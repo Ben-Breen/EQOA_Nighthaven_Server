@@ -4,7 +4,7 @@
 
 Surveyed repository: `C:\Users\breen\Projects\EQOAGameServer` at local HEAD `95d0f33` (2026-09-19, “Add deprecation notice to README”). `git status --short` was empty at survey time. The repository was treated as read-only; no reference files were changed. Nighthaven client was not inspected or modified. This is source archaeology, not protocol certification.
 
-Classification: **CONFIRMED** = direct source/config/schema/documentation evidence; **INFERRED** = interpretation; **UNKNOWN** = evidence absent or ambiguous; **OBSOLETE / HISTORICAL** = dated implementation choice, not an inherent protocol requirement.
+Classification: **CONFIRMED — reference** = direct source/config/schema/documentation evidence about the surveyed repository; **INFERRED** = interpretation; **UNKNOWN** = evidence absent or ambiguous; **OBSOLETE / HISTORICAL** = dated implementation choice, not an inherent protocol requirement. This survey contains no **CONFIRMED — client/protocol** evidence.
 
 ## Component map
 

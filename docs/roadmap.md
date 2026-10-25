@@ -6,7 +6,7 @@ This roadmap is ordered to reduce uncertainty before committing to broad game im
 
 - Preserve the read-only reference boundary and this evidence-tagged survey.
 - Inventory available public documents and lawfully collected captures; record client revision, emulator/console path, timestamp, and provenance for each capture.
-- Create a protocol hypothesis ledger with CONFIRMED / INFERRED / UNKNOWN entries and source/capture links.
+- Create a protocol hypothesis ledger distinguishing CONFIRMED — reference from CONFIRMED — client/protocol, plus INFERRED and UNKNOWN entries with source/capture links.
 - Do not import game art, audio, maps, dialogue, or other proprietary content.
 
 ## 1. Minimal protocol laboratory

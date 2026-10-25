@@ -27,7 +27,7 @@ Unknowns here are intentionally unresolved. Do not fill them from intuition or b
 3. Review public technical documentation and independent emulator/interoperability research; cite exact source, date and confidence.
 4. Inspect the precise reference parser/serializer paths for each milestone feature, but mark server-specific choices separately from observed client behavior.
 5. Validate field hypotheses with controlled client experiments. Change one behavior at a time and preserve successful/failing fixtures.
-6. Promote an item from INFERRED to CONFIRMED only when direct code, capture, schema or repeatable test supports it; retain UNKNOWN when evidence conflicts.
+6. Promote a source-derived implementation fact to CONFIRMED — reference only when direct repository evidence supports it. Promote a client/protocol claim to CONFIRMED — client/protocol only when the capture/experiment criteria in [protocol-evidence-plan.md](protocol-evidence-plan.md) are met; retain UNKNOWN when evidence conflicts.
 
 ## Operational questions
 

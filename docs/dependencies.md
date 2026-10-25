@@ -5,8 +5,9 @@
 | Dependency/assumption | Evidence | Class | Nighthaven treatment |
 |---|---|---|---|
 | C# / .NET 6 (`net6.0`) | Both executable projects target `net6.0`; Docker installs SDK 6.0 | IMPLEMENTATION-CHOICE; obsolete lifecycle relative to modern supported .NET | Prefer currently supported .NET when implementation begins; retest wire behavior |
-| `MySqlConnector` 0.69.4 | Auth and game project references | IMPLEMENTATION-CHOICE | PostgreSQL driver behind persistence adapter |
-| MariaDB 10.2 compose / 10.3.37 schema dump | `docker-compose.yml`, schema header | IMPLEMENTATION-CHOICE; historical deployment | PostgreSQL preferred by project brief |
+| `MySqlConnector` 0.69.4 | Auth and game project references | IMPLEMENTATION-CHOICE | Reference-only provider evidence; keep the selected Nighthaven provider behind one persistence adapter |
+| MariaDB 10.2 compose / 10.3.37 schema dump | `docker-compose.yml`, schema header | IMPLEMENTATION-CHOICE; historical deployment | Serious Nighthaven candidate given reference evidence and operator familiarity; not selected automatically |
+| PostgreSQL (candidate) | No PostgreSQL dependency in the surveyed reference projects | IMPLEMENTATION-CHOICE | Candidate only; no unique Nighthaven requirement is demonstrated. Select one backend before persistence implementation |
 | `System.IO.Pipelines` 5.0.1 | Both game/auth project references | IMPLEMENTATION-CHOICE | Use only if framing/perf needs it; modern BCL APIs may suffice |
 | `System.Configuration.ConfigurationManager` 6.0.1 | Project references and app.config access | IMPLEMENTATION-CHOICE | Typed validated config, environment/secrets provider |
 | `NLua` 1.6.0 | Game project reference; many `.lua` scripts | IMPLEMENTATION-CHOICE | Optional isolated scripting boundary after core stability |

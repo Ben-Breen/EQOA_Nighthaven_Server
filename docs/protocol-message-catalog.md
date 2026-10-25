@@ -2,6 +2,8 @@
 
 This catalog is a source-derived index, not a complete protocol specification. “Direction” is based on class/dispatch names. Exact field meanings are only stated where source comments or code directly demonstrate them. Source paths are relative to `EQOAGameServer/`. IDs are repository enum values and must be validated against original-client captures.
 
+Every `CONFIRMED` label in this catalog means **CONFIRMED — reference**: it describes code in that repository, not confirmed original-client semantics. No entry here is **CONFIRMED — client/protocol**.
+
 ## Framing and transport records
 
 | Record | Direction | Identifier | Demonstrated content | Source | Confidence / unknowns |

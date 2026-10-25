@@ -4,7 +4,7 @@
 
 The reference survey establishes that its world server parses a custom UDP datagram/segment/message format with CRC handling and distinct reliable, unreliable, ping, and state-channel paths. Its account service parses TCP messages. It does **not** establish the complete official EQOA protocol, all client variants, or that every implementation detail is required for compatibility. See [protocol-message-catalog.md](protocol-message-catalog.md).
 
-Labels: **CONFIRMED**, **INFERRED**, **UNKNOWN**, **OBSOLETE / HISTORICAL** as defined in [reference-implementation-analysis.md](reference-implementation-analysis.md).
+Evidence in this document is **CONFIRMED — reference** unless explicitly marked otherwise. This means the behavior is present in the surveyed implementation; it does not mean **CONFIRMED — client/protocol**. Use **INFERRED**, **UNKNOWN**, and **HISTORICAL CHOICE** for the other classifications defined in [architecture.md](architecture.md).
 
 ## Confirmed reference observations
 
