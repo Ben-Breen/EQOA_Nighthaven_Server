@@ -20,7 +20,7 @@ This roadmap is ordered to reduce uncertainty before committing to broad game im
 
 - Single modern .NET process with explicit Transport, Protocol, Application, Domain, Persistence, Configuration, and Observability boundaries.
 - Typed config, secret injection, minimal bind/exposed ports, startup validation, cancellation-based shutdown, health/readiness and metrics.
-- PostgreSQL adapter and migrations; backup/restore smoke procedure; repository contract tests when requested/appropriate.
+- Selected relational database adapter and migrations; backup/restore smoke procedure; repository contract tests when appropriate. Select one backend before persistence implementation; do not build dual adapters for theoretical portability.
 
 ## 3. Session reliability and operations
 
@@ -31,7 +31,7 @@ This roadmap is ordered to reduce uncertainty before committing to broad game im
 
 ## 4. First playable vertical slice
 
-- Authentication through the verified client exchange; character list/create/select; single zone entry; entity visibility and movement; save/load; disconnect and reconnect.
+- Authentication through the verified client exchange; character list/select; create a character only if needed for the test setup; single zone entry; entity visibility and movement; save/load; disconnect. Test client reconnect only if evidence confirms the target client supports the required rebind behavior.
 - Keep combat, items, NPC scripts and content out until each vertical behavior has capture-backed messages and explicit domain rules.
 
 ## 5. Incremental gameplay domains

@@ -248,7 +248,7 @@ Promote a specific statement to `CONFIRMED — client/protocol` only when all ap
 6. Conflicting builds/runs are recorded; the claim is restricted to the profile that is actually supported.
 7. Redaction is reviewed and the sanitized derivative can reproduce the intended test without pretending to be the original raw capture.
 
-A single clear capture may confirm a narrow observable event (for example, that a particular datagram was emitted in that run), but a field's meaning, invariant, requiredness, or cross-version behavior usually needs repetition or differential evidence. If these conditions are not met, keep the statement `INFERRED` or `UNKNOWN` and state why.
+A single clear capture can support an artifact-specific observation (for example, that a datagram was emitted in that recorded run), but does not by itself promote a general client/protocol fact. Keep the broader behavior `INFERRED` or `UNKNOWN` until the applicable promotion criteria are met; a field's meaning, invariant, requiredness, or cross-version behavior needs repeated or differential evidence where practical.
 
 ## Minimum evidence gates before wire-facing implementation
 
