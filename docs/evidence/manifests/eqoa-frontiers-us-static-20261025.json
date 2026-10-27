@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-static-20261025",
+  "experiment_id": "E00-supporting-static",
+  "source_kind": "static_client_artifacts",
+  "method": "S",
+  "observation_date": "2026-10-25",
+  "captured_at_utc": null,
+  "runtime_executed": false,
+  "transport": null,
+  "source_endpoint": null,
+  "destination_endpoint": null,
+  "packet_boundaries": null,
+  "interpretation_status": "UNKNOWN",
+  "verification_scope": "direct artifact bytes/structure, static export/instruction analysis; not observed client transitions or network requirements",
+  "client_profile": "frontiers-us-eeee1fcc-pcsx2-lab-candidate",
+  "raw_artifacts": [
+    {
+      "artifact_id": "frontiers-iso-operator-001",
+      "file_name": "EQOA_Frontiers.iso",
+      "bytes": 3056386048,
+      "sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+      "role": "operator-supplied disc image; acquisition/rip provenance not yet documented"
+    },
+    {
+      "artifact_id": "frontiers-bootstrap-001",
+      "file_name": "SLUS_207.44",
+      "bytes": 400296,
+      "sha256": "40909bc57f83be237a5dbbaef1ca935c98188fddfa4ffc715039e1d3307fdcd2",
+      "derived_from": "frontiers-iso-operator-001",
+      "iso_lba": 95522,
+      "iso_offset": 195629056,
+      "elf_xor_checksum": "EEEE1FCC"
+    },
+    {
+      "artifact_id": "frontiers-station-disc-001",
+      "file_name": "STATION.PAK",
+      "bytes": 82094,
+      "sha256": "cbde2c3bbe637ddcf6c39c71cd362e8f855f60181a39cde802bf45b51ded44d1",
+      "derived_from": "frontiers-iso-operator-001",
+      "iso_lba": 95896,
+      "iso_offset": 196395008
+    },
+    {
+      "artifact_id": "frontiers-external-patch-001",
+      "file_name": "eeee1fcc.pnach",
+      "bytes": 3463,
+      "sha256": "01693f0235a74153e9d6ac075407c196968168b6dcf6dffa94f276fa45580fbb",
+      "role": "external supplied runtime patch, examined only; not imported or adopted as Nighthaven code"
+    },
+    {
+      "artifact_id": "frontiers-card-operator-001",
+      "file_name": "EQOA.ps2",
+      "bytes": 8650752,
+      "sha256": "661a35e06f53d6dc53035da527bdd9346035d2b1e942be8558eb21713c273f6a",
+      "role": "modified operator-supplied PS2 memory card; emulator mount state not observed"
+    },
+    {
+      "artifact_id": "frontiers-station-card-001",
+      "file_name": "station.pak",
+      "bytes": 82095,
+      "sha256": "78016dae89587a85af823a27d46cc08487cdd104c1ffcdaaf3796b426529cd25",
+      "derived_from": "frontiers-card-operator-001",
+      "card_directory": "BASLUS-20744EQONLINE"
+    },
+    {
+      "artifact_id": "frontiers-hosts-card-001",
+      "file_name": "eqahosts.txt",
+      "bytes": 15,
+      "sha256": "0af244930780912940b418e3a3ef2808d47d8ffb44cfbd853e147663c8fd8f8f",
+      "derived_from": "frontiers-card-operator-001",
+      "card_directory": "BASLUS-20744EQONLINE"
+    }
+  ],
+  "storage": {
+    "raw_location": "operator-local artifact registry, outside the Nighthaven Git tree",
+    "registry_id": "nighthaven-pass5-local-artifacts-20261025",
+    "raw_imported": false,
+    "encrypted_at_rest_verified": false,
+    "capture_storage_ready": false,
+    "note": "Original operator files remain unchanged. This metadata does not certify current local storage access control or encryption."
+  },
+  "tools": {
+    "iso": "local read-only ISO9660 parser, 2048-byte blocks, endian mirror checks",
+    "elf": "ELF32 little-endian load mapping and embedded export tables; complete-u32 XOR checksum",
+    "card": "local read-only FAT parser, 512+16-byte pages, two pages per cluster; ECC not validated or repaired",
+    "mips": "bounded custom instruction decoding, unsupported opcodes left undecoded"
+  },
+  "assumptions": [
+    "Supplied media described by the operator as Frontiers; physical media provenance and support-policy selection remain pending.",
+    "Stored endpoint strings do not establish transport, actual usage, timing, reachability, or service role."
+  ],
+  "redaction": {
+    "public_metadata_only": true,
+    "raw_payloads_included": false,
+    "account_session_values_included": false,
+    "fixtures_created": false
+  },
+  "observations": [
+    {
+      "id": "S01",
+      "artifact_id": "frontiers-bootstrap-001",
+      "file_offset": "0x25B18",
+      "runtime_address": "0x00124B18",
+      "verification": "direct static export/code mapping",
+      "fact": "External patch targets sceInetName2Address and writes a constant output+4 result; no hostname comparison in the replacement."
+    },
+    {
+      "id": "S02",
+      "artifact_id": "frontiers-iso-operator-001",
+      "component": "MODULES/INET.IRX",
+      "iso_lba": 86767,
+      "file_offset": "0xBBA4",
+      "verification": "direct static address-to-string formatter; corroborated by stored card host",
+      "fact": "Numeric 0x05A1D9BC formats as 5.161.217.188; raw little-endian memory-byte spelling is not the dotted address."
+    },
+    {
+      "id": "S03",
+      "artifact_id": "frontiers-station-disc-001",
+      "file_offset": "0x1401D",
+      "verification": "direct archive payload",
+      "fact": "Station host configuration contains 64.37.156.200:9735."
+    },
+    {
+      "id": "S04",
+      "artifact_id": "frontiers-station-card-001",
+      "file_offset": "0x1401D",
+      "card_raw_offset": "0x39C1D",
+      "verification": "direct archive payload and FAT/page mapping",
+      "fact": "Station host configuration contains 5.161.217.188:9735 followed by three NUL bytes."
+    },
+    {
+      "id": "S05",
+      "artifact_id": "frontiers-station-card-001",
+      "file_offset": "0x14058",
+      "card_raw_offset": "0x39C58",
+      "verification": "direct archive payload",
+      "fact": "NewsURL uses HTTP host 5.161.217.188, port 7000, and slash-padded patch/web/eqoa/motd/news.html path; UI rendering and actual request are unobserved."
+    },
+    {
+      "id": "S06",
+      "artifact_id": "frontiers-card-operator-001",
+      "verification": "all twelve directory slots in the inspected EQOA directory chain",
+      "fact": "No SS or ENC-named entry in this directory; does not establish emulator mounting or recover orphaned clusters."
+    },
+    {
+      "id": "S07",
+      "artifact_id": "frontiers-iso-operator-001",
+      "component": "UTIL.REL exports",
+      "verification": "named exports; strong static runtime bias consistency, not live allocation measurement",
+      "fact": "DNAS InitNoHDD/AuthGetUniqueID/Shutdown/Abort/GetStatus/SetProxy/GetProxy and one unnamed-symbol export correspond to external patch targets."
+    },
+    {
+      "id": "S08",
+      "artifact_id": "frontiers-bootstrap-001",
+      "file_offset": "0x5BA98",
+      "verification": "direct path-template bytes and loader call exports",
+      "fact": "Injected loader constructs mc0:/BASLUS-20744EQONLINE/SS and calls local file open/read/close; no direct download operation is established."
+    }
+  ]
+}

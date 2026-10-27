@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-tap-lab-20261025",
+  "source_kind": "lab_environment_setup",
+  "observed_at_utc": "2026-10-25T20:41:57.805137+00:00",
+  "captured_at_utc": null,
+  "client_packets_collected": false,
+  "e00_complete": false,
+  "interpretation_status": "UNKNOWN",
+  "driver": {
+    "name": "TAP-Windows Adapter V9",
+    "version": "9.27.0.0",
+    "signed": true,
+    "signer": "Microsoft Windows Hardware Compatibility Publisher",
+    "release": "https://github.com/OpenVPN/tap-windows6/releases/tag/9.27.0",
+    "archive_sha256": "36e2609b7ceefedcb978ce5c48caf9e0e5af83423717c4e2e3c1d7ebca8f62a5"
+  },
+  "adapter": {
+    "alias": "Nighthaven E00 TAP",
+    "host_ipv4": "198.18.0.1/24",
+    "host_dhcp": "disabled",
+    "forwarding": "disabled",
+    "default_gateway": null,
+    "dns_servers": [],
+    "bridge": false,
+    "internet_connection_sharing": false,
+    "media_status": "Always Connected",
+    "guest_network_enabled": false
+  },
+  "verification": {
+    "checked_at_utc": "2026-10-25T20:37:32.7892509Z",
+    "isolation_checks_passed": true,
+    "native_nat": "CIM provider unavailable; WinNat driver separately confirmed stopped/Started=false",
+    "scope": "Dedicated lab adapter configuration at check time, not a claim about every possible future relay or client behavior. Recheck before each run."
+  },
+  "local_receipt_key": "nighthaven-tap-install-20261025",
+  "raw_admin_transcript_imported": false,
+  "windows_execution_policy_changed": false,
+  "retention": "Keep for upcoming captures; later operator-requested removal must verify exact device and published INF and check other package references."
+}

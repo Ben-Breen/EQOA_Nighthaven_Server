@@ -27,7 +27,7 @@
 
 These statuses describe *observability in the repository*, not claims that nothing has occurred on the operator's PC.
 
-- [ ] **NH-E00 — Define Frontiers client profile and capture clean baseline.** **NOT VERIFIED.** Record legally held client media/build, SHA-256 of operator's own image, emulator/BIOS/network settings, UTC run timeline, and at least three comparable cold-start runs with packet-capture hashes. **Next when complete:** E01.
+- [ ] **NH-E00 — Define Frontiers client profile and capture clean baseline.** **IN PROGRESS locally; NOT COMPLETE.** [Pass #5](pass5-status.md) records candidate media fingerprints, a static interpretation ledger, one offline readiness observation and historical TAP setup metadata. These records are supporting evidence, not the required captured baseline. Record legally held client media/build, SHA-256 of operator's own image, emulator/BIOS/network settings, UTC run timeline, and at least three comparable cold-start runs with packet-capture hashes. **Next when complete:** E01.
 - [ ] **NH-E01 — Establish DNS/bootstrap/DNAS stage timeline.** **BLOCKED until E00 evidence verified.** Observe DNS, endpoints, transports, HTTP metadata if present, progression/error screens, and one-variable-at-a-time experiments. **Next:** E02.
 - [ ] **NH-E02 — Isolate DNAS dependency and alternative client behavior.** **BLOCKED by E01.** Distinguish observed client-side gate, endpoint redirection, patch/account dependencies, and service-side behavior; do not presuppose a bypass or service implementation. **Next:** document decision and E03.
 - [ ] **NH-E03 — Determine server discovery and endpoint selection.** **BLOCKED by bootstrap evidence.** **Next:** E04/E05 as applicable.
@@ -35,7 +35,7 @@ These statuses describe *observability in the repository*, not claims that nothi
 - [ ] **NH-E05 — Capture first game datagram and session establishment.** **BLOCKED by earlier client flow.** **Next:** E06.
 - [ ] **NH-E06 — Verify framing, byte order, sizes, checksums/integrity.** **BLOCKED by E05 captures.** **Next:** E07.
 - [ ] **NH-E07 — Verify acknowledgments, retries and login-subset sequencing.** **BLOCKED by E05/E06.** **Next:** E08.
-- [ ] **NH-E08 — Capture character list and selection.** **BLOCKED by prior client flow.** **Next:** E09.
+- [ ] **NH-E08 — Capture character list, creation and selection.** **BLOCKED by prior client flow.** Verify minimal creation, the created character appearing in the list, and selection; a provisioned character alone does not satisfy creation. **Next:** E09.
 - [ ] **NH-E09 — Capture world entry and player entity initialization.** **BLOCKED by E08.** **Next:** E10.
 - [ ] **NH-E10 — Capture minimal movement and replication.** **BLOCKED by E09.** **Next:** E11.
 - [ ] **NH-E11 — Capture logout, disconnect, reconnect, and state-recovery behavior.** **BLOCKED by a functioning observed session.** **Next:** evaluate implementation acceptance gates.

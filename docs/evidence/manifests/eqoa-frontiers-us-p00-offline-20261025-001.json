@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-p00-offline-20261025-001",
+  "experiment_id": "P00-offline-readiness-control",
+  "source_kind": "pcsx2",
+  "observed_at_utc": "2026-10-25T14:47:18.408040+00:00",
+  "captured_at_utc": null,
+  "runtime_profile": "frontiers-us-eeee1fcc-pcsx2-lab-copied-card-offline",
+  "emulator_version": "2.8.2.0",
+  "emulator_executable_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+  "bios_image_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+  "bios_log_description": "USA v01.60 (07/02/2002), Console20020207-164243",
+  "iso_artifact_id": "frontiers-iso-operator-001",
+  "initial_card_artifact_id": "frontiers-card-operator-001",
+  "card_variant": "operator modified-card clone, not pristine",
+  "settings_sha256_at_snapshot": "219570215120e4225b097369cbdc35254e990d5e9e037c73bb9070cf0e7f1d8b",
+  "network_enabled_in_selected_config": false,
+  "external_cheats_enabled_in_selected_config": false,
+  "compatibility_patches_enabled_in_selected_config": false,
+  "ui_game_boot": "operator reported selecting and starting game; log corroborates boot",
+  "raw_log": {
+    "registry_id": "nighthaven-pass5-local-artifacts-20261025",
+    "snapshot_id": "P00-offline-log-001",
+    "sha256": "091e818286bdf61240731fca9347ace50bd7b6a10b18a357e64f8c36dc368d30",
+    "bytes": 17889,
+    "committed": false
+  },
+  "network_capture": null,
+  "transport": null,
+  "source_endpoint": null,
+  "destination_endpoint": null,
+  "packet_boundaries": null,
+  "e00_complete": false,
+  "interpretation_status": "UNKNOWN",
+  "observations": [
+    {
+      "basis": "emulator log",
+      "relative_log_seconds": 52.9375,
+      "observation": "Disc serial SLUS-20744 and CRC EEEE1FCC were logged."
+    },
+    {
+      "basis": "emulator log",
+      "relative_log_seconds": 52.9707,
+      "observation": "Slot0 log identifies EQOA-working-copy.ps2 as an 8 MB formatted card."
+    },
+    {
+      "basis": "emulator log",
+      "relative_log_seconds": 57.0983,
+      "observation": "Bootstrap ELF entry 0x00100008 was reported executing."
+    },
+    {
+      "basis": "emulator log",
+      "relative_log_seconds": 61.2365,
+      "observation": "sceDNAS2CryptInit_nohdd() returned 0. This is local crypto initialization, not evidence of successful network DNAS authentication."
+    },
+    {
+      "basis": "emulator log",
+      "relative_log_seconds": 61.7335,
+      "observation": "SUPPORT.ENC memory-card path was attempted; later MCERR.ENC and SETUP.ENC attempts were logged. Trying does not prove file presence or success."
+    },
+    {
+      "basis": "emulator log",
+      "relative_log_seconds": 67.844,
+      "observation": "Game emitted WORDS.TXT read from memory card. This does not identify a Station archive selected later."
+    }
+  ],
+  "limits": [
+    "One operator-driven offline control, not three repeatable cold-start captures.",
+    "No raw packets, observed connections, DNAS handshake, first stable screen capture, or wire field interpretation.",
+    "Log timestamps are relative emulator log times, not packet timestamps. Snapshot UTC is not claimed as exact boot time.",
+    "The selected source card already contains compatibility configuration.",
+    "Raw log is a local private analysis artifact; encrypted/access-controlled capture retention has not been certified.",
+    "Original-hardware behavior and full online startup remain UNKNOWN."
+  ],
+  "mounted_card": {
+    "artifact_id": "frontiers-card-labclone-001",
+    "file_name": "EQOA-working-copy.ps2",
+    "derived_from": "frontiers-card-operator-001",
+    "initial_snapshot_sha256": "661a35e06f53d6dc53035da527bdd9346035d2b1e942be8558eb21713c273f6a",
+    "initial_snapshot_verification": "Clone bytes hashed equal to source before isolated UI launch; source/copy registry retained locally.",
+    "selection_evidence": "McdSlot0 log identifies EQOA-working-copy.ps2 as a formatted 8 MB card.",
+    "post_run_sha256": null,
+    "post_run_note": "VM remains operator-controlled; final card snapshot/hash not claimed before normal shutdown."
+  }
+}

@@ -2,6 +2,10 @@
 
 This is an ordered, evidence-only plan. No network listeners, packet codecs, DNAS behavior, authentication, database, or server functionality are implemented here.
 
+## Pass #5 checkpoint
+
+Acquisition has begun with [hashed static client-artifact observations](pass5-status.md) and a prepared isolated E00 run card. This is supporting archaeology, not completion of E00/E01 or a change to the ordered experiments. Static manifests may use `source_kind: static_client_artifacts` with `method: S`; capture timestamp, transport, endpoints and packet boundaries must be null when no runtime capture occurred. Existing capture metadata and promotion requirements below still apply to actual runs.
+
 ## Research order and dependencies
 
 The order below prioritizes upstream blockers. Do not reverse it merely to start coding earlier.
@@ -14,12 +18,12 @@ The order below prioritizes upstream blockers. Do not reverse it merely to start
 | 3 | Account service and game-service first contact | Defines which services exist and whether account and game exchanges are separate or coupled. | Valid/invalid account test exchange and first game datagram, each paired with client result. |
 | 4 | Game framing and integrity | Required before interpreting session, opcode, or character messages. | Repeatable packet boundaries, field-by-field byte observations, CRC/integrity vector and rejection behavior. |
 | 5 | Session/reliability subset used during login | Needed to know whether later application messages are accepted/delivered and how to correlate them. | Observed session handshake, IDs, ack/sequence progression, and controlled-loss evidence for the subset in use. |
-| 6 | Character list and selection | First application-level slice after session and authentication. | Captured list request/response, one-character list and selection transition with client screen/result. |
+| 6 | Character list, creation and selection | First application-level slice after session and authentication. | Captured empty/list response, one independently created character, refreshed list and selection transition with client screen/result. |
 | 7 | World entry and initial entity | Depends on selection and session; prevents building world messages against guessed entry flow. | Capture from selected character to stable zone and one visible player entity. |
 | 8 | Movement and minimal replication | Required for playable baseline, but unnecessary before a client-visible entity exists. | Paired controlled movement input and server/client replication with timing and field hypotheses validated. |
 | 9 | Disconnect, reconnect and save/load | Important recovery behavior, downstream of a stable session and character state. | Normal logout, abrupt loss, process lifetime and reload traces; reconnect conclusion per client profile. |
 
-Defer broad combat, spell, quest, inventory, guild, merchant, loot, NPC scripting, and full world replication research until the baseline needs them. Character creation can also be deferred if one independently provisioned test character is enough to test list/select; otherwise research it after list framing is understood.
+Defer broad combat, spell, quest, inventory, guild, merchant, loot, NPC scripting, and full world replication research until the baseline needs them. The operator-prioritized first playable path includes character creation. Research the minimal create flow in E08 after list framing is understood, then verify the created character appears and can be selected. A provisioned character can support an intermediate list/select experiment but does not satisfy the creation requirement.
 
 ## Experiment cards
 
@@ -121,17 +125,17 @@ Each experiment is intentionally narrow. Perform it with a client and environmen
 - **Still unknown:** Loss handling in world movement/large segmented messages and complete sequence wrap semantics.
 - **Unlocks:** The minimal reliable transport subset required for login/character flow; defer unused channels.
 
-### E08 — Character list and selection
+### E08 — Character list, creation and selection
 
-- **Objective:** Observe the smallest character-list/select exchange and its client transition.
+- **Objective:** Observe the smallest character-list/create/select exchanges and their client transitions.
 - **Prerequisite:** Account/game/session stages are mapped and a known-good session can reach character select.
 - **Setup:** Use an authorized test account with zero or one self-created/provisioned character; avoid importing historical seed data.
-- **Action:** Capture list display, select one character, and separately try an empty list if safely provisionable.
-- **Capture:** Request/response, exact bytes, visible character/UI state, client version, response timing and any ack gates.
-- **Expected evidence:** Minimum list and select messages accepted by the client, including empty-list behavior if tested.
-- **Interpretations:** One successful path identifies a usable vertical slice; it does not establish full character creation schema or field semantics.
-- **Still unknown:** Create/delete, limits, malformed list behavior, alternate builds.
-- **Unlocks:** Character list/select codecs and application service contracts.
+- **Action:** Capture an empty list where safely provisionable, create one independently authored test character, refresh the list and select that character. Separate list, creation and selection observations so each transition has attributable evidence.
+- **Capture:** List/create/select requests and responses, exact bytes, synthetic test inputs, visible character/UI state, client version, response timing and any ack gates.
+- **Expected evidence:** Minimum list, creation and select messages accepted by the client, including the newly created character appearing in the list and progressing through selection.
+- **Interpretations:** One successful path identifies a bounded creation/list/select slice; it does not establish all creation options or field semantics. A provisioned-character run alone does not verify creation.
+- **Still unknown:** Delete, untested creation options and limits, malformed input/list behavior, alternate builds.
+- **Unlocks:** Evidence requirements for minimal character list/create/select codecs and application service contracts; implementation still requires the applicable gates and authorization.
 
 ### E09 — World entry and initial entity
 
@@ -199,6 +203,8 @@ Each capture package should have a manifest with at least:
 | `redaction` | Whether raw is restricted, sanitized copy exists, transformation rules, and reviewer |
 | `notes` | User action, screen state, perturbation, errors and context |
 
+Static records use source_kind static_client_artifacts and method S; lab setup records use source_kind lab_environment_setup. These supporting records are not capture packages: inapplicable network fields are null or explicitly omitted, and setup/observation timestamps must not be presented as capture timestamps. The committed JSON examples document their narrower scope; capture packages must still satisfy the table above.
+
 ### Decoded record shape
 
 Decoded data should be append-only annotations separate from raw bytes, with fields such as: `artifact_id`, `frame_index`, `byte_range`, `direction`, `candidate_layer`, `candidate_type_or_opcode`, `candidate_fields` (each with byte range/type/byte-order hypothesis), `confidence`, `evidence_basis`, `decoder_version`, `reviewer`, and `unresolved`. Never replace raw bytes with a decoded/re-encoded packet.
@@ -260,7 +266,7 @@ A single clear capture can support an artifact-specific observation (for example
 | Reliability | Sequence and acknowledgement scope for messages used in baseline, ordering/duplicate behavior, retry trigger and practical limits, wrap behavior if reached; at least one controlled loss/delay result for critical handshake delivery. | Full transport behavior for combat, movement channels not used in baseline, large segmented messages if not needed. |
 | Authentication | Which service/transport is used; complete request/response boundaries; valid and invalid credential behavior; account/session identity relationship; password transform/crypto and version-specific requirements; disconnect semantics for auth flow. Credentials must be synthetic/test-only in captures. | Account creation, password change, subscription and unsupported account operations if not required for test login. |
 | Session | First-flow state sequence; session and connection identifier observations; creation/ack/reset conditions; account-to-game correlation; timeout behavior on the baseline path. Reconnect identity proof before claiming rebind support. | Process restart restoration, reconnect behavior beyond the required test and all unused session states. |
-| Character list/select | Capture-backed request/response sequence, count/length rules, minimum valid one-character response, tested client-visible list result, selection payload and next-state response/ack. | Create/delete and full appearance/equipment combinations if the test character can be provisioned without those messages. |
+| Character list/create/select | Capture-backed list/create/select sequences, count/length rules, minimal creation inputs and accepted response, newly created character visible in the list, selection payload and next-state response/ack. | Delete and appearance/equipment combinations outside the minimal tested creation path. |
 | World entry | Observed transition after selection, minimum required zone/entity initialization, client-ready transition, one visible player entity, and critical ack/retry behavior. | Other zones, NPCs, combat, full object state and content. |
 | Movement/entity replication | Controlled input-to-packet relation, entity handle/ID mapping for the test entity, minimum server update that causes visible movement, update timing and client-visible stop/idle result. | Collision/pathfinding, remote visibility, NPC and combat replication. |
 
@@ -276,7 +282,7 @@ flowchart TD
   B --> C[Account connection/auth — if client flow requires it]
   C --> D[Game connection — may be separate or reordered]
   D --> E[Session establishment]
-  E --> F[Character list]
+  E --> F[Character list and minimal creation]
   F --> G[Character selection]
   G --> H[World entry]
   H --> I[One test zone]
@@ -291,7 +297,7 @@ Each arrow is an unverified transition until observed. Mark an optional/missing 
 - one named client profile, with original PS2 confirmation for claims required on physical hardware;
 - bootstrap and DNAS decision documented, including whether no DNAS-specific Nighthaven behavior is required;
 - valid account/auth and game session established using capture-backed messages;
-- character list/select and a single independently authored test character;
+- character creation, refreshed list/select and a single independently authored test character, with capture-backed client-visible results for each transition;
 - one zone with one client-visible player and controlled basic movement;
 - clean logout/reload behavior for at least one proven persistent value;
 - packet fixtures for every wire message used, with raw evidence link, safe redacted fixture, interpretation status and regression expectation;

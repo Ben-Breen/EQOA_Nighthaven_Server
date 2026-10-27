@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-static-20261025",
+  "method": "S",
+  "capture_evidence": false,
+  "decoder": "static analysis checkpoint 2026-10-25; no wire decoder",
+  "records": [
+    {
+      "id": "H01",
+      "status": "INFERRED",
+      "basis": [
+        "S01",
+        "S02"
+      ],
+      "claim": "Calls reaching the patched shared resolver receive the selected IPv4 result.",
+      "limits": "No runtime callsites, DNS trace, mount state, or universal connection routing proved.",
+      "next": "E00 then E01/E02/E03; observe caller, output and actual connections."
+    },
+    {
+      "id": "H02",
+      "status": "UNKNOWN",
+      "basis": [
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "claim": "Which Station archive/configuration is selected at startup and which service consumes each endpoint.",
+      "next": "Record file-open path and phase alongside passive capture; vary one input only after baseline."
+    },
+    {
+      "id": "H03",
+      "status": "UNKNOWN",
+      "basis": [
+        "S07"
+      ],
+      "claim": "Necessary Nighthaven DNAS compatibility behavior and exact synthetic status-word semantics.",
+      "next": "E01 timeline then E02 differential; no service/bypass implementation decision yet."
+    },
+    {
+      "id": "H04",
+      "status": "UNKNOWN",
+      "basis": [
+        "S06",
+        "S08"
+      ],
+      "claim": "Whether the SS loader succeeds or affects the running client.",
+      "next": "Verify mounted mc0 identity and observe open result; absent file on supplied card is a bounded static fact."
+    },
+    {
+      "id": "H05",
+      "status": "UNKNOWN",
+      "basis": [
+        "S05"
+      ],
+      "claim": "MOTD rendering subset, HTTP response requirements and supported news.html markup.",
+      "next": "Deferred secondary work; capture exact HTTP request/response and renderer behavior later."
+    },
+    {
+      "id": "H06",
+      "status": "UNKNOWN",
+      "basis": [],
+      "claim": "Network framing, CRC, authentication exchange, reliability, character selection and world-entry requirements.",
+      "next": "Follow E04\u2013E11 only after upstream prerequisites. Static address encoding is not wire-packet byte-order evidence."
+    }
+  ]
+}

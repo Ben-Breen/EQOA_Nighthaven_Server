@@ -2,6 +2,10 @@
 
 This roadmap is ordered to reduce uncertainty before committing to broad game implementation. Each milestone is independently reviewable; experiments should stay disposable until evidence promotes them into the stable core.
 
+## Current checkpoint
+
+[Pass #5 — Client/Protocol Evidence Acquisition](pass5-status.md) has begun. The static artifact inventory is registered; E00 is partial and E01–E11 are not run. Architecture Gate #2 remains PASS, Evidence Acquisition Gate OPEN, and Protocol Implementation Gate CLOSED. MOTD markup remains deferred.
+
 ## 0. Evidence baseline
 
 - Preserve the read-only reference boundary and this evidence-tagged survey.
@@ -31,7 +35,7 @@ This roadmap is ordered to reduce uncertainty before committing to broad game im
 
 ## 4. First playable vertical slice
 
-- Authentication through the verified client exchange; character list/select; create a character only if needed for the test setup; single zone entry; entity visibility and movement; save/load; disconnect. Test client reconnect only if evidence confirms the target client supports the required rebind behavior.
+- Operator-prioritized first playable path (2026-10-25): account login, character creation and selection, then world-server entry. Capture and validate the exchanges for each transition before implementing that path. Continue with a single zone, entity visibility/movement, save/load and disconnect; client reconnect remains conditional on supporting evidence.
 - Keep combat, items, NPC scripts and content out until each vertical behavior has capture-backed messages and explicit domain rules.
 
 ## 5. Incremental gameplay domains
@@ -49,3 +53,7 @@ This roadmap is ordered to reduce uncertainty before committing to broad game im
 4. Persistence operations are transactional and backup/restore is demonstrated.
 5. Clean-room content and code provenance review is complete before distribution.
 
+
+## Deferred content research leads
+
+The operator identified EQOAEmu and Hagley as possible future research assets. EQOAEmu's rumored open-source direction is unverified; available source/content, completeness, provenance and publication terms for both leads must be checked when their work becomes relevant. No research, import, copying or dependency selection is authorized by listing them here. Broader quests, tradeskills, guilds and content work remain downstream of the first playable login/create-character/world-entry path.

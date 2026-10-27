@@ -53,6 +53,10 @@ Client compatibility research
     └── Which state survives logout, transient loss, or process restart?
 ```
 
+## Current acquisition checkpoint
+
+[Pass #5 status](pass5-status.md) links the candidate Frontiers profile, hashed static artifact manifest, interpretation ledger, and isolated E00/E01 run card. The inspected patch modifies a shared resolver, named DNAS routines, a resource pathname, and a local patch-loading hook. This is evidence about that supplied compatibility method; it selects no Nighthaven compatibility mechanism. The supplied card is already modified. No capture-backed startup result or original-hardware result is asserted.
+
 ## Client profile and environment record
 
 Before collecting protocol evidence, identify a specific target client: region, game edition, disc/build identifier and cryptographic hash of the user's own disc image (record the hash and media provenance, not the image in the Nighthaven repository). Record PS2 model/network path or emulator version, BIOS provenance, network plugin/settings, memory-card/network configuration, and whether any client patch/cheat is active. Do not change the Nighthaven client repository as part of this research.

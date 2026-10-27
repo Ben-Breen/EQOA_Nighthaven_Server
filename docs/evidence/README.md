@@ -2,6 +2,10 @@
 
 This directory is for Nighthaven protocol evidence manifests, sanitized interpretations and reviewed fixtures when collection begins. **No packet captures, client images, game assets or protocol fixtures were created by the research-planning pass.**
 
+## Pass #5 checkpoint
+
+[Pass #5 status](../pass5-status.md) registers the first static client-artifact observations and a prepared E00 run card. Static manifests use `source_kind: static_client_artifacts`, `method: S`, and null capture/network fields. Their verification describes artifact bytes or static code only; interpretation labels remain INFERRED/UNKNOWN as appropriate. They are not reference-server claims or CONFIRMED — client/protocol observations. No raw artifacts or packet fixtures are imported by this checkpoint.
+
 ## Authority and classification
 
 - Raw capture files are the authoritative record of observed bytes and packet/stream boundaries.
@@ -15,9 +19,9 @@ This directory is for Nighthaven protocol evidence manifests, sanitized interpre
 docs/evidence/
 ├── README.md
 ├── manifests/
-│   └── <artifact-id>.yaml
+│   └── <artifact-id>.json
 ├── interpretations/
-│   └── <artifact-id>.yaml
+│   └── <artifact-id>.json
 └── fixtures/
     └── <fixture-id>/
         ├── manifest.yaml
@@ -25,6 +29,8 @@ docs/evidence/
 ```
 
 Do not store raw `.pcap`/`.pcapng`, original game images, BIOS files, passwords, or other sensitive data in this Git working tree by default. Keep raw captures in operator-approved access-controlled encrypted storage; reference them by stable artifact ID, restricted location and SHA-256. A reviewer must approve any sanitized derivative before it enters source control.
+
+Current checkpoint manifests and interpretations use JSON. YAML remains acceptable for future records under the same metadata and evidence rules. The fixture layout is illustrative; no fixtures exist yet.
 
 ## Required metadata
 
