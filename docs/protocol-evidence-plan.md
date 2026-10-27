@@ -129,11 +129,11 @@ Each experiment is intentionally narrow. Perform it with a client and environmen
 
 - **Objective:** Observe the smallest character-list/create/select exchanges and their client transitions.
 - **Prerequisite:** Account/game/session stages are mapped and a known-good session can reach character select.
-- **Setup:** Use an authorized test account with zero or one self-created/provisioned character; avoid importing historical seed data.
-- **Action:** Capture an empty list where safely provisionable, create one independently authored test character, refresh the list and select that character. Separate list, creation and selection observations so each transition has attributable evidence.
+- **Setup:** Use an authorized test account with no existing characters for the standard baseline; avoid importing historical seed data. Keep any pre-provisioned-character compatibility experiment separate from this baseline.
+- **Action:** Capture the empty list, complete the client-driven creation path for one independently authored standard in-scope character, record the client-visible choices, validation steps, response and result observed for the selected profile, refresh the list and select that character. Separate list, creation and selection observations so each transition has attributable evidence.
 - **Capture:** List/create/select requests and responses, exact bytes, synthetic test inputs, visible character/UI state, client version, response timing and any ack gates.
-- **Expected evidence:** Minimum list, creation and select messages accepted by the client, including the newly created character appearing in the list and progressing through selection.
-- **Interpretations:** One successful path identifies a bounded creation/list/select slice; it does not establish all creation options or field semantics. A provisioned-character run alone does not verify creation.
+- **Expected evidence:** The standard client-driven creation path beginning from an empty list, followed by the new character appearing in the refreshed list and progressing through selection.
+- **Interpretations:** One successful path identifies a bounded standard creation/list/select slice; it does not establish all creation options or field semantics. A pre-provisioned-character run alone does not verify creation and cannot satisfy this baseline.
 - **Still unknown:** Delete, untested creation options and limits, malformed input/list behavior, alternate builds.
 - **Unlocks:** Evidence requirements for minimal character list/create/select codecs and application service contracts; implementation still requires the applicable gates and authorization.
 

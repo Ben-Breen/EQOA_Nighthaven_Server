@@ -35,7 +35,7 @@ These statuses describe *observability in the repository*, not claims that nothi
 - [ ] **NH-E05 — Capture first game datagram and session establishment.** **BLOCKED by earlier client flow.** **Next:** E06.
 - [ ] **NH-E06 — Verify framing, byte order, sizes, checksums/integrity.** **BLOCKED by E05 captures.** **Next:** E07.
 - [ ] **NH-E07 — Verify acknowledgments, retries and login-subset sequencing.** **BLOCKED by E05/E06.** **Next:** E08.
-- [ ] **NH-E08 — Capture character list, creation and selection.** **BLOCKED by prior client flow.** Verify minimal creation, the created character appearing in the list, and selection; a provisioned character alone does not satisfy creation. **Next:** E09.
+- [ ] **NH-E08 — Capture character list, creation and selection.** **BLOCKED by prior client flow.** Begin with an empty character list; verify client-driven standard creation, the new character appearing in a refreshed list, and selection. A pre-provisioned character alone does not satisfy this baseline; reserve it for a separate, specifically scoped nonstandard race/class compatibility experiment. **Next:** E09.
 - [ ] **NH-E09 — Capture world entry and player entity initialization.** **BLOCKED by E08.** **Next:** E10.
 - [ ] **NH-E10 — Capture minimal movement and replication.** **BLOCKED by E09.** **Next:** E11.
 - [ ] **NH-E11 — Capture logout, disconnect, reconnect, and state-recovery behavior.** **BLOCKED by a functioning observed session.** **Next:** evaluate implementation acceptance gates.

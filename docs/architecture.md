@@ -248,12 +248,12 @@ The first slice should prove process, protocol, session, persistence, and recove
 1. After selecting a relational backend, start the host with validated config and a private database; expose only the endpoints proven necessary.
 2. Parse the verified initial client handshake and authentication exchange for one explicit client profile; reject invalid credentials.
 3. Create a `NetworkConnection`, authenticate, apply configurable capacity/account policy, and create a distinct `PlayerSession`.
-4. Load a single independently authored test character; send a capture-backed character list and accept selection.
+4. Begin with an account that has no characters. Implement the capture-backed, complete client-driven creation path for one standard in-scope character, covering the client-visible choices, validation steps and response observed for the selected profile; refresh the list, verify the new character appears, and select it. A pre-provisioned character does not satisfy this first-slice acceptance.
 5. Enter one test zone with a player entity and support only the minimum movement/state messages needed to demonstrate client-visible presence, if confirmed.
 6. Persist only a demonstrated durable character change or a cleanly selected character state; close/disconnect and verify reload.
 7. Exercise transient connection loss and reconnect within the grace period only if the client protocol supports it; otherwise test internal expiry, persistence, slot release and FIFO admission without claiming client rebind support.
 
-**Explicitly out of scope:** broad NPC content, combat, abilities, quests, merchants, loot, groups, guilds, scripting, map ingestion, and proprietary assets. These are later milestones.
+**Explicitly out of scope:** broad NPC content, combat, abilities, quests, merchants, loot, groups, guilds, scripting, map ingestion, nonstandard race/class combinations, ruleset-specific behavior, and proprietary assets. These are later milestones. A future, separately scoped compatibility experiment may use a pre-provisioned character to test loading/display/selection of a candidate nonstandard race/class combination; that does not establish that the client creation flow permits the combination and cannot replace the standard client-driven creation path above.
 
 ## 15. Unresolved questions and evidence gates
 
@@ -264,7 +264,7 @@ The following are blocking protocol questions for wire implementation, not for t
 - What are exact frame boundaries, field-specific byte order, CRC/integrity rules, message lengths and maximum sizes?
 - What are session creation, handshake, acknowledgement, retransmission, duplicate/reorder, segmentation, timeout, reset and reconnect semantics?
 - What authentication bytes, crypto, key/padding behavior and account service messages does the target client require?
-- What is the required sequence for server selection, character list, character selection, world entry and zone transfer?
+- For the selected client profile, what is the observed sequence for server selection, an empty character list, client-driven creation, refreshed list, character selection, world entry and zone transfer?
 - What movement and entity replication formats are required for a first visible avatar? How do client-visible entity IDs map to server identities?
 - What behavior does the client expect for unknown opcodes, invalid packets, overload, disconnect and server shutdown?
 - Which state is durably saved by the original service, and what save/recovery boundaries are needed for the initial slice?

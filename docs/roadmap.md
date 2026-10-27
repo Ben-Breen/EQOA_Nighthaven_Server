@@ -35,8 +35,12 @@ This roadmap is ordered to reduce uncertainty before committing to broad game im
 
 ## 4. First playable vertical slice
 
-- Operator-prioritized first playable path (2026-10-25): account login, character creation and selection, then world-server entry. Capture and validate the exchanges for each transition before implementing that path. Continue with a single zone, entity visibility/movement, save/load and disconnect; client reconnect remains conditional on supporting evidence.
+- Operator-prioritized first playable path (2026-10-25): account login, client-driven character creation from an empty character list, refreshed list and selection, then world-server entry. Capture and validate the exchanges for each transition before implementing that path. A pre-provisioned character does not satisfy the standard creation baseline. Continue with a single zone, entity visibility/movement, save/load and disconnect; client reconnect remains conditional on supporting evidence.
 - Keep combat, items, NPC scripts and content out until each vertical behavior has capture-backed messages and explicit domain rules.
+
+## Deferred ruleset compatibility research
+
+After the standard creation and world-entry path is proven, a separate future experiment may test candidate nonstandard race/class combinations such as Gnome Monk, Troll Bard or Ogre Bard. A pre-provisioned character may test whether the client can load/display/select a combination, but cannot establish that its creation flow permits or transmits it; that question requires a separate client-driven creation experiment. Such experiments do not count as standard character-creation coverage. Possible Classic, Regular and Chaos variants are future research/planning tracks only here. This roadmap does not define their rules, promise support, or add ruleset architecture to the current slice.
 
 ## 5. Incremental gameplay domains
 
