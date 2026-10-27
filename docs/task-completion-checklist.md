@@ -1,8 +1,8 @@
 # Nighthaven Codex — Task Completion Checklist
 
-**Reviewed:** 2026-10-26 (America/Chicago)  
+**Reviewed:** 2026-10-27 (America/Chicago)
 **Repository:** [Ben-Breen/EQOA_Nighthaven_Server](https://github.com/Ben-Breen/EQOA_Nighthaven_Server)  
-**Last verified repository commit:** [`d63bea28b198620bc2a1dfa44ae3640dfb84a5e6`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/d63bea28b198620bc2a1dfa44ae3640dfb84a5e6), 2026-10-25  
+**Last verified repository commit:** [`5ad39d638cde5a52135647c958235b2299838ce7`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/5ad39d638cde5a52135647c958235b2299838ce7), 2026-10-27
 **Intended repository path:** `docs/task-completion-checklist.md`  
 **Phase:** Architecture, reference archaeology, and independent client/protocol evidence research. Wire-facing implementation is **not authorized** by this checklist.
 
@@ -22,12 +22,16 @@
 - [x] **NH-DOC-004 — Commit independent architecture specification.** `docs/architecture.md`: proposed modular monolith, protocol boundaries, PostgreSQL selection, validation/security, session/capacity behavior, tests and recovery. Verified by [commit `79c69efe`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/79c69efe0c3b7979977ba2285745cc2819aaab2e). This is an architectural specification, not an implemented server.
 - [x] **NH-DOC-005 — Prepare evidence acquisition, bootstrap/DNAS and client interoperability research plans.** `docs/protocol-evidence-plan.md`, `docs/client-interoperability-plan.md`, `docs/protocol-unknowns.md`, `docs/evidence/README.md`. Verified by [commit `076a34fc`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/076a34fcd20ca4ab417b1a3d691414347a18cb67). No experiment completion is implied.
 - [x] **NH-DOC-006 — Reconcile architecture and protocol evidence terminology.** Verified by [commit `87e0bc14`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/87e0bc1470b108dce3ea9c00c88f08ddab65171d) and [commit `d63bea28`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/d63bea28b198620bc2a1dfa44ae3640dfb84a5e6).
+- [x] **NH-DOC-007 — Add the task-completion checklist and daily review procedure.** Verified in `docs/task-completion-checklist.md` by [commit `9ab6ddf`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/9ab6ddf).
+- [x] **NH-DOC-008 — Record Pass #5 static observations and prepare the E00/E01 run card.** Verified in `docs/pass5-status.md` and `docs/evidence/` by [commit `3a6f218`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/3a6f218). This completes the documentation deliverable only; E00 remains incomplete and no client/protocol wire fact is confirmed.
+- [x] **NH-DOC-009 — Align the first playable path with client-driven standard character creation.** Verified in the architecture, roadmap, E08 evidence plan and checklist by [commit `5ad39d6`](https://github.com/Ben-Breen/EQOA_Nighthaven_Server/commit/5ad39d638cde5a52135647c958235b2299838ce7). The baseline begins with an empty character list; pre-provisioned characters and future ruleset/combination experiments remain separate.
 
 ## Experiments — not yet verified complete
 
 These statuses describe *observability in the repository*, not claims that nothing has occurred on the operator's PC.
 
 - [ ] **NH-E00 — Define Frontiers client profile and capture clean baseline.** **IN PROGRESS locally; NOT COMPLETE.** [Pass #5](pass5-status.md) records candidate media fingerprints, a static interpretation ledger, one offline readiness observation and historical TAP setup metadata. These records are supporting evidence, not the required captured baseline. Record legally held client media/build, SHA-256 of operator's own image, emulator/BIOS/network settings, UTC run timeline, and at least three comparable cold-start runs with packet-capture hashes. **Next when complete:** E01.
+- [ ] **NH-E00-PREFLIGHT — Verify isolated runtime, containment, capture coverage and evidence storage.** **BLOCKED.** The intended isolated PCSX2 profile/path is not identified; the standard profile found has Ethernet enabled with the Sockets backend. The historical TAP setup is not current proof: no matching adapter is presently visible, and Windows NAT enumeration was unavailable. Guest-only capture coverage, a restricted encrypted capture location, profile-scoped configuration hashes, the starting card/config snapshot and a consistent first-stable-screen stop point remain unverified. Do not boot with guest networking enabled or start E00 captures until these checks pass; the E00 run itself also requires explicit operator authorization.
 - [ ] **NH-E01 — Establish DNS/bootstrap/DNAS stage timeline.** **BLOCKED until E00 evidence verified.** Observe DNS, endpoints, transports, HTTP metadata if present, progression/error screens, and one-variable-at-a-time experiments. **Next:** E02.
 - [ ] **NH-E02 — Isolate DNAS dependency and alternative client behavior.** **BLOCKED by E01.** Distinguish observed client-side gate, endpoint redirection, patch/account dependencies, and service-side behavior; do not presuppose a bypass or service implementation. **Next:** document decision and E03.
 - [ ] **NH-E03 — Determine server discovery and endpoint selection.** **BLOCKED by bootstrap evidence.** **Next:** E04/E05 as applicable.
@@ -60,6 +64,7 @@ These statuses describe *observability in the repository*, not claims that nothi
 | Date (America/Chicago) | Observed repository head | New verified complete tasks | Priority |
 |---|---|---|---|
 | 2026-10-26 | `d63bea28` | Baseline: six existing documentation deliverables `NH-DOC-001`–`NH-DOC-006` identified from commits dated 2026-10-25. No E00–E11 run verified. | E00 evidence audit and baseline |
+| 2026-10-27 | `5ad39d6` | `NH-DOC-007`–`NH-DOC-009` verified from their October 27 commits. No E00 baseline run verified; P00 remains an offline readiness observation. | Resolve blocked E00 preflight before requesting an authorized run |
 
 ## Copy-ready Codex prompt: E00 evidence audit
 
