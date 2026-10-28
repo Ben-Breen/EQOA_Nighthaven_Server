@@ -26,6 +26,8 @@ All three show saved PS2 configuration **EQOA 2** and device **SCE/Ethernet (Net
 
 The recorded DEV9 INI has `EthEnable=true`, `EthApi=TAP`, `InterceptDHCP=true`, and `PS2IP`, `Mask`, `Gateway`, `DNS1`, `DNS2` set to `0.0.0.0`, with automatic mask/gateway enabled. These are emulator configuration values, not observed effective guest addresses. Whether zero values select automatic behavior, are ignored by this path, or require correction remains UNKNOWN here. Inspect the effective guest address/DNS configuration in the next targeted attempt; do not assume an IPv4 assignment or infer the cause of the failure from these values alone.
 
+Subsequent [E00-N01 preparation](../experiments/E00-N01-contained-startup.md) identifies versioned PCSX2 source using configured `PS2IP` directly for the TAP DHCP offer when no override is supplied. That narrows the static setting question: zero is not an automatic address allocator on that source path. The actual cause of these historical failures and effective guest configuration remain UNKNOWN; raw evidence and this review's original observations are unchanged.
+
 ## Packet observations and interpretation
 
 | Converted artifact | Recorded frames | Bounded observation |
