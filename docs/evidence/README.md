@@ -6,6 +6,8 @@ This directory is for Nighthaven protocol evidence manifests, sanitized interpre
 
 [Pass #5 status](../pass5-status.md) registers the first static client-artifact observations and a prepared E00 run card. Static manifests use `source_kind: static_client_artifacts`, `method: S`, and null capture/network fields. Their verification describes artifact bytes or static code only; interpretation labels remain INFERRED/UNKNOWN as appropriate. They are not reference-server claims or CONFIRMED — client/protocol observations. No raw artifacts or packet fixtures are imported by this checkpoint.
 
+The 2026-10-28 [E00 runtime manifest](manifests/eqoa-frontiers-us-e00-offline-20261028-001.json) and [review](interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md) register three collected, reviewed fully offline modified-card controls. Runtime hashes/timestamps are populated; exact endpoints and raw bytes remain restricted outside Git. These are completed offline controls, not a completed full E00 or proven guest-only/all-flow capture. E01 is not run, and no protocol fixture or implementation gate is opened.
+
 ## Authority and classification
 
 - Raw capture files are the authoritative record of observed bytes and packet/stream boundaries.

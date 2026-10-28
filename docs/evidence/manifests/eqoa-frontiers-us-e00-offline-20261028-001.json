@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e00-offline-20261028-001",
+  "experiment_id": "E00",
+  "session_id": "E00-20261028T010947216Z",
+  "source_kind": "pcsx2",
+  "method": "runtime observation and read-only artifact review",
+  "runtime_profile": "frontiers-us-eeee1fcc-pcsx2-lab-fully-offline-modified-card",
+  "client_identity_manifest": "eqoa-frontiers-us-static-20261025.json",
+  "emulator_version": "2.8.2.0",
+  "emulator_executable_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+  "bios_image_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+  "initial_modified_card_sha256": "661a35e06f53d6dc53035da527bdd9346035d2b1e942be8558eb21713c273f6a",
+  "baseline_ini_sha256": "252482c278140459c39191bdf5b5db6d040891a47229443b3cda0a49631a0b2d",
+  "preflight_script_sha256": "16003242121aeeebf073975a7f43ef864e8f0e8e05d20a28d050e6dfdd94859b",
+  "raw_registry": {
+    "session_id": "E00-20261028T010947216Z",
+    "location": "operator-controlled EFS RawEvidence directory outside Git; exact path in local registry",
+    "session_result_sha256": "885ed9c26825862c38735d3dd33dd9f359f4cb09a0dee75c77bcbf74547070bb",
+    "input_manifest_sha256": "af7ac94f46c4bbe5e1be8a6f171aa1759ffe8337e8392cbe75f17ad262e4d200",
+    "timeline_sha256": "e42bc7ae979bf239158fe45140dea65c4e9fd74db863ffdf285c0fb2592b8be3",
+    "collection_result": "COLLECTED_PENDING_REVIEW",
+    "raw_records_unchanged": true
+  },
+  "recorded_dev9_settings": {
+    "EthEnable": true,
+    "EthApi": "TAP",
+    "InterceptDHCP": true,
+    "PS2IP": "0.0.0.0",
+    "Mask": "0.0.0.0",
+    "Gateway": "0.0.0.0",
+    "DNS1": "0.0.0.0",
+    "DNS2": "0.0.0.0",
+    "AutoMask": true,
+    "AutoGateway": true
+  },
+  "recorded_dev9_settings_scope": "INI values only; effective guest IPv4/DHCP/DNS configuration and meaning of automatic/sentinel values not established by this review.",
+  "capture": {
+    "tool": "Windows PktMon",
+    "version": "10.0.19041.3636 (WinBuild.160101.0800)",
+    "component_id": 1,
+    "component": "TAP-Windows Adapter V9",
+    "capture_boundary": "TAP component only; emulator-internal handling may bypass it",
+    "format": "ETL raw event capture; PktMon-converted pcapng",
+    "pcapng_link_type": 1,
+    "filters": "none",
+    "direction": "per-event context remains in restricted raw evidence; guest attribution not established by capture alone",
+    "transport": "observed Ethernet ARP and host-source IPv4/UDP; no EQOA application transport established",
+    "source_endpoint": null,
+    "destination_endpoint": null,
+    "endpoint_treatment": "MAC/IP and host identifiers omitted from this public metadata record; retained in raw evidence",
+    "connection_context": "three separate cold-start offline controls; no established account/game session observed"
+  },
+  "review": {
+    "reviewed_at_utc": "2026-10-28T06:13:56.9897863Z",
+    "reviewer": "Codex read-only review; operator collected runs",
+    "decoder": "ad hoc read-only pcapng block/Ethernet/ARP/IPv4/UDP inspection, review v1; not an EQOA codec",
+    "review_shell_version": "7.6.5",
+    "raw_files_checked": 73,
+    "manifest_references_checked": 135,
+    "size_or_hash_mismatches": 0,
+    "unencrypted_raw_files": 0,
+    "unexpected_allow_acl_entries": 0,
+    "raw_root_inheritance_disabled": true,
+    "control_status": "REVIEWED; three offline-control repetitions complete",
+    "e00_complete": false,
+    "interpretation_record": "../interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md"
+  },
+  "runs": [
+    {
+      "run": "R01",
+      "capture_ready_utc": "2026-10-28T01:09:53.9201061Z",
+      "emulator_running_utc": "2026-10-28T01:09:54.2280414Z",
+      "forced_exit": false,
+      "run_result_sha256": "8bbc0132192577f2ae31d1b8d75c374489e18ea6218d47001b5192ba93c1c236",
+      "ini_input_sha256": "252482c278140459c39191bdf5b5db6d040891a47229443b3cda0a49631a0b2d",
+      "card_output_sha256": "3466aff6fbdd24c6a0b396963506bfe5d200936e01ee06584ee053b539c062bd",
+      "raw_log_sha256": "cdb98d32b75d87ae563593e4713899bede847153843edef58dfe46b46bb09420",
+      "captures": [
+        {
+          "path": "R01/capture1.etl",
+          "bytes": 150994944,
+          "sha256": "5af4c4418ac467ef45035666008505468b3a606553b07d513d6c458cdb7befe9"
+        },
+        {
+          "path": "R01/capture1.pcapng",
+          "bytes": 11188,
+          "sha256": "d895b1b3347f6ff8d86aafd41f04f309b21e83d026c82ebf520ee3947f3164d9",
+          "recorded_frames": 21
+        },
+        {
+          "path": "R01/capture2.etl",
+          "bytes": 9913,
+          "sha256": "e33aaee0caa40eba077556a9e52b074f5a90b24aa3a810c8d77fbd3517338ff6"
+        },
+        {
+          "path": "R01/capture2.pcapng",
+          "bytes": 152,
+          "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f",
+          "recorded_frames": 0
+        }
+      ],
+      "screens": [
+        {
+          "artifact_id": "R01-screen-01",
+          "file_write_utc": "2026-10-28T01:11:00.4544722Z",
+          "sha256": "39f8c92caa7396355a2aeb6b4226bcba15ada9712ad0efdd3b01104a1451a0f2",
+          "observed_screen": "EULA"
+        },
+        {
+          "artifact_id": "R01-screen-02",
+          "file_write_utc": "2026-10-28T01:12:25.8209922Z",
+          "sha256": "f77ee1c6e7098b0408aea7b93a52e8b228cdfa6bc07a12b04ad823fe6827bf2e",
+          "observed_screen": "modified-card preparation notice"
+        },
+        {
+          "artifact_id": "R01-screen-03",
+          "file_write_utc": "2026-10-28T01:12:34.8520135Z",
+          "sha256": "846a98bb13e306ad3f03078dc4170cb2303e630290250e7c7a4a8f530fae7d33",
+          "observed_screen": "Play menu"
+        },
+        {
+          "artifact_id": "R01-screen-04",
+          "file_write_utc": "2026-10-28T01:13:08.9610862Z",
+          "sha256": "21bc323c06f43e952fa9b5ed96ceac8ca3f3bda270db886e82162a0f4b850ca3",
+          "observed_screen": "saved network configuration selection"
+        },
+        {
+          "artifact_id": "R01-screen-05",
+          "file_write_utc": "2026-10-28T01:14:03.8936893Z",
+          "sha256": "8bf2f54c398be438d154ece2913b8866323162cce1205f02b328f26a0184ba2f",
+          "observed_screen": "network failure / disconnected"
+        }
+      ]
+    },
+    {
+      "run": "R02",
+      "capture_ready_utc": "2026-10-28T01:14:28.8902896Z",
+      "emulator_running_utc": "2026-10-28T01:14:29.0700868Z",
+      "forced_exit": false,
+      "run_result_sha256": "733e9c1e7bcd6c4fd7f3a2e4d99698cf379ace6707afe7809f0603e898a3406d",
+      "ini_input_sha256": "252482c278140459c39191bdf5b5db6d040891a47229443b3cda0a49631a0b2d",
+      "card_output_sha256": "e73749de71fa01c10f3d61b00d05860c3c06594f9e6cf0cff5541ce2e228a4c2",
+      "raw_log_sha256": "23a8d8dc02b43f3dad13dc78d835acaacd59bde762fa4bbefc26ed2c53f5d18d",
+      "captures": [
+        {
+          "path": "R02/capture1.etl",
+          "bytes": 28416,
+          "sha256": "032549587e3ddc4a56ad46be63468387c126ffbd7c43b41411b8329c12e18ff1"
+        },
+        {
+          "path": "R02/capture1.pcapng",
+          "bytes": 244,
+          "sha256": "62588551d6fcabd3671557e0bd1f935687b695f96c1b26c83315b80f12b78fa5",
+          "recorded_frames": 1
+        }
+      ],
+      "screens": [
+        {
+          "artifact_id": "R02-screen-01",
+          "file_write_utc": "2026-10-28T01:15:45.8205687Z",
+          "sha256": "11e067e517e2ef516d9ef1e8cd8a5df2d4eb18dd390273b69c4d2e3d8df95696",
+          "observed_screen": "EULA"
+        },
+        {
+          "artifact_id": "R02-screen-02",
+          "file_write_utc": "2026-10-28T01:16:04.3603442Z",
+          "sha256": "fa79c772f5d5ddea080b300fed9dad9d3144c10fe4226ccbe684fb48f52ba35f",
+          "observed_screen": "modified-card preparation notice"
+        },
+        {
+          "artifact_id": "R02-screen-03",
+          "file_write_utc": "2026-10-28T01:16:10.6393605Z",
+          "sha256": "f4c4c147e874854ccedb16e450e297b3013fec87592e21fd5b777d2c2419416d",
+          "observed_screen": "saved network configuration selection"
+        },
+        {
+          "artifact_id": "R02-screen-04",
+          "file_write_utc": "2026-10-28T01:17:19.8547264Z",
+          "sha256": "b2abbe574faad46df26adea9157208d8b50c8612fad317f87834ec70e8165b66",
+          "observed_screen": "network failure / disconnected"
+        }
+      ]
+    },
+    {
+      "run": "R03",
+      "capture_ready_utc": "2026-10-28T01:17:46.2448288Z",
+      "emulator_running_utc": "2026-10-28T01:17:46.3938702Z",
+      "forced_exit": false,
+      "run_result_sha256": "e1bbfe1636ae2c8590e3c092e3623334f0542ee2ae7c98ab487e6e085040bcfb",
+      "ini_input_sha256": "252482c278140459c39191bdf5b5db6d040891a47229443b3cda0a49631a0b2d",
+      "card_output_sha256": "66bbb29a4aa4f2f0f95e04a765962052344473ccf5ff6898a1f6342a75f76af1",
+      "raw_log_sha256": "793295a4408475f0e677abf8daa7ad7f023a37ae17fa38fab7bbfc37178bb915",
+      "captures": [
+        {
+          "path": "R03/capture1.etl",
+          "bytes": 28202,
+          "sha256": "86cddc71cecd96457a750e4a7ba20b26cb1694fa15a63f10dc97696ec7afa514"
+        },
+        {
+          "path": "R03/capture1.pcapng",
+          "bytes": 244,
+          "sha256": "ed6ca42c835029ef31f939a4ea77baf0b2ed10d728e85381b943d76bb156477d",
+          "recorded_frames": 1
+        }
+      ],
+      "screens": [
+        {
+          "artifact_id": "R03-screen-01",
+          "file_write_utc": "2026-10-28T01:18:47.8028347Z",
+          "sha256": "411594dcabfdff52456e4c8092c76bedb9831c507f38a94b55d834e066ba8fa2",
+          "observed_screen": "EULA"
+        },
+        {
+          "artifact_id": "R03-screen-02",
+          "file_write_utc": "2026-10-28T01:19:06.5580648Z",
+          "sha256": "0b84a989bab935da35d7bb2e01e072ceb8d4742d4223bed45ac596157ce6c7c6",
+          "observed_screen": "Play menu"
+        },
+        {
+          "artifact_id": "R03-screen-03",
+          "file_write_utc": "2026-10-28T01:19:10.3243998Z",
+          "sha256": "32ad638f5e9e0800524a64755cc494029fd218bb1c1be8975442d0ad050ddef5",
+          "observed_screen": "saved network configuration selection"
+        },
+        {
+          "artifact_id": "R03-screen-04",
+          "file_write_utc": "2026-10-28T01:19:14.592193Z",
+          "sha256": "f3a6fa652427ca677ed0325a621474cdb56f5d5d36581f0a051b2c23fead9523",
+          "observed_screen": "connecting"
+        },
+        {
+          "artifact_id": "R03-screen-05",
+          "file_write_utc": "2026-10-28T01:20:03.4922806Z",
+          "sha256": "7c67f141bda8849f3a0e09a6f80a0b62f3e7d4f926080cd9654112bc2988af15",
+          "observed_screen": "network failure / disconnected"
+        }
+      ]
+    }
+  ],
+  "timing_limits": "Helper phase UTC and screenshot file-write UTC are recorded; no precise button-input log or independently measured clock error. Screenshot times bound observations, not transition/timeout durations.",
+  "redaction": {
+    "raw_artifacts_modified": false,
+    "published_packet_bytes": false,
+    "published_game_images_or_content": false,
+    "omitted": [
+      "operator name/SID",
+      "absolute private paths",
+      "MAC/IP and machine identifiers",
+      "raw packet payloads",
+      "game/BIOS/card bytes",
+      "raw logs and screenshots"
+    ],
+    "transformation": "Allowlisted technical metadata/hashes and independent state summaries only; no packet fixture generated.",
+    "publication_status": "Operator approved committing this sanitized documentation on 2026-10-28; publication history is recorded by Git. Raw artifacts remain outside Git."
+  },
+  "limits": [
+    "Fully offline modified-card control; not normal online startup or original hardware.",
+    "Host-origin frames are present: this is a TAP-component capture, not proven guest-only collection.",
+    "Internal DNS/DHCP interception can hide guest requests; all-flow coverage and DNS behavior remain UNKNOWN.",
+    "No login, authentication, account/game session, DNAS response semantics or EQOA opcode established.",
+    "Package/media/BIOS acquisition provenance remains operator context to complete.",
+    "No implementation gate opened."
+  ]
+}

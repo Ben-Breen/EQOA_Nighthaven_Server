@@ -2,6 +2,8 @@
 
 Checkpoint date: 2026-10-25. Previous documentation review: d63bea28b198620bc2a1dfa44ae3640dfb84a5e6. Pass #5 has begun; Pass #6 and protocol implementation have not begun.
 
+Latest review: 2026-10-28 (America/Chicago). Three offline-control repetitions are now collected and reviewed; full E00 remains incomplete. Earlier sections retain their dated checkpoint context.
+
 ## Current result
 
 The first checkpoint registers static observations of the operator-supplied Frontiers ISO, PNACH, original STATION.PAK, and EQOA memory card. These observations inform the experiments; they are not packet captures or completed E00/E01 results. No original-client wire fact is promoted to CONFIRMED — client/protocol.
@@ -33,15 +35,30 @@ The operator approved installation of a verified signed TAP driver. TAP-Windows 
 
 [Setup metadata](evidence/manifests/eqoa-frontiers-us-tap-lab-20261025.json) records this environment change. Exact device/package removal details and administrative logs remain in the local lab receipt. Retain the driver for upcoming captures; removal is deferred until the operator requests it. PCSX2 networking remains disabled, no capture has started, and E00 stays partial.
 
-## Gate state
+## 2026-10-27 E00 preparation update
+
+The exact portable profile and configuration hashes are now identified in the [candidate profile](evidence/profiles/frontiers-us-eeee1fcc-pcsx2-lab.md). Operator execution verified an elevated capture context, TAP component enumeration, and a separate EFS-encrypted raw directory with operator/SYSTEM-only access. An initial helper overstated NAT verification after an unavailable query; the original output is retained with a correction and independent stopped-driver/service observations. A preparation boot without capture was closed normally and is excluded from R01–R03; the approved original card is still available for fresh clones.
+
+The [run card](evidence/experiments/E00-first-baseline.md#tap-capture-boundary--source-evidence-runtime-result-still-unknown) records a new PCSX2 source finding: internal DNS can use the host resolver before TAP output, and intercepted DHCP/DNS can be invisible to TAP capture. Stopping the wildcard Technitium listener is authorized, including restoration, but does not by itself close the host-resolver path. A bounded fully offline operator session is being prepared; temporary host-network interruption requires separate authorization. No baseline capture or network-disconnection action has occurred. E00 remains incomplete and E01 has not started.
+
+## 2026-10-28 E00 collection review
+
+The operator collected session `E00-20261028T010947216Z`: R01–R03, all explicitly **fully offline modified-card controls**, with capture before boot, fresh frozen inputs and normal closure. [Sanitized manifest](evidence/manifests/eqoa-frontiers-us-e00-offline-20261028-001.json) and [review](evidence/interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md) register raw hashes and 14 reviewed screenshots. All 135 manifest references match actual sizes/hashes; all 73 raw files report EFS encryption and operator/SYSTEM-only Allow ACLs. No raw bytes, logs, screenshots, card/BIOS content or credentials were added to Git.
+
+All three show EULA, the saved PS2 network configuration **EQOA 2** and a later failure/disconnected result. Twenty host-source UDP frames appear in R01; one non-host-source ARP request appears in each run. Guest origin is INFERRED, full guest/DNS visibility is UNKNOWN, and no EQOA opcode or endpoint requirement is established. This is a TAP-component capture with host traffic, not proven guest-only coverage. Exact button-input timing and some intermediate screenshots were not collected.
+
+The helper recorded full restoration at `01:20:20Z`; the later recovery attempt made no changes and incorrectly threw on an already-restored state. That reporting bug was corrected locally and isolated branch/syntax checks passed; no guest rerun is needed for it. The latest review confirms PCSX2 closed, fail-closed INI and administratively enabled physical adapters. Technitium now reports Stopped, differing from the earlier restoration observation; the intervening cause is UNKNOWN. No current network/service state was changed during this review.
+
+## Current gate state
 
 | Gate or experiment | State | Reason |
 |---|---|---|
 | Architecture Gate #2 | PASS carried forward | No architecture changes in this checkpoint. |
-| Evidence Acquisition Gate | OPEN | Static observations registered; runtime collection remains necessary. |
-| E00 | PARTIAL / NOT COMPLETE | Candidate media identity established; three captured cold starts and complete runtime/storage provenance are outstanding. |
+| Evidence Acquisition Gate | OPEN | Static evidence and reviewed offline-control collection registered; further targeted observation remains necessary. |
+| E00 offline control R01–R03 | COMPLETE, scoped control only | Repetitions, integrity and screen/packet review complete; normal online startup and all-flow visibility are not established. |
+| E00 | PARTIAL / NOT COMPLETE | Required DNS/all-flow coverage and normal destinations remain unestablished; exact input timeline and acquisition provenance are incomplete. |
 | E01 | NOT RUN | Depends on E00 baseline and a controlled network/capture path. |
 | E02–E11 | NOT RUN | Existing sequence and prerequisites remain in force. |
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
-Next: verify the isolated configuration and capture boundaries, finish the E00 profile, then collect three repeatable cold starts before the E01 timeline. A VM boot without raw guest/network evidence does not close E00. No live account login or revival-server interaction is part of that first baseline.
+Next: prepare one contained network-startup run card with explicit guest IPv4/DNS settings, controlled endpoints, capture boundaries and stop condition. Preparation requires no boot; retain the completed offline controls instead of repeating them unchanged. The targeted attempt should address the remaining E00 network-evidence gap before E01 timeline collection, without requiring a broad capture framework first. DNAS compatibility remains an open research question rather than a selected bypass. No live account login or revival-server interaction is authorized by this review.
