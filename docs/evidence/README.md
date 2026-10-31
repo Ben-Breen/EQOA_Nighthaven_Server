@@ -67,3 +67,7 @@ Do not label any packet field or client transition `CONFIRMED — client/protoco
 ## Online configured-client reference, 2026-10-31
 
 [Review](interpretations/eqoa-frontiers-us-e01-reference-20261031-001.md) and [manifest](manifests/eqoa-frontiers-us-e01-reference-20261031-001.json) register a separate Sandstorm-configured PCSX2 capture: gzip/XML update response and plain-text Changes exchanges; account login is operator-reported without screenshot. Source/response content remains private; structure/hashes only are published. No minimum Nighthaven response or universal client requirement is established. A generator was discussed and explicitly deferred without implementation.
+
+## Independent bootstrap probe U02, 2026-10-31
+
+[Result](interpretations/eqoa-frontiers-us-e01-u02-20261031-001.md), [manifest](manifests/eqoa-frontiers-us-e01-u02-20261031-001.json) and [run card](experiments/E01-U02-bootstrap-response.md) register delivery of independently authored gzip/XML/Changes responses and progression to Writing game data, then black screen. Account login and cause remain unresolved; no account-service connection was captured. Independent tool code is versioned separately from private media/capture tooling. No raw/proprietary content is imported and broad implementation gates remain closed.

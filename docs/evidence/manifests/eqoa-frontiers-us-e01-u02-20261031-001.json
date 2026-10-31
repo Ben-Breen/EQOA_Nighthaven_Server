@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-u02-20261031-001",
+  "experiment_id": "E01-U02",
+  "human_name": "Independent Nighthaven bootstrap candidate",
+  "session_id": "E01-U02-20261031T193950239Z",
+  "reviewed_at_utc": "2026-10-31T19:49:41.786599+00:00",
+  "client_profile": "Frontiers US SLUS-20744 / EEEE1FCC, PCSX2 2.8.2.0; same guarded lab PNACH and prepared-card source as U01",
+  "authorization": {
+    "source": "Explicit approval of one isolated U02 run",
+    "maximum_runs": 1,
+    "scope": "Temporary physical disconnect, capture, two-path independent responder, restoration; stop before credentials.",
+    "prompt_handoff": "Exact prompt answer supplied from recorded chat approval, not newly typed terminal input."
+  },
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_card_sha256": "e859bee1de08dcaa861c1f29aca1396f4a3f7b0a847eadc1a1d7243779d4c393",
+    "patch_sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82",
+    "source_bios_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "runner_sha256": "d88f104788168d52096c60dae08cce3e53438573c022fb0eee716cce1dfa5863",
+    "listener_script_sha256": "522b58162ae76332bb4d21ee550c65316153ddc57f21403286c5d75d8ad2d92e"
+  },
+  "independent_code": {
+    "repository_path": "tools/ProtocolEvidenceLab/E01BootstrapResponder.ps1",
+    "sha256": "522b58162ae76332bb4d21ee550c65316153ddc57f21403286c5d75d8ad2d92e",
+    "private_harness": "Version4, preserved separately from v1–v3",
+    "standalone_general_generator_implemented": false,
+    "download_or_delete_file_entries": 0,
+    "external_manifest_content_replayed": false
+  },
+  "reference_contract_observations": {
+    "classification": "CONFIRMED — client/protocol",
+    "scope": "Previously captured external environment only",
+    "manifest_version": "1",
+    "product_version": "36",
+    "changes_version": "0",
+    "changes_port": 7000,
+    "changes_crc_matches_standard_crc32_decimal": true,
+    "algorithm_generalization": "INFERRED from one body (repeated response has same body); not a universal protocol proof."
+  },
+  "candidate_policy": {
+    "classification": "NIGHTHAVEN DECISION",
+    "description": "Fixed authored gzip XML with empty Nighthaven Distribution and original Changes text; only lab endpoints; reference version identifiers retained as hypotheses.",
+    "version_or_empty_distribution_necessity": "UNKNOWN",
+    "paths": [
+      "/patch/eqoa/eqoa-frontierslive-update.xml.gz",
+      "/patch/eqoa/Changes.txt"
+    ]
+  },
+  "capture": {
+    "tool": "Windows PktMon",
+    "component": 101,
+    "frames": 47,
+    "tcp_frames": 30,
+    "tcp_connections": 3,
+    "client_application_bytes": 220,
+    "server_application_bytes": 543,
+    "payloads_equal_listener_artifacts": true,
+    "all_response_bytes_and_fin_acknowledged": true,
+    "tcp_destination_ports_observed": [
+      7000
+    ],
+    "subsequent_account_connection_observed": false,
+    "guest_other_ipv4_udp": "DNS only in this capture",
+    "dns_frames": 8,
+    "ipv4_fragment_frames": 0,
+    "conversion_drops": 0,
+    "capture_ready_utc": "2026-10-31T19:40:47.4643102Z",
+    "guest_launch_utc": "2026-10-31T19:40:53.9227222Z",
+    "boundary": "TAP plus emulator semantic logs; intercepted/all-flow/hardware coverage not claimed."
+  },
+  "listener": {
+    "result": "CAPTURED",
+    "application_bytes_sent": 543,
+    "bytes_received": 220,
+    "stopped": true,
+    "listener_closed": true,
+    "client_closed": true,
+    "file_closed": true,
+    "exchanges": [
+      {
+        "index": 1,
+        "remote_address": "198.18.0.2",
+        "accepted_utc": "2026-10-31T19:42:19.3059736Z",
+        "response_write_attempted": true,
+        "response_write_complete": true,
+        "request_file": "listener-1-request.bin",
+        "request_bytes": 104,
+        "request_sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18",
+        "response_file": "listener-1-response.bin",
+        "response_name": "Nighthaven-empty-distribution-v1",
+        "response_bytes": 307,
+        "response_sha256": "fc3dd9c20882f8d74e99d622ae83d37f37da89f7da03b1eae184a0b9f79efd05",
+        "sent_utc": "2026-10-31T19:42:19.4778076Z"
+      },
+      {
+        "index": 2,
+        "remote_address": "198.18.0.2",
+        "accepted_utc": "2026-10-31T19:42:19.5569408Z",
+        "response_write_attempted": true,
+        "response_write_complete": true,
+        "request_file": "listener-2-request.bin",
+        "request_bytes": 58,
+        "request_sha256": "1cc86777852000f89edc74fb86f33f74d99c8208f46bd03cd2d8f77d6a84fd56",
+        "response_file": "listener-2-response.bin",
+        "response_name": "Nighthaven-changes-v1",
+        "response_bytes": 118,
+        "response_sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07",
+        "sent_utc": "2026-10-31T19:42:19.6002406Z"
+      },
+      {
+        "index": 3,
+        "remote_address": "198.18.0.2",
+        "accepted_utc": "2026-10-31T19:42:19.6645810Z",
+        "response_write_attempted": true,
+        "response_write_complete": true,
+        "request_file": "listener-3-request.bin",
+        "request_bytes": 58,
+        "request_sha256": "1cc86777852000f89edc74fb86f33f74d99c8208f46bd03cd2d8f77d6a84fd56",
+        "response_file": "listener-3-response.bin",
+        "response_name": "Nighthaven-changes-v1",
+        "response_bytes": 118,
+        "response_sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07",
+        "sent_utc": "2026-10-31T19:42:19.7000438Z"
+      }
+    ],
+    "cleanup_errors": [],
+    "stop_reason": "OPERATOR_STOP"
+  },
+  "screens": [
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144152.png",
+        "bytes": 1169606,
+        "sha256": "118770be376e756a62e6ad503b556425171cbb9b474e2650d673bbbdeff5ba0a"
+      },
+      "observation": "EQOA2 network profile",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    },
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144157.png",
+        "bytes": 1117410,
+        "sha256": "196d4ddf988dfd76907440e7ef89a19043af44b5ddf423e1791bf4c1c4d1abe8"
+      },
+      "observation": "Connecting",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    },
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144205.png",
+        "bytes": 1116790,
+        "sha256": "e0f4787f528af46888cc7719f228a70b310edfd7265a338944c3f241fdb99690"
+      },
+      "observation": "Connected",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    },
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144211.png",
+        "bytes": 1150587,
+        "sha256": "1a44634ee66497d0fa898d3fa53bcde89a80a00d4f66cc414cb589aba7ae13f9"
+      },
+      "observation": "Initializing network",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    },
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144214.png",
+        "bytes": 1171651,
+        "sha256": "5db025568d83cd3e0086d83799f93824d1bd95c6eed3b5f5fd253be48ecb88eb"
+      },
+      "observation": "DNAS Status Done",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    },
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144215.png",
+        "bytes": 1171679,
+        "sha256": "9d37c7fef79a86572ec06c0bef65ddbcb9716da62ef77aefc7666786ab81f063"
+      },
+      "observation": "DNAS Status Done",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    },
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144221.png",
+        "bytes": 1130643,
+        "sha256": "776953f9904ab659a725aeb15493d6c897bb1af39ff40762522e40937126da12"
+      },
+      "observation": "Writing game data",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    },
+    {
+      "artifact": {
+        "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031144239.png",
+        "bytes": 3671,
+        "sha256": "beb2d1ef7b079180dc5ab7aae1babf4b297135298cae022666338c6e9de5d486"
+      },
+      "observation": "Black screen; login form not shown",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This modified client/emulator session only; timestamp is screenshot write time, not exact transition."
+    }
+  ],
+  "operator_report": "Sort of reached account login, then black screen; guessed missing authentication service; closed normally.",
+  "interpretation": {
+    "classification": "INFERRED",
+    "conclusion": "Candidate progressed beyond the former update error to writing game data and a post-update transition, then black screen.",
+    "account_login_confirmed": false,
+    "stable_bootstrap_acceptance_complete": false,
+    "missing_authentication_server_cause": "UNKNOWN; no subsequent account-service connection observed. Do not implement a speculative service as a fix.",
+    "other_hypotheses": [
+      "Disc/card client loading or cached-resource requirements",
+      "Selected manifest version/file-list assumptions",
+      "Remaining compatibility/loader/decryption/render transition behavior"
+    ],
+    "hypothesis_status": "UNKNOWN; none established as cause."
+  },
+  "validation": {
+    "offline_harness_checks_passed": 110,
+    "offline_response_loopback_checks_passed": 19,
+    "reference_checks": {
+      "session": 71,
+      "run": 34,
+      "input": 7
+    },
+    "total_reference_checks": 112,
+    "mismatches": 0,
+    "public_responder_matches_run_helper": true
+  },
+  "raw_registry": {
+    "location": "Restricted EFS RawEvidence outside Git; session ID resolves private path",
+    "session_files": 72,
+    "authorization_files": 3,
+    "all_efs_operator_system_only": true,
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 26035,
+        "sha256": "6417de418928b21447d8a8dc34fe3399c3ad0d1ae85ef8e6f3a3adba781f6725"
+      },
+      {
+        "path": "E01/run-result.json",
+        "bytes": 8362,
+        "sha256": "420ed6f0ab57bbfc8fac245f7e8fed6e3b5e6a00e49b034303565aff9269b18a"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 6913,
+        "sha256": "75cc54c3534ad17c2e5c913acd66b568bea589eb4689581d86201196b2f4e5c2"
+      },
+      {
+        "path": "inputs/ini-restoration-failclosed.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "timeline.jsonl",
+        "bytes": 38207,
+        "sha256": "ed3a887ea8715652c24293f50400e7326712edb62f87ba2983b2e41ff636ba84"
+      },
+      {
+        "path": "E01/listener-result.json",
+        "bytes": 2378,
+        "sha256": "d5590f2d9a9d57fd80ce4695dd5dfb2bc7c5ffb3cb0c7c86db57f3f08eb984bf"
+      },
+      {
+        "path": "E01/capture1.pcapng",
+        "bytes": 7252,
+        "sha256": "515439d29554e03367ebe59c62519a69814270aef8e0243a29447e7846c74ab1"
+      },
+      {
+        "path": "E01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      },
+      {
+        "path": "E01/live-output/logs/emulog.txt",
+        "bytes": 43605,
+        "sha256": "83665aad5b7c7b46ab880f3de2b1995c7f831c462272e5fef12a303dc868e401"
+      },
+      {
+        "path": "E01/listener-1-request.bin",
+        "bytes": 104,
+        "sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18"
+      },
+      {
+        "path": "E01/listener-1-response.bin",
+        "bytes": 307,
+        "sha256": "fc3dd9c20882f8d74e99d622ae83d37f37da89f7da03b1eae184a0b9f79efd05"
+      },
+      {
+        "path": "E01/listener-2-request.bin",
+        "bytes": 58,
+        "sha256": "1cc86777852000f89edc74fb86f33f74d99c8208f46bd03cd2d8f77d6a84fd56"
+      },
+      {
+        "path": "E01/listener-2-response.bin",
+        "bytes": 118,
+        "sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07"
+      },
+      {
+        "path": "E01/listener-3-request.bin",
+        "bytes": 58,
+        "sha256": "1cc86777852000f89edc74fb86f33f74d99c8208f46bd03cd2d8f77d6a84fd56"
+      },
+      {
+        "path": "E01/listener-3-response.bin",
+        "bytes": 118,
+        "sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07"
+      }
+    ],
+    "authorization_artifact_id": "E01-U02-Authorization-20261031T193949834Z"
+  },
+  "rollback": {
+    "result": "ROLLBACK_VERIFIED_NO_BOOT",
+    "verified_at_utc": "2026-10-31T19:46:05.0951588Z",
+    "evidence_sha256": "debfc1e058f71bdf51f21b550b1f6da36a6088d73a46f63c87d2d2e0d1e9da72",
+    "source_iso_card_original_patches_preserved": true,
+    "profile_exact": true,
+    "networking_and_cheats_disabled": true,
+    "capture_listener_rule_absent": true,
+    "dns_and_physical_adapters_restored": true,
+    "additional_boot": false
+  },
+  "next_action": "Identify post-update program/resource selection and transition failure from existing logs/media or focused loader/file-open instrumentation before another response variant or account implementation.",
+  "redaction": {
+    "raw_packets_game_assets_screenshots_bios_cards_external_payloads_imported": false,
+    "private_paths_sid_mac_credentials_tokens_imported": false
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e00": "PARTIAL",
+    "e01": "PARTIAL; updater progression, black screen unresolved",
+    "protocol_implementation": "CLOSED for broad server functionality; explicitly authorized disposable bootstrap probe only"
+  }
+}

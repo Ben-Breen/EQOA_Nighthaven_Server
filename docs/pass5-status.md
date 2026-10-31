@@ -91,6 +91,10 @@ The explicitly approved [E01-U01 result](evidence/interpretations/eqoa-frontiers
 
 The separately authorized [reference capture](evidence/interpretations/eqoa-frontiers-us-e01-reference-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-reference-20261031-001.json) record 27 TCP frames: the same initial request, HTTP200 with 463 gzip bytes decompressing to XML, then two plain-text Changes.txt exchanges. The operator reports account login; no screenshot independently verifies that screen. This is scoped patched-client/external-service evidence, not proof of a minimal Nighthaven contract. Raw content remains private. Capture/filter cleanup and unchanged Nighthaven profile are recorded; Box1's active card changed normally. A future manifest/Changes generator was suggested but explicitly deferred without implementation.
 
+## October 31 E01-U02 — independent responder, post-update black screen
+
+The [independent lab responder](../tools/ProtocolEvidenceLab/E01BootstrapResponder.ps1), [result](evidence/interpretations/eqoa-frontiers-us-e01-u02-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-u02-20261031-001.json) record an explicitly approved candidate implementation and isolated run. One authored gzip/XML response and two Changes responses were delivered/acknowledged. Eight images show Writing game data, then black screen; **account login is not confirmed** and no subsequent account-service connection was captured. The missing-authentication-service explanation remains UNKNOWN.110 harness checks,19 offline response checks,112 artifact references and independent elevated rollback verification pass. The standalone generator remains deferred; no broad server/account implementation was added.
+
 ## Current gate state
 
 | Gate or experiment | State | Reason |
@@ -102,8 +106,8 @@ The separately authorized [reference capture](evidence/interpretations/eqoa-fron
 | October 29 proposed online-host N02/N03 | NOT RUN / BLOCKED | Separate from the later offline clean-card N02. Executable-only resolver containment failed; a stronger boundary is required for an online host. |
 | E00-N02 offline clean-card collection/comparison | COMPLETE, scoped observations only | Earlier setup control plus corrected-DNS run retained separately; latest run has stable working card, eight images and DNAS-stage DNS/error. No DNAS success or causal proof. |
 | E00 | PARTIAL / NOT COMPLETE | N01 qualification and separate N02 clean-card evidence do not satisfy three unchanged-profile cold starts. Timing, acquisition provenance and capture blind spots remain limitations. |
-| E01 | PARTIAL; three lab observations and one external reference reviewed | Lab empty-response failure and external gzip/XML plus Changes exchanges observed. Minimal Nighthaven acceptance contract and full dependency timeline remain open. |
+| E01 | PARTIAL; four lab observations and one external reference reviewed | Independent candidate reaches Writing game data then black screen. Login and post-update cause remain unresolved; no account-service connection observed. |
 | E02–E11 | NOT RUN | Existing sequence and prerequisites remain in force. |
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
-Next: inspect the original updater parser offline and compare the external gzip/XML/Changes sequence to identify a minimal independently authored candidate. The exact HTTP200-empty-v1 lab variant did not pass updating; the external response does not establish which fields are mandatory. Any further live response experiment requires new authorization. The operator-directed E01 handoff retains E00 limitations; these results do not pass full E00 or authorize an updater, account/game/database services or broad wire implementation.
+Next: identify the post-update program/resource selection and transition failure from existing artifacts, then focused loader evidence if needed. U02 advances to Writing game data but does not establish account login or an authentication-service cause; manifest minimums remain open. Any further live response experiment requires new authorization. The operator-directed E01 handoff retains E00 limitations; these results do not pass full E00 or authorize an updater, account/game/database services or broad wire implementation.
