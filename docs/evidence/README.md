@@ -16,6 +16,10 @@ The October 30 [N02 clean-card result](interpretations/eqoa-frontiers-us-e00-n02
 
 A later operator-approved five-minute-policy N02 records the corrected DNS destination, eight screenshots and DNAS Error (-611). Its [separate manifest](manifests/eqoa-frontiers-us-e00-n02-20261031-002.json) and [N01/N02 comparison](interpretations/e00-n01-n02-comparison-20261030.md) preserve both this result and the earlier setup control. The run ended by normal operator close before five minutes; DHCP no longer shortened the window. No full E00/E01 or DNAS success is implied.
 
+The October 31 [E01 manifest](manifests/eqoa-frontiers-us-e01-20261031-001.json) and [review](interpretations/eqoa-frontiers-us-e01-20261031-001.md) record one explicitly authorized lab-PNACH experiment following a qualified E00 handoff. Screenshots show DNAS Status: Done and a subsequent update error; raw TAP frames show SYN attempts to `198.18.0.1:7000`, without a reply/application exchange. Nine images, 92 integrity checks and exact rollback were reviewed. Source/candidate patch files, cards, images and raw captures remain outside Git. Full E00/E01/E02 and Protocol Implementation Gate status are not promoted by this scoped result.
+
+A separately approved [TCP/7000 observation](interpretations/eqoa-frontiers-us-e01-tcp7000-20261031-001.md) and [manifest](manifests/eqoa-frontiers-us-e01-tcp7000-20261031-001.json) now establish a completed lab handshake and one 104-byte HTTP/1.1 GET for the update-manifest path. The legacy Host field is distinct from the lab connection destination. No application response was sent. Four images, raw-stream/payload equality, integrity and listener/firewall/profile rollback are reviewed; response acceptance and full E01 remain open. Only sanitized decoded fields and hashes are published.
+
 ## Authority and classification
 
 - Raw capture files are the authoritative record of observed bytes and packet/stream boundaries.

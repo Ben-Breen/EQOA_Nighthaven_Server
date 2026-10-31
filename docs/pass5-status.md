@@ -69,6 +69,20 @@ The later [manifest](evidence/manifests/eqoa-frontiers-us-e00-n02-20261031-002.j
 
 The [N01/N02 comparison](evidence/interpretations/e00-n01-n02-comparison-20261030.md) shows the latest N02 queried only `198.18.0.1`, asking both the PTR and DNAS-associated A question; N01 also queried the legacy resolver. Both received eight local REFUSED replies and reached DNAS Error (-611). The corrected-DNS run does not establish a successful DNAS exchange or a single-variable cause. The earlier N02 control is preserved, the seed remains unchanged, the mount stayed stable and restoration passed. No additional live run followed.
 
+## October 31 E01 — lab PNACH and update-stage observation
+
+The operator authorized a scoped E01 handoff using the existing N01/N02 evidence, retaining full E00's repeatability/provenance limitations and declining a third network baseline. The newer supplied PNACH matches the published artifact already registered in the static evidence. An independently encoded, guarded lab candidate omits the resource rewrite, memory-card loader and graphics changes; its source-informed provenance and unproven per-stub necessity remain explicit.
+
+The [E01 review](evidence/interpretations/eqoa-frontiers-us-e01-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-20261031-001.json) register one authorized session, `E01-20261031T115857739Z`. Nine screenshots show DNAS **Status: Done**, update connection and an update error. The 21-frame TAP capture includes five SYN attempts to `198.18.0.1:7000`, with no TCP reply or application payload. HTTP and the missing-response cause remain UNKNOWN. This is scoped client/emulator evidence, not Sony authentication, a working service or proof that every patch write executed.
+
+Seven bounded candidate checks and 82 offline harness tests passed before elevated readiness and the captured run. The prepared corrected-DNS N02 output was copied to a distinct disposable card. All 92 manifest-reference checks pass; 62 session files and three authorization/observer files remain restricted and EFS encrypted outside Git. Normal closure and a separate elevated read-only check verify rollback: original INI restored byte-for-byte, cheats/networking disabled, capture stopped, original DNS state and physical adapters restored, source ISO/cards/PNACH files unchanged. No additional unpatched boot occurred. Patch code, assets and raw captures remain outside the repository.
+
+## October 31 E01 — receive-only TCP/7000 observation
+
+After explicit new-run approval, session `E01-TCP-20261031T122522344Z` used the same prepared input and PNACH with one TAP-bound, guest-only receive tool. Its [result](evidence/interpretations/eqoa-frontiers-us-e01-tcp7000-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-tcp7000-20261031-001.json) record a completed TCP handshake and a 104-byte HTTP/1.1 GET for `/patch/eqoa/eqoa-frontierslive-update.xml.gz`. The socket destination is `198.18.0.1:7000`; the legacy domain remains only in the observed Host field. Listener bytes match the raw TCP payload. No application response was sent; an acceptable empty body or update manifest remains UNKNOWN.
+
+Four screenshots, 26 frames, 92 reference checks, source preservation and normal closure are reviewed. All raw artifacts remain restricted/EFS outside Git. The listener/rule were removed before restoring uplinks; a separate elevated read-only check verifies their absence, idle capture and exact original-profile rollback. Ten receiver checks and 103 offline integration tests preceded the run. This is a completed bounded observation, not an updater or playable server. News/greeting behavior remains optional and deferred.
+
 ## Current gate state
 
 | Gate or experiment | State | Reason |
@@ -80,8 +94,8 @@ The [N01/N02 comparison](evidence/interpretations/e00-n01-n02-comparison-2026103
 | October 29 proposed online-host N02/N03 | NOT RUN / BLOCKED | Separate from the later offline clean-card N02. Executable-only resolver containment failed; a stronger boundary is required for an online host. |
 | E00-N02 offline clean-card collection/comparison | COMPLETE, scoped observations only | Earlier setup control plus corrected-DNS run retained separately; latest run has stable working card, eight images and DNAS-stage DNS/error. No DNAS success or causal proof. |
 | E00 | PARTIAL / NOT COMPLETE | N01 qualification and separate N02 clean-card evidence do not satisfy three unchanged-profile cold starts. Timing, acquisition provenance and capture blind spots remain limitations. |
-| E01 | NOT RUN as a dedicated experiment | N01 supplies DNS/DNAS-screen observations and a concrete next target; it does not complete the ordered E01 timeline/differential. |
+| E01 | PARTIAL; two scoped observations reviewed | DNAS Done, lab TCP/7000 and one HTTP request observed. Accepted response, full dependency timeline and per-change differential remain open. |
 | E02–E11 | NOT RUN | Existing sequence and prerequisites remain in force. |
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
-Next: use the comparison to plan a controlled post-resolution E01 observation, preserving the refusal baseline and separately versioning/hash-recording a prepared working-card input. Address the applicable E00 acceptance requirements before executing E01. Do not automatically repeat a run or choose a DNAS bypass. No additional boot, game service, database or wire implementation is authorized by this evidence review.
+Next: inspect the original update-response parser/no-update acceptance conditions and specify an independent candidate response with explicit unknowns. Any response experiment requires new authorization. The operator-directed E01 handoff retains E00 limitations; these results do not pass full E00 or authorize an updater, account/game/database services or broad wire implementation.

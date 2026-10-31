@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-20261031-001",
+  "experiment_id": "E01",
+  "session_id": "E01-20261031T115857739Z",
+  "collected_local_date": "2026-10-31",
+  "timezone": "America/Chicago",
+  "reviewed_at_utc": "2026-10-31T12:08:49.245120+00:00",
+  "source_kind": "pcsx2",
+  "client_identity_manifest": "eqoa-frontiers-us-static-20261025.json",
+  "runtime_scope": "SLUS-20744 / EEEE1FCC in PCSX2 2.8.2.0 only; no physical PS2 or cross-build claim.",
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_card_sha256": "e859bee1de08dcaa861c1f29aca1396f4a3f7b0a847eadc1a1d7243779d4c393",
+    "patch_sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82",
+    "source_bios_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "dns_helper_sha256": "c07a7d75cd60e82af10bc7ebae2ebee7d72e241ca7968939744a3f240672ab8f",
+    "runner_sha256": "8b2a14fff87e8242a6f5f6894d6bebc3e8ffbc0919b8bdc5c80e74677d71abe3",
+    "baseline_ini_sha256": "f6e6e77008e121206d39cc04c02322fe85bf04c4ae090de7ed570e596d83155e"
+  },
+  "source_card_provenance": "Preserved output of E00-N02-20261031T031431295Z, copied to separate disposable EQOA-E01-active.ps2; input unchanged.",
+  "external_source": {
+    "url": "https://eqoa.live/eeee1fcc.pnach",
+    "linked_from": "https://eqoa.live/install.html",
+    "retrieved_utc": "2026-10-31T11:49:58.8712916Z",
+    "bytes": 3463,
+    "sha256": "01693f0235a74153e9d6ac075407c196968168b6dcf6dffa94f276fa45580fbb",
+    "operator_newer_file_matches_published": true,
+    "attribution": "Xylof",
+    "license": "No explicit license found; no redistribution permission inferred.",
+    "source_and_candidate_committed": false
+  },
+  "candidate": {
+    "bytes": 2292,
+    "sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82",
+    "write_count": 28,
+    "guard_count": 9,
+    "lab_result_address": "198.18.0.1",
+    "minimum_necessity": "UNKNOWN",
+    "excluded": [
+      "graphics",
+      "resource-name rewrite",
+      "memory-card loader",
+      "revival-project endpoints"
+    ],
+    "static_tests_passed": 7,
+    "harness_offline_tests_passed": 82,
+    "limitations": "Source-informed independent encodings, not a clean-room claim. Loading 37 commands does not prove every guard fired."
+  },
+  "authorization": {
+    "source": "Explicit direct chat request; no automatic extra run.",
+    "e00_handoff": "Operator-directed scoped E01 research despite retained E00 repeatability gap; no third baseline required.",
+    "prompt_label_correction": "Script supplied exact prompt response from chat authorization; not newly typed terminal input."
+  },
+  "collection": {
+    "result": "REVIEWED_SCOPED_COMPATIBILITY_EXPERIMENT",
+    "stop_reason": "NORMAL_OPERATOR_CLOSE",
+    "forced_exit": false,
+    "run_limit_seconds": 300,
+    "network_phase_limit_seconds": null,
+    "capture_ready_utc": "2026-10-31T11:59:44.0838063Z",
+    "emulator_launch_utc": "2026-10-31T11:59:45.5604109Z",
+    "collecting_outputs_utc": "2026-10-31T12:01:37.2499000Z",
+    "finished_utc": "2026-10-31T12:01:55.1494455Z",
+    "capture_before_launch_seconds": 1.4766046,
+    "launch_to_collection_seconds": 111.6894891
+  },
+  "capture": {
+    "tool": "Windows PktMon",
+    "version": "10.0.19041.3636 (WinBuild.160101.0800)",
+    "component_id": 101,
+    "transport": "Ethernet/IPv4 UDP-DNS and TCP",
+    "boundary": "TAP component; host noise included; intercepted emulator traffic may be absent.",
+    "recorded_frames": 21,
+    "frame_catalog": {
+      "arp": 6,
+      "host_multicast_udp": 2,
+      "guest_ptr_questions": 4,
+      "lab_refused_replies": 4,
+      "guest_tcp_syn": 5
+    },
+    "guest_source": "198.18.0.2",
+    "dns_destination": "198.18.0.1:53",
+    "dns_question": "2.0.18.198.in-addr.arpa PTR",
+    "dnas_a_queries_recorded": 0,
+    "tcp_destination": "198.18.0.1:7000",
+    "tcp_flags": "SYN only, 0x02",
+    "tcp_syn_times_utc": [
+      "2026-10-31T12:01:15.833771Z",
+      "2026-10-31T12:01:16.815298Z",
+      "2026-10-31T12:01:18.818514Z",
+      "2026-10-31T12:01:22.821272Z",
+      "2026-10-31T12:01:30.846336Z"
+    ],
+    "tcp_reply_frames": 0,
+    "tcp_handshake_completed": false,
+    "tcp_payload_bytes": 0,
+    "ipv4_fragment_frames": 0,
+    "conversion_packet_drops": 0,
+    "pktmon_events_lost": 0,
+    "application_protocol": "UNKNOWN; port and update UI do not establish HTTP."
+  },
+  "decoders": [
+    {
+      "name": "inspect_e00_capture.py",
+      "sha256": "0ab07d03f7913847f9303a37d0fd73d12d9d4bba9d0c28dbe6c0f22e7cfc859e",
+      "scope": "Read-only pcapng Ethernet/IPv4/UDP-DNS metadata; no EQOA codec."
+    },
+    {
+      "name": "inspect_e01_tcp.py",
+      "sha256": "7aa4d2b8bf46393df120023ebc51f08f2206261bafce2550689db8fb901f1f34",
+      "scope": "Read-only pcapng TCP metadata with interface timestamp-resolution handling."
+    },
+    {
+      "name": "visual inspection",
+      "scope": "All nine preserved F8 images; screenshot write time is not exact transition time."
+    }
+  ],
+  "raw_registry": {
+    "location": "Operator-controlled EFS RawEvidence outside Git; session ID resolves local path.",
+    "session_files": 62,
+    "authorization_files": 3,
+    "all_efs": true,
+    "allow_acl": "Operator/SYSTEM only; child ACLs inherit restricted raw parent.",
+    "manifest_reference_checks": {
+      "top_level": 61,
+      "embedded_run": 24,
+      "embedded_input": 7,
+      "total": 92,
+      "mismatches": 0
+    },
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 21501,
+        "sha256": "e2aebeea636a02f2f2e7e507c2026b8ccdc7d346e1fea3d95e0cd2563bb65b92"
+      },
+      {
+        "path": "E01/run-result.json",
+        "bytes": 6275,
+        "sha256": "1d19af48ac26b140a9e23694d0fe298b21b56c4dd546df82cd5c7fb99c672cb5"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 6053,
+        "sha256": "4bbc63619b544d1c9f75de6b00d753130a6bbf7d6ff1b7642487b67ac7888372"
+      },
+      {
+        "path": "inputs/ini-original.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "inputs/ini-restoration-failclosed.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "timeline.jsonl",
+        "bytes": 18224,
+        "sha256": "5f3f18624c4e8431923120144cf83b2d053f0a07cb414b6c338660a83cbd1aa1"
+      },
+      {
+        "path": "dns-proof.json",
+        "bytes": 1132,
+        "sha256": "01e987776ffa2144b3595b6816b4ba63a7989f8acfc168dca1b012e0b96c4eda"
+      },
+      {
+        "path": "dns-restoration.json",
+        "bytes": 152,
+        "sha256": "f3f67b7fd613a88f08a5ecb4e493723f5f2c672c15b0e92158f322721d3c6506"
+      },
+      {
+        "path": "lab-cheats/EEEE1FCC.pnach",
+        "bytes": 2292,
+        "sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82"
+      },
+      {
+        "path": "E01/capture1.etl",
+        "bytes": 134217728,
+        "sha256": "5c8098932489eab9c99e05a98d5a50d58df9e949ad96db62ad108b6e865086a1",
+        "last_write_utc": "2026-10-31T12:01:36.5983727Z"
+      },
+      {
+        "path": "E01/capture1.pcapng",
+        "bytes": 3524,
+        "sha256": "320423dc4c48112b990082969f23c743b3d546cc8f7a0e7850aff0436c589287",
+        "last_write_utc": "2026-10-31T12:01:37.4252681Z"
+      },
+      {
+        "path": "E01/capture2.etl",
+        "bytes": 9833,
+        "sha256": "96d8ad1291e42c04c21d701aea2811ea794d7b796a61724a3777ec5791023f3b",
+        "last_write_utc": "2026-10-31T12:01:36.9228828Z"
+      },
+      {
+        "path": "E01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f",
+        "last_write_utc": "2026-10-31T12:01:37.5012778Z"
+      },
+      {
+        "path": "E01/ini-input.ini",
+        "bytes": 10553,
+        "sha256": "f6e6e77008e121206d39cc04c02322fe85bf04c4ae090de7ed570e596d83155e",
+        "last_write_utc": "2026-10-31T11:59:43.5249122Z"
+      },
+      {
+        "path": "E01/ini-output.ini",
+        "bytes": 10553,
+        "sha256": "f6e6e77008e121206d39cc04c02322fe85bf04c4ae090de7ed570e596d83155e",
+        "last_write_utc": "2026-10-31T11:59:45.6348299Z"
+      },
+      {
+        "path": "E01/live-output/logs/emulog.txt",
+        "bytes": 51244,
+        "sha256": "f14a1123f4a88f87110a246ee7bfa6ebe826b7cbc4c2b3a40052bf9521a998d5",
+        "last_write_utc": "2026-10-31T12:01:36.0741238Z"
+      }
+    ],
+    "authorization_artifact_id": "E01-Authorization-20261031T115857442Z",
+    "authorization_files_metadata": [
+      {
+        "path": "authorization.json",
+        "bytes": 1163,
+        "sha256": "9db7e028868b5901d8a9f883e2872f88234830318cfb425e52cff621cefa8e1b"
+      },
+      {
+        "path": "adapter-transitions.jsonl",
+        "bytes": 116485,
+        "sha256": "7943630641e8f1193939826f225c6ee5f640e6d2f9e6c8396de4e0fc98cd358b"
+      }
+    ]
+  },
+  "isolation_observation": {
+    "total_observer_samples": 337,
+    "capture_interval_samples": 214,
+    "unsafe_or_missing_samples": 0,
+    "maximum_gap_seconds": 0.5681869,
+    "physical_adapters": "Both administratively Down in every capture-interval sample.",
+    "scope": "Sampled states plus existing route/driver/service guards; not all-flow coverage proof.",
+    "nat_table": "UNKNOWN: provider unavailable; independent WinNAT driver, ICS/RRAS and bridge/forwarding checks passed."
+  },
+  "screen_observations": [
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070031.png",
+      "sha256": "a7a87f08e688cbf80c9fb33919fa0e219ca3d93a8cbd1703561ddda0e30579b9",
+      "file_write_utc": "2026-10-31T12:00:32.7964271Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "EULA",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070055.png",
+      "sha256": "149a96b3702dac5b4dee1563d437357687715d35763204f38a868b4916a7ae24",
+      "file_write_utc": "2026-10-31T12:00:55.9626633Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Network Connecting",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070101.png",
+      "sha256": "0724c309c4b0de1acb927b20e3b1dc2f57772e24ddcb3e8e009ade438f3bbe40",
+      "file_write_utc": "2026-10-31T12:01:02.6013790Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Network Connected",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070108.png",
+      "sha256": "3b3d99cc0677239172e313815fccb0561bff6bfaa7ed3bd9d8f4751fb10907e1",
+      "file_write_utc": "2026-10-31T12:01:08.9328130Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Initializing Network",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070110.png",
+      "sha256": "d5368ba08ad530bd59a9145008e69c61aac7fd0cf399f13f9071b9d04fcce593",
+      "file_write_utc": "2026-10-31T12:01:11.8400798Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "DNAS Status: Done",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070111.png",
+      "sha256": "1c15ed1b5543f089ba6722db9986d1a911226b816b107588e2be496b3e05ff7e",
+      "file_write_utc": "2026-10-31T12:01:12.8583558Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "DNAS Status: Done",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070115.png",
+      "sha256": "8644e1bb72cfd12e6410208c3589bec232a7ad4659a03fe0efc7573e56638f7c",
+      "file_write_utc": "2026-10-31T12:01:16.0480311Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Connecting to update server",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070116.png",
+      "sha256": "c71bf5489233a54d4d88a5cfe4ec1a827c408f964363bb37cca080ccb3693650",
+      "file_write_utc": "2026-10-31T12:01:16.9276780Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Connecting to update server",
+      "scope": "This modified PCSX2/client run only."
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031070127.png",
+      "sha256": "90aceba9b74e9de37b0f20e06c7e4fb43f6a1e4e328811f19de7b6cad6d6cb64",
+      "file_write_utc": "2026-10-31T12:01:28.1370750Z",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Update error",
+      "scope": "This modified PCSX2/client run only."
+    }
+  ],
+  "interpretation": {
+    "confirmed_scoped": [
+      "Client displayed DNAS Status: Done, then update connection and error screens.",
+      "Captured guest SYN attempts target lab TCP/7000; no reply/handshake/payload captured."
+    ],
+    "inferred": [
+      "The observed TCP attempt belongs to the contemporaneous update stage."
+    ],
+    "unknown": [
+      "Per-stub necessity",
+      "Whether all conditional writes executed",
+      "Complete dynamic call coverage",
+      "Update application request/response",
+      "Why no TCP reply was captured",
+      "General server endpoint coverage",
+      "Physical PS2 interoperability"
+    ],
+    "not_established": [
+      "Sony DNAS service authentication",
+      "Working updater/account/game server",
+      "Full E00/E01/E02 completion",
+      "HTTP protocol based on port alone"
+    ]
+  },
+  "restoration": {
+    "guest_stopped": true,
+    "capture_stopped": true,
+    "original_ini_exact": true,
+    "networking_disabled": true,
+    "cheats_disabled": true,
+    "original_cheat_directory_restored": true,
+    "original_dns_state_restored": true,
+    "physical_administrative_states_restored": true,
+    "source_card_iso_original_patches_preserved": true,
+    "verification": "ROLLBACK_VERIFIED_NO_BOOT",
+    "additional_unpatched_boot": false
+  },
+  "redaction": {
+    "raw_imported": false,
+    "patch_code_imported": false,
+    "images_cards_assets_imported": false,
+    "credentials_tokens_private_paths_mac_sid_included": false,
+    "ephemeral_tcp_source_port_and_sequence_omitted": true
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e00": "PARTIAL",
+    "e01": "PARTIAL; scoped patched observation reviewed",
+    "protocol_implementation": "CLOSED"
+  }
+}

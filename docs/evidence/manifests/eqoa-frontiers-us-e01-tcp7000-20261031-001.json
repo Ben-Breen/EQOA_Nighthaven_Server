@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-tcp7000-20261031-001",
+  "experiment_id": "E01-TCP7000",
+  "session_id": "E01-TCP-20261031T122522344Z",
+  "collected_local_date": "2026-10-31",
+  "timezone": "America/Chicago",
+  "reviewed_at_utc": "2026-10-31T12:37:46.405677+00:00",
+  "source_kind": "pcsx2",
+  "runtime_scope": "Frontiers US SLUS-20744 / EEEE1FCC; PCSX2 2.8.2.0 only.",
+  "comparison_artifact": "eqoa-frontiers-us-e01-20261031-001",
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_card_sha256": "e859bee1de08dcaa861c1f29aca1396f4a3f7b0a847eadc1a1d7243779d4c393",
+    "patch_sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82",
+    "source_bios_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "dns_helper_sha256": "c07a7d75cd60e82af10bc7ebae2ebee7d72e241ca7968939744a3f240672ab8f",
+    "runner_sha256": "2515078715bdc17a77f94469e598ac9aee2017cbbf75bf96022ac79a8a7c70ff",
+    "baseline_ini_sha256": "c78c037451d03e7a4487a81fe1e531951e201239c19a68edb1d7a12d78fe3c12",
+    "listener_script_sha256": "96f80c628c89ea21f1bfd43a9a0d2c67eae00b532f41840431bf9675e783cb20",
+    "listener_pwsh_sha256": "362a356ce7f0940ec74f73a8fc2c990a2cc24a38a11c90bbd8eca947110ad139"
+  },
+  "source_card_provenance": "Same prepared E00-N02-20261031T031431295Z output copied to disposable EQOA-E01-active.ps2. Previous changed E01 output preserved separately.",
+  "experimental_change": "Receive-only lab endpoint plus narrow temporary firewall rule; harness hash and evidence paths also differ, so do not claim an exhaustive single-variable causal proof.",
+  "authorization": {
+    "source": "Explicit user approval after requesting the TAP-bound listener",
+    "maximum_runs": 1,
+    "application_responses_authorized": false,
+    "temporary_physical_disconnection_and_scoped_rule": true,
+    "prompt_source": "Scripted exact prompt answer from direct chat approval, not newly typed terminal input."
+  },
+  "collection": {
+    "result": "REVIEWED_SCOPED_INITIAL_REQUEST",
+    "stop_reason": "NORMAL_OPERATOR_CLOSE",
+    "forced_exit": false,
+    "run_limit_seconds": 300,
+    "capture_ready_utc": "2026-10-31T12:26:09.3916663Z",
+    "listener_ready_utc": "2026-10-31T12:26:14.5552961Z",
+    "emulator_launch_utc": "2026-10-31T12:26:15.9848413Z",
+    "collecting_outputs_utc": "2026-10-31T12:27:45.5878428Z",
+    "finished_utc": "2026-10-31T12:28:04.1634650Z",
+    "capture_before_launch_seconds": 6.593175,
+    "listener_before_launch_seconds": 1.4295452
+  },
+  "listener": {
+    "result": "CAPTURED",
+    "bind_address": "198.18.0.1",
+    "port": 7000,
+    "remote_address": "198.18.0.2",
+    "accepted_utc": "2026-10-31T12:27:31.4791857Z",
+    "bytes_received": 104,
+    "application_bytes_sent": 0,
+    "stop_reason": "IDLE_AFTER_DATA",
+    "stopped": true,
+    "listener_closed": true,
+    "client_closed": true,
+    "file_closed": true,
+    "cleanup_errors": [],
+    "payload_sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18"
+  },
+  "capture": {
+    "tool": "Windows PktMon",
+    "version": "10.0.19041.3636 (WinBuild.160101.0800)",
+    "component_id": 101,
+    "boundary": "TAP plus semantic emulator DHCP/DNS logs; intercepted traffic may be absent.",
+    "recorded_frames": 26,
+    "frame_catalog": {
+      "arp": 6,
+      "host_multicast_udp": 3,
+      "guest_ptr_questions": 4,
+      "lab_refused_replies": 4,
+      "tcp": 9
+    },
+    "tcp_guest_frames": 5,
+    "tcp_host_frames": 4,
+    "tcp_connection": "198.18.0.2 to 198.18.0.1:7000",
+    "handshake_completed": true,
+    "first_syn_utc": "2026-10-31T12:27:31.419558Z",
+    "handshake_ack_utc": "2026-10-31T12:27:31.420144Z",
+    "client_data_utc": "2026-10-31T12:27:31.421119Z",
+    "guest_data_frames": 1,
+    "client_application_bytes": 104,
+    "server_application_bytes": 0,
+    "tcp_payload_equals_listener_file": true,
+    "dns_question": "2.0.18.198.in-addr.arpa PTR",
+    "dnas_a_queries_recorded": 0,
+    "ipv4_fragment_frames": 0,
+    "conversion_packet_drops": 0,
+    "pktmon_events_lost": 0
+  },
+  "decoded_request": {
+    "classification": "CONFIRMED — client/protocol",
+    "scope": "This single modified PCSX2/client connection; raw bytes and parser assumptions retained separately.",
+    "method": "GET",
+    "request_target": "/patch/eqoa/eqoa-frontierslive-update.xml.gz",
+    "version": "HTTP/1.1",
+    "host_header": "patch.everquestonlineadventures.com",
+    "header_names": [
+      "Host"
+    ],
+    "request_body_bytes": 0,
+    "query_present": false,
+    "authorization_or_cookie_headers_present": false,
+    "network_destination": "198.18.0.1:7000",
+    "legacy_host_header_is_not_network_destination": true,
+    "raw_request_imported": false,
+    "response_format": "UNKNOWN",
+    "empty_response_accepted": "UNKNOWN",
+    "filename_implies_actual_gzip_or_xml_format": "UNKNOWN until response/parser evidence"
+  },
+  "screen_observations": [
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031072726.png",
+      "sha256": "799b1bbc71dc3186db9d62fa7dfbf264b3f1b300aaf5deb084a44f9bf11a4aee",
+      "file_write_utc": "2026-10-31T12:27:27.5560499Z",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This PCSX2/client run; write time is not exact transition time.",
+      "observation": "DNAS Status: Done"
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031072729.png",
+      "sha256": "daf6cde18b8cf6ee29b232744b3cbd8538cadff7e45716d4cc336f3571f8d4c4",
+      "file_write_utc": "2026-10-31T12:27:30.7685896Z",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This PCSX2/client run; write time is not exact transition time.",
+      "observation": "Update: Reading game data"
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031072731.png",
+      "sha256": "80603a9cf4a286a86d12272815724674841ccfcc7b2d7222f12f313ac1f8cc89",
+      "file_write_utc": "2026-10-31T12:27:32.4322740Z",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This PCSX2/client run; write time is not exact transition time.",
+      "observation": "Update: Connecting to update server"
+    },
+    {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031072735.png",
+      "sha256": "bba1f2e179311cd535513b0af355d50fa535a994af89e794c5580ccfccb64c0e",
+      "file_write_utc": "2026-10-31T12:27:36.8030744Z",
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "This PCSX2/client run; write time is not exact transition time.",
+      "observation": "Update error"
+    }
+  ],
+  "tools": {
+    "harness_offline_integration_tests_passed": 103,
+    "receive_only_loopback_tests_passed": 10,
+    "tcp_decoder_sha256": "7aa4d2b8bf46393df120023ebc51f08f2206261bafce2550689db8fb901f1f34",
+    "dns_decoder_sha256": "0ab07d03f7913847f9303a37d0fd73d12d9d4bba9d0c28dbe6c0f22e7cfc859e",
+    "request_summary": "Bounded ASCII/CRLF/header interpretation; raw TCP data compared byte-for-byte with listener file."
+  },
+  "raw_registry": {
+    "location": "Operator-controlled EFS RawEvidence outside Git; session ID resolves local path.",
+    "session_files": 62,
+    "authorization_files": 3,
+    "all_efs": true,
+    "allow_acl": "Operator/SYSTEM only; child objects inherit the restricted parent ACL.",
+    "manifest_reference_checks": {
+      "top_level": 61,
+      "embedded_run": 24,
+      "embedded_input": 7,
+      "total": 92,
+      "mismatches": 0
+    },
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 20857,
+        "sha256": "323d515837757db79df3f1d618c5a9d26cd20b468f9d5f5d108c77a349e2b8e6"
+      },
+      {
+        "path": "E01/run-result.json",
+        "bytes": 5913,
+        "sha256": "ece37969dbbbccac24967e29ffa017d269d397586a5c8e901d45685e4f4d66ca"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 6484,
+        "sha256": "1134d29880bc5541643325243edd98fc3f3852206dc5551c1008081c23175686"
+      },
+      {
+        "path": "inputs/ini-original.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "inputs/ini-restoration-failclosed.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "timeline.jsonl",
+        "bytes": 38081,
+        "sha256": "981b7dc676094f3cf80454578d1083991a649497fbdf921d23af5eef6ab13c68"
+      },
+      {
+        "path": "dns-restoration.json",
+        "bytes": 152,
+        "sha256": "86c7d7a939e668b5d49ac5b97c18083f702d47ae35521d350a40ad74307225d6"
+      },
+      {
+        "path": "E01/listener-ready.json",
+        "bytes": 342,
+        "sha256": "fd2a363259b897daca78a733895cc58d5f48edca36f18ef4f4eebc2ed2a8b3e8"
+      },
+      {
+        "path": "E01/listener-result.json",
+        "bytes": 615,
+        "sha256": "4f40a8de02b505a511425181a0e01f91bb9063cb68fa0af2d1808d4df1ebce19"
+      },
+      {
+        "path": "E01/listener-client-to-server.bin",
+        "bytes": 104,
+        "sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18"
+      },
+      {
+        "path": "E01/capture1.etl",
+        "bytes": 117440512,
+        "sha256": "f9520a62f62a5ae038402554e02245a0ff74d6a987f7ca3b1adc299e32ae7ab2"
+      },
+      {
+        "path": "E01/capture1.pcapng",
+        "bytes": 4712,
+        "sha256": "4e56c9cd52bbd663f9a6552c0b6a3696c384a94978cca972292d4b371243e0e4"
+      },
+      {
+        "path": "E01/capture2.etl",
+        "bytes": 9831,
+        "sha256": "49849b8ee824ac447e334adcff8a36888bf20c334edaf0cf5e161bee9ac02fa1"
+      },
+      {
+        "path": "E01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      },
+      {
+        "path": "E01/live-output/logs/emulog.txt",
+        "bytes": 40116,
+        "sha256": "d0c2f6744ea0ee63d969bc8378ac294315fab061c0d8d21f3affd8f9a21b0d30"
+      }
+    ],
+    "authorization_artifact_id": "E01-TCP-Authorization-20261031T122522016Z",
+    "authorization_files_metadata": [
+      {
+        "path": "authorization.json",
+        "bytes": 1251,
+        "sha256": "714f65330f459c0305fb5a607db80abfec0bb5cbcddb0a3ac285e13a1698f115"
+      },
+      {
+        "path": "adapter-transitions.jsonl",
+        "bytes": 106440,
+        "sha256": "7e511defd88c88ba14b06c4ebfd4ab57cfa0f125f073ccb4d5636022edb3401c"
+      }
+    ]
+  },
+  "isolation_observation": {
+    "total_samples": 308,
+    "capture_interval_samples": 183,
+    "unsafe_or_missing_samples": 0,
+    "maximum_gap_seconds": 0.5622943,
+    "physical_adapters": "Both administratively Down in all capture-interval samples.",
+    "scope": "Sampled containment and route/service guards; not all-flow or original-hardware proof."
+  },
+  "restoration": {
+    "guest_stopped": true,
+    "capture_stopped": true,
+    "listener_stopped": true,
+    "temporary_scoped_rule_removed": true,
+    "original_ini_exact": true,
+    "networking_disabled": true,
+    "cheats_disabled": true,
+    "original_cheat_directory_restored": true,
+    "dns_original_state_restored": true,
+    "physical_administrative_states_restored": true,
+    "source_iso_cards_original_patches_preserved": true,
+    "independent_elevated_verification": "ROLLBACK_VERIFIED_NO_BOOT; listener process/port/rule absence checked",
+    "medium_token_firewall_query": "DENIED; not treated as proof. Separate elevated check subsequently verified absence.",
+    "additional_unpatched_boot": false
+  },
+  "unknowns": [
+    "Accepted HTTP response/status/body",
+    "Manifest schema/content/encoding/integrity requirements",
+    "Empty HTTP response acceptance",
+    "Next endpoint after successful update stage",
+    "Per-DNAS-stub necessity",
+    "Full resolver caller coverage",
+    "Physical PS2 behavior"
+  ],
+  "redaction": {
+    "raw_bytes_assets_images_cards_patch_code_imported": false,
+    "private_paths_sid_mac_credentials_tokens_imported": false,
+    "ephemeral_tcp_source_port_and_sequence_omitted": true
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e00": "PARTIAL",
+    "e01": "PARTIAL; two scoped observations reviewed",
+    "protocol_implementation": "CLOSED"
+  }
+}
