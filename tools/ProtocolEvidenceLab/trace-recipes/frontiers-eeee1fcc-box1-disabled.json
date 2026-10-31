@@ -1,0 +1,56 @@
+{
+  "Version": "0.01",
+  "Breakpoints": [
+    {
+      "X": "0",
+      "TYPE": "8",
+      "OFFSET": "001016B8",
+      "DESCRIPTION": "Common loader hook entry",
+      "SIZE / LABEL": "",
+      "INSTRUCTION": "",
+      "CONDITION": "",
+      "HITS": "0"
+    },
+    {
+      "X": "0",
+      "TYPE": "8",
+      "OFFSET": "000FA048",
+      "DESCRIPTION": "External loader before helper call - inspect a0 bounded filename candidate",
+      "SIZE / LABEL": "",
+      "INSTRUCTION": "",
+      "CONDITION": "",
+      "HITS": "0"
+    },
+    {
+      "X": "0",
+      "TYPE": "8",
+      "OFFSET": "000FA050",
+      "DESCRIPTION": "External loader helper return - record v0 before negative-result branch",
+      "SIZE / LABEL": "",
+      "INSTRUCTION": "",
+      "CONDITION": "",
+      "HITS": "0"
+    },
+    {
+      "X": "0",
+      "TYPE": "8",
+      "OFFSET": "000FA068",
+      "DESCRIPTION": "External loader header helper return - record v0",
+      "SIZE / LABEL": "",
+      "INSTRUCTION": "",
+      "CONDITION": "",
+      "HITS": "0"
+    },
+    {
+      "X": "0",
+      "TYPE": "8",
+      "OFFSET": "001016C4",
+      "DESCRIPTION": "Common bootstrap resume marker",
+      "SIZE / LABEL": "",
+      "INSTRUCTION": "",
+      "CONDITION": "",
+      "HITS": "0"
+    }
+  ],
+  "SavedAddresses": []
+}

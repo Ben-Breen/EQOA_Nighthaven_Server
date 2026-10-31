@@ -111,3 +111,7 @@ The [independent lab responder](../tools/ProtocolEvidenceLab/E01BootstrapRespond
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
 Next: identify the post-update program/resource selection and transition failure from existing artifacts, then focused loader evidence if needed. U02 advances to Writing game data but does not establish account login or an authentication-service cause; manifest minimums remain open. Any further live response experiment requires new authorization. The operator-directed E01 handoff retains E00 limitations; these results do not pass full E00 or authorize an updater, account/game/database services or broad wire implementation.
+
+## October 31 loader tracing preparation — no launch
+
+[Box1 tracing plan](evidence/experiments/E01-Box1-loader-tracing.md) registers private EFS staging and a disabled debugger recipe. Console/file logging and targeted pause checkpoints replace reliance on developer-only trace channels or the empty memory-log handler. 16 private artifacts, unchanged source fingerprints and five synthetic preparation checks are verified. Active profiles remain unchanged; no emulator or capture was started. Actual breakpoint import/hits remain NOT RUN. The next separately approved guided comparison must validate tracing at entry before Play; no new lab run or broader implementation is authorized. Gate states above are unchanged.
