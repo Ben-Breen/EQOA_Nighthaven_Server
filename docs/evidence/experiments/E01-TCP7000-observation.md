@@ -45,3 +45,7 @@ A parseable-looking prefix alone does not establish a universal protocol. Retain
 Stop the owned guest and listener, verify closed sockets/process identity and the final listener report, remove only the uniquely named and verified temporary firewall rule, stop owned capture, restore the original profile with cheats/networking disabled, restore temporary DNS, then restore only saved physical administrative states. Uncertain listener/rule cleanup must hold uplink restoration for recovery review.
 
 Complete this experiment only after reviewing capture, listener bytes/count/hash, accept/read/close timing, screen state, source preservation and recovery. A no-data or failed-handshake result can complete a bounded observation without proving the application protocol. No updater response or broad server functionality is authorized by this run card. Protocol Implementation Gate remains CLOSED for the Nighthaven server.
+
+## Subsequent separate experiment
+
+The independently authorized [E01-U01 empty-response observation](../interpretations/eqoa-frontiers-us-e01-u01-20261031-001.md) followed this receive-only run. Its exact HTTP200-empty-v1 response did not pass updating. The earlier zero-response result above remains unchanged; accepted-response semantics and rejection cause remain UNKNOWN.

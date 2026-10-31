@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-u01-20261031-001",
+  "experiment_id": "E01-U01",
+  "human_name": "Empty update response",
+  "session_id": "E01-U01-20261031T185944972Z",
+  "reviewed_at_utc": "2026-10-31T19:04:45.001866+00:00",
+  "source_kind": "pcsx2",
+  "client_profile": "Frontiers US SLUS-20744 / EEEE1FCC; PCSX2 2.8.2.0",
+  "comparison_artifact": "eqoa-frontiers-us-e01-tcp7000-20261031-001",
+  "scope": "One modified-client/emulator observation; no physical PS2, revision-wide or original-server semantics claim.",
+  "authorization": {
+    "source": "Explicit One test now and request to resume",
+    "maximum_runs": 1,
+    "temporary_physical_disconnection": true,
+    "prompt_handoff": "Scripted exact answer from direct chat approval, not newly typed terminal input."
+  },
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_card_sha256": "e859bee1de08dcaa861c1f29aca1396f4a3f7b0a847eadc1a1d7243779d4c393",
+    "patch_sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82",
+    "source_bios_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "runner_sha256": "151b641dfdd60369a97d5e4d9dd30b92707cd95fcb87def1ce72612084807b5f",
+    "listener_script_sha256": "49e909ebb471376cf56ee33f34bbbb011ee4afe47504a67c38d59ce5f3d34482"
+  },
+  "source_card_provenance": "Same prepared N02 output as preceding E01 runs; copied to disposable working card. Original media unchanged.",
+  "intervention": {
+    "classification": "NIGHTHAVEN DECISION",
+    "description": "Disposable one-shot guest-only TAP listener returns one pinned HTTP/1.1 200 OK, Content-Length 0, Connection close response only to the exact prior request. Not a production updater.",
+    "response_bytes": 57,
+    "response_sha256": "44ad2a18185d8a6504b531521ce4a9608a2ab2941568aaaf03111df87ffee6b9",
+    "request_bytes": 104,
+    "request_sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18"
+  },
+  "observations": {
+    "classification": "CONFIRMED — client/protocol",
+    "scope": "This artifact/client/emulator session only",
+    "transport": "TCP",
+    "guest": "198.18.0.2",
+    "lab_endpoint": "198.18.0.1:7000",
+    "tcp_frames": 10,
+    "request_payload_matches_listener": true,
+    "response_payload_matches_listener": true,
+    "response_acknowledged_at_tcp_level": true,
+    "server_data_utc": "2026-10-31T19:02:10.029433+00:00",
+    "screen": "Update error; no observed progression to account login",
+    "screen_ref": {
+      "path": "E01/live-output/screens/EverQuest Online Adventures - Frontiers_SLUS-20744_20261031140212.png",
+      "bytes": 1092712,
+      "sha256": "9f47c15c6482244e85103a8bbb47554258b8a48a2f4ff33c8ce7772f59b6d206"
+    },
+    "operator_report": "Same error before normal lab closure"
+  },
+  "interpretation": {
+    "classification": "INFERRED",
+    "conclusion": "This exact empty HTTP response is insufficient to pass the update stage in this environment.",
+    "limits": "TCP acknowledgment does not prove application parsing or reveal the reason. Do not generalize to every empty-body framing/status variant. HTTP dialect, manifest encoding/schema/content and other acceptance conditions remain UNKNOWN; .xml.gz is not proof of actual gzip/XML requirements."
+  },
+  "listener": {
+    "result": "CAPTURED",
+    "bytes_received": 104,
+    "application_bytes_sent": 57,
+    "response_write_complete": true,
+    "response_name": "HTTP200-empty-v1",
+    "response_sha256": "44ad2a18185d8a6504b531521ce4a9608a2ab2941568aaaf03111df87ffee6b9",
+    "stopped": true,
+    "listener_closed": true,
+    "client_closed": true,
+    "cleanup_errors": []
+  },
+  "validation": {
+    "offline_harness_checks_passed": 110,
+    "loopback_response_checks_passed": 3,
+    "manifest_reference_checks": {
+      "session": 59,
+      "run": 22,
+      "inputs": 7
+    },
+    "total_reference_checks": 88,
+    "mismatches": 0
+  },
+  "raw_registry": {
+    "location": "Operator-controlled EFS RawEvidence outside Git; session ID resolves private path",
+    "session_files": 60,
+    "authorization_files": 3,
+    "all_efs_and_operator_system_only": true,
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 19515,
+        "sha256": "86227fd8eba1e90458aacdbae5e7733c5ac6a754782e0b3f934e6e865aa82bf5"
+      },
+      {
+        "path": "E01/run-result.json",
+        "bytes": 5270,
+        "sha256": "ec1c5bfcb268c2eb5521690788965c09a339ef1b4a815bbde20220879962c065"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 6691,
+        "sha256": "61aa48c092b1f4a8493ee0fdb001f8b81bfa31fd1869b266b31cdcea2c601f7e"
+      },
+      {
+        "path": "inputs/ini-restoration-failclosed.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "timeline.jsonl",
+        "bytes": 38207,
+        "sha256": "1d90b3e5b82923b77a9d11bc9589e3af513e56dda82e95193a5d5e9728a37d01"
+      },
+      {
+        "path": "E01/listener-result.json",
+        "bytes": 924,
+        "sha256": "39f6b231f684542c4f1c739857965744a0cc9da5512246d594c1e2dbe34100e6"
+      },
+      {
+        "path": "E01/listener-client-to-server.bin",
+        "bytes": 104,
+        "sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18"
+      },
+      {
+        "path": "E01/listener-server-to-client.bin",
+        "bytes": 57,
+        "sha256": "44ad2a18185d8a6504b531521ce4a9608a2ab2941568aaaf03111df87ffee6b9"
+      },
+      {
+        "path": "E01/capture1.pcapng",
+        "bytes": 4856,
+        "sha256": "2c13655ce982e252bb1d04815aaef9981f4c1c4b8dd4abb83d422cc0f98ab326"
+      },
+      {
+        "path": "E01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      }
+    ],
+    "authorization_artifact_id": "E01-U01-Authorization-20261031T185944600Z",
+    "authorization_files_metadata": [
+      {
+        "path": "adapter-transitions.jsonl",
+        "bytes": 117853,
+        "sha256": "1d4f5f3f078eba292abda1a4a91610f730c8658d1ba14dbba88a614b21bc46de"
+      },
+      {
+        "path": "authorization.json",
+        "bytes": 1259,
+        "sha256": "d35837dacb254b331eab7b7fb593646f630026d915163583963aab64f0a47a7c"
+      },
+      {
+        "path": "observer-stop.txt",
+        "bytes": 4,
+        "sha256": "6c45cb72a36e63d522aa54ed8adbd7a29a989474f2f77e0458af8800564ef3cb"
+      }
+    ]
+  },
+  "rollback": {
+    "result": "ROLLBACK_VERIFIED_NO_BOOT",
+    "verified_at_utc": "2026-10-31T19:03:35.8798509Z",
+    "evidence_sha256": "51cc436d76316b53605c8c07789b36704f2886f04f127c57ee65719add2c0ece",
+    "exact_profile_restored": true,
+    "networking_and_cheats_disabled": true,
+    "capture_stopped": true,
+    "listener_process_port_and_temporary_rule_absent": true,
+    "dns_and_administrative_adapter_states_restored": true,
+    "source_preservation": true,
+    "additional_guest_boot": false
+  },
+  "unknowns": [
+    "Accepted update response contract",
+    "Why this response fails",
+    "Subsequent account endpoint/flow",
+    "Per-DNAS-stub necessity",
+    "Physical PS2 behavior"
+  ],
+  "redaction": {
+    "raw_bytes_assets_screenshots_patch_code_imported": false,
+    "private_paths_sid_mac_credentials_tokens_imported": false,
+    "ephemeral_ports_sequence_numbers_omitted": true
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e00": "PARTIAL",
+    "e01": "PARTIAL; three scoped observations reviewed",
+    "protocol_implementation": "CLOSED"
+  },
+  "collection_timeline_utc": {
+    "CAPTURE_READY": "2026-10-31T19:00:32.9587276Z",
+    "FINISHED": "2026-10-31T19:02:44.1943035Z"
+  },
+  "tools": {
+    "tcp_decoder_base_sha256": "7aa4d2b8bf46393df120023ebc51f08f2206261bafce2550689db8fb901f1f34",
+    "analysis_script_sha256": "4664a71c1b6ba607bfcd5fd01bdc6e9a7684ddbb8890dd6301596cc73747ff35",
+    "method": "Offline Ethernet/IPv4/TCP pcapng decoder with added per-payload SHA-256 annotation; exact listener artifact comparison, no reassembly needed for the single data frame in each direction. TCP ACK covers response bytes and FIN. No application parsing success inferred.",
+    "capture_boundary": "TAP component 101 plus emulator semantic logs; intercepted traffic may be absent."
+  }
+}

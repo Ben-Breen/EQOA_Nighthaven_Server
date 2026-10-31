@@ -83,6 +83,10 @@ After explicit new-run approval, session `E01-TCP-20261031T122522344Z` used the 
 
 Four screenshots, 26 frames, 92 reference checks, source preservation and normal closure are reviewed. All raw artifacts remain restricted/EFS outside Git. The listener/rule were removed before restoring uplinks; a separate elevated read-only check verifies their absence, idle capture and exact original-profile rollback. Ten receiver checks and 103 offline integration tests preceded the run. This is a completed bounded observation, not an updater or playable server. News/greeting behavior remains optional and deferred.
 
+## October 31 E01-U01 — empty update response
+
+The explicitly approved [E01-U01 result](evidence/interpretations/eqoa-frontiers-us-e01-u01-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-u01-20261031-001.json) record one 104-byte request, a pinned 57-byte HTTP200 response with zero body, TCP acknowledgment and a subsequent update-error screenshot. Account login was not reached. **INFERRED:** this exact response is insufficient in this client/emulator environment. Application parsing and the rejection cause remain UNKNOWN; this does not reject every empty-body variant. All 88 file-reference checks pass, restricted EFS raw storage and source preservation are verified, and separate elevated read-only rollback verification passes. No second run was started; news remains deferred.
+
 ## Current gate state
 
 | Gate or experiment | State | Reason |
@@ -94,8 +98,8 @@ Four screenshots, 26 frames, 92 reference checks, source preservation and normal
 | October 29 proposed online-host N02/N03 | NOT RUN / BLOCKED | Separate from the later offline clean-card N02. Executable-only resolver containment failed; a stronger boundary is required for an online host. |
 | E00-N02 offline clean-card collection/comparison | COMPLETE, scoped observations only | Earlier setup control plus corrected-DNS run retained separately; latest run has stable working card, eight images and DNAS-stage DNS/error. No DNAS success or causal proof. |
 | E00 | PARTIAL / NOT COMPLETE | N01 qualification and separate N02 clean-card evidence do not satisfy three unchanged-profile cold starts. Timing, acquisition provenance and capture blind spots remain limitations. |
-| E01 | PARTIAL; two scoped observations reviewed | DNAS Done, lab TCP/7000 and one HTTP request observed. Accepted response, full dependency timeline and per-change differential remain open. |
+| E01 | PARTIAL; three scoped observations reviewed | DNAS Done, lab HTTP request and exact empty-response failure observed. Accepted response, full dependency timeline and per-change differential remain open. |
 | E02–E11 | NOT RUN | Existing sequence and prerequisites remain in force. |
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
-Next: inspect the original update-response parser/no-update acceptance conditions and specify an independent candidate response with explicit unknowns. Any response experiment requires new authorization. The operator-directed E01 handoff retains E00 limitations; these results do not pass full E00 or authorize an updater, account/game/database services or broad wire implementation.
+Next: inspect the original updater response parser offline to identify success/failure conditions before specifying another response. The exact HTTP200-empty-v1 variant did not pass updating. Any further live response experiment requires new authorization. The operator-directed E01 handoff retains E00 limitations; these results do not pass full E00 or authorize an updater, account/game/database services or broad wire implementation.
