@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-reference-20261031-001",
+  "experiment_id": "E01-REF",
+  "human_name": "Online Sandstorm-configured client reference capture",
+  "session_id": "E01-REF-20261031T192009001Z",
+  "reviewed_at_utc": "2026-10-31T19:26:54.075180+00:00",
+  "classification": "CONFIRMED — client/protocol",
+  "scope": "Captured patched Frontiers US EEEE1FCC under PCSX2 2.8.2.0, communicating with external Sandstorm service. Not original SOE behavior or a universal compatibility requirement.",
+  "authorization": "Explicit user authorization for one online configured-client observation; stop before credentials. Failed preflight/ISO launch excluded from usable observation.",
+  "configuration": {
+    "runtime": "PCSX2 Box1 2.8.2.0",
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_kind": "Published Sandstorm PNACH with enabled DNAS/DNS/code section and two graphics sections",
+    "pins": [
+      {
+        "path": "inis\\PCSX2.ini",
+        "bytes": 15538,
+        "sha256": "49467a539891b468469b4dba33acfadbd99071d984ed98a866d2a8849e3d4f9c"
+      },
+      {
+        "path": "gamesettings\\SLUS-20744_EEEE1FCC.ini",
+        "bytes": 374,
+        "sha256": "204ccf9c147c3c489026041c94dceec623e282a8ffa9b5bd2823f1e879fc5978"
+      },
+      {
+        "path": "cheats\\eeee1fcc.pnach",
+        "bytes": 3463,
+        "sha256": "01693f0235a74153e9d6ac075407c196968168b6dcf6dffa94f276fa45580fbb"
+      },
+      {
+        "path": "memcards\\Mcd001.ps2",
+        "bytes": 8650752,
+        "sha256": "157c69bb473a0c48292f1b51d37de138e25bd7c9ad9362cd231347894b27114e"
+      }
+    ],
+    "patch_source": "https://eqoa.live/eeee1fcc.pnach",
+    "source_provenance": "Same SHA-256 as source inspected 2026-10-31; not newly fetched in this run. License/reuse permission not established; code/content not imported.",
+    "differences_from_nighthaven": "Different PNACH, memory card, BIOS/configuration and remote service. Same initial HTTP request does not make this an exhaustive controlled differential.",
+    "iso_identity": "Same canonical file path as earlier hashed Frontiers ISO; existence and regular-user readability checked, full ISO hash not repeated in this capture."
+  },
+  "capture": {
+    "tool": "Windows PktMon",
+    "component": 528,
+    "boundary": "Configured physical Wi-Fi adapter only; bidirectional IPv4 TCP to/from 5.161.217.188 port7000; not process-exclusive or all-endpoint coverage.",
+    "mapping": "Unique exact physical device description; randomized interface MAC differs from reported hardware MAC.",
+    "full_packet_bytes": true,
+    "tcp_frames": 27,
+    "events_lost_reported": 0,
+    "ready_utc": "2026-10-31T19:20:10.2951382Z",
+    "guest_start_utc": "2026-10-31T19:20:19.0383087Z",
+    "finished_utc": "2026-10-31T19:22:31.8534853Z",
+    "stop_reason": "NORMAL_GUEST_EXIT",
+    "no_screenshot": true
+  },
+  "http_metadata": {
+    "tcp_frames": 27,
+    "flows": [
+      {
+        "flow": 1,
+        "directions": {
+          "client": {
+            "bytes": 104,
+            "sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18",
+            "header_end_found": true,
+            "protocol_line": "REQUEST LINE RETAINED PRIVATELY",
+            "selected_headers": [],
+            "body_bytes": 0,
+            "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "body_gzip_magic": false
+          },
+          "server": {
+            "bytes": 606,
+            "sha256": "0c475d3395949f63133021ae65b2166693b270eb190b456ce68c2154a8edf039",
+            "header_end_found": true,
+            "protocol_line": "HTTP/1.1 200 OK",
+            "selected_headers": [
+              "Content-Length: 463",
+              "Content-Type: application/x-gzip"
+            ],
+            "body_bytes": 463,
+            "body_sha256": "11e3398bf5f66f07f93f51ff245bf07d3494c328c11dd4a64b3892a3df39fe63",
+            "body_gzip_magic": true
+          }
+        }
+      },
+      {
+        "flow": 2,
+        "directions": {
+          "client": {
+            "bytes": 61,
+            "sha256": "b935cfb74e1d593089d10628abcb35a604e836fa288ca831a2859b9284c5da5b",
+            "header_end_found": true,
+            "protocol_line": "REQUEST LINE RETAINED PRIVATELY",
+            "selected_headers": [],
+            "body_bytes": 0,
+            "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "body_gzip_magic": false
+          },
+          "server": {
+            "bytes": 371,
+            "sha256": "5cfcd3859faba6cee8ea091af963a23e4de2c6dff70e35637fa24cae87bc1311",
+            "header_end_found": true,
+            "protocol_line": "HTTP/1.1 200 OK",
+            "selected_headers": [
+              "Content-Length: 119",
+              "Content-Type: text/plain"
+            ],
+            "body_bytes": 119,
+            "body_sha256": "f61b5084de0fedd318fa1dfe4374a5a26fb3b3d20364b3dfa816741229bc1648",
+            "body_gzip_magic": false
+          }
+        }
+      },
+      {
+        "flow": 3,
+        "directions": {
+          "client": {
+            "bytes": 61,
+            "sha256": "b935cfb74e1d593089d10628abcb35a604e836fa288ca831a2859b9284c5da5b",
+            "header_end_found": true,
+            "protocol_line": "REQUEST LINE RETAINED PRIVATELY",
+            "selected_headers": [],
+            "body_bytes": 0,
+            "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "body_gzip_magic": false
+          },
+          "server": {
+            "bytes": 371,
+            "sha256": "f086dfc70866a9a0e8e9096e26f2d6eea27679eb98ee9cc2edc60825c51a68c4",
+            "header_end_found": true,
+            "protocol_line": "HTTP/1.1 200 OK",
+            "selected_headers": [
+              "Content-Length: 119",
+              "Content-Type: text/plain"
+            ],
+            "body_bytes": 119,
+            "body_sha256": "f61b5084de0fedd318fa1dfe4374a5a26fb3b3d20364b3dfa816741229bc1648",
+            "body_gzip_magic": false
+          }
+        }
+      }
+    ],
+    "decoder_base_sha256": "7aa4d2b8bf46393df120023ebc51f08f2206261bafce2550689db8fb901f1f34"
+  },
+  "update_body_structure": {
+    "classification": "CONFIRMED — client/protocol",
+    "scope": "Actual captured response only; field necessity/semantics not established.",
+    "wire_body_bytes": 463,
+    "gzip_crc_and_size_validated": true,
+    "decoded_bytes": 1258,
+    "decoded_sha256": "91cc2d3e9ee74e7a118e80f6fb875d98aad63452ac05950514a954787fc13a87",
+    "xml_shape_only": {
+      "tag": "VerantPatcher",
+      "attribute_names": [
+        "Version"
+      ],
+      "children": [
+        {
+          "tag": "Product",
+          "attribute_names": [
+            "Version"
+          ],
+          "children": [
+            {
+              "tag": "Distribution",
+              "attribute_names": [
+                "Name",
+                "UseCRC"
+              ],
+              "children": [
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "CRC",
+                    "DownloadSize",
+                    "LocalName",
+                    "Name",
+                    "RemotePath",
+                    "Server",
+                    "TotalSize"
+                  ],
+                  "children": []
+                },
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "CRC",
+                    "DownloadSize",
+                    "LocalName",
+                    "Name",
+                    "RemotePath",
+                    "Server",
+                    "TotalSize"
+                  ],
+                  "children": []
+                },
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "CRC",
+                    "DownloadSize",
+                    "LocalName",
+                    "Name",
+                    "RemotePath",
+                    "Server",
+                    "TotalSize"
+                  ],
+                  "children": []
+                },
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "Delete",
+                    "LocalName"
+                  ],
+                  "children": []
+                },
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "CRC",
+                    "DownloadSize",
+                    "LocalName",
+                    "Name",
+                    "RemotePath",
+                    "Server",
+                    "TotalSize"
+                  ],
+                  "children": []
+                },
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "CRC",
+                    "DownloadSize",
+                    "LocalName",
+                    "Name",
+                    "RemotePath",
+                    "Server",
+                    "TotalSize"
+                  ],
+                  "children": []
+                },
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "Delete",
+                    "LocalName"
+                  ],
+                  "children": []
+                },
+                {
+                  "tag": "File",
+                  "attribute_names": [
+                    "CRC",
+                    "DownloadSize",
+                    "LocalName",
+                    "Name",
+                    "RemotePath",
+                    "Server",
+                    "TotalSize"
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "tag": "Changes",
+              "attribute_names": [
+                "CRC",
+                "Port",
+                "RemotePath",
+                "Server",
+                "Version"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "attribute_values_and_text_imported": false
+  },
+  "followup_requests": {
+    "observed_path": "/patch/eqoa/Changes.txt",
+    "count": 2,
+    "request_bytes_each": 61,
+    "response_body_bytes_each": 119,
+    "response_content_type": "text/plain",
+    "response_text_imported": false,
+    "semantic_role": "INFERRED change/news resource; not an established optional/mandatory acceptance rule."
+  },
+  "screen_observation": {
+    "source": "Direct operator report: Account login",
+    "classification": "INFERRED",
+    "screenshot_available": false,
+    "independent_screen_confirmation": "UNKNOWN",
+    "credentials_entry": "Not requested; operator instructed to stop before entering credentials."
+  },
+  "conclusion": {
+    "classification": "INFERRED",
+    "statement": "This configured environment progressed beyond updating using a nonempty gzip XML response and follow-up Changes resource exchanges. A successful reference for research, not proof that all fields/files/headers or gzip are intrinsically required.",
+    "nighthaven_minimum_accepted_manifest": "UNKNOWN",
+    "no_update_or_empty_changes_acceptance": "UNKNOWN"
+  },
+  "analysis": {
+    "script_sha256": "9d0ddac543b046948106a85c0132c2295ba70ebce64f0ca0ac6abbfb60468281",
+    "method": "Strict frame/data/LLC layout checks, IPv4/TCP bounds, sequence-based reassembly with gap and conflicting-overlap rejection. Header allowlist and body hashes; gzip CRC/ISIZE verified; XML tag/attribute-name shape only.",
+    "link_format_limitation": "PktMon pcapng says Ethernet while bytes have native Wi-Fi data headers with IPv4 LLC at offset24/26; scoped decoder adaptation validated across all27 frames. Driver-provided plaintext does not establish over-the-air encryption behavior.",
+    "original_inventory_hash_checks": 8,
+    "mismatches": 0
+  },
+  "raw_registry": {
+    "location": "Operator-controlled restricted EFS RawEvidence outside Git",
+    "files": [
+      {
+        "path": "capture.etl",
+        "bytes": 41280,
+        "sha256": "348a572a6c7abe43b06e535c1194382ecf26e357e8781c4a6c4ee3b5bb16c8c2"
+      },
+      {
+        "path": "capture.pcapng",
+        "bytes": 4660,
+        "sha256": "127f9d08238f08cd129e3558719a51c4f7e0422a564ac541060b81343952b47c"
+      },
+      {
+        "path": "capture.pcapng.conversion.txt",
+        "bytes": 205,
+        "sha256": "3aa391522284a6c54a672af96ecb92f444710d3f72e8e33f6053cded51f2e8ac"
+      },
+      {
+        "path": "filters.txt",
+        "bytes": 209,
+        "sha256": "2d578cee611f3c0b59d459e19430e755361fe85be7823e6432b7c2f65b415fda"
+      },
+      {
+        "path": "flow-1-client.bin",
+        "bytes": 104,
+        "sha256": "8a84e038e8e550ee1a687e216990a2c248434bda0bfa6ae275b021e21e2abb18"
+      },
+      {
+        "path": "flow-1-server.bin",
+        "bytes": 606,
+        "sha256": "0c475d3395949f63133021ae65b2166693b270eb190b456ce68c2154a8edf039"
+      },
+      {
+        "path": "flow-2-client.bin",
+        "bytes": 61,
+        "sha256": "b935cfb74e1d593089d10628abcb35a604e836fa288ca831a2859b9284c5da5b"
+      },
+      {
+        "path": "flow-2-server.bin",
+        "bytes": 371,
+        "sha256": "5cfcd3859faba6cee8ea091af963a23e4de2c6dff70e35637fa24cae87bc1311"
+      },
+      {
+        "path": "flow-3-client.bin",
+        "bytes": 61,
+        "sha256": "b935cfb74e1d593089d10628abcb35a604e836fa288ca831a2859b9284c5da5b"
+      },
+      {
+        "path": "flow-3-server.bin",
+        "bytes": 371,
+        "sha256": "f086dfc70866a9a0e8e9096e26f2d6eea27679eb98ee9cc2edc60825c51a68c4"
+      },
+      {
+        "path": "inventory.json",
+        "bytes": 1166,
+        "sha256": "f55f570a5a4c85912c638b8ceba1153888ef8cba0a125d41c85991774eabc920"
+      },
+      {
+        "path": "pktmon-start.txt",
+        "bytes": 739,
+        "sha256": "785b69247bebbcef2969c06e0db49cee72f20a93d4b15abf9bd21bac84a897ee"
+      },
+      {
+        "path": "pktmon-stop.txt",
+        "bytes": 156,
+        "sha256": "0af60f5850e4499aacbce402b70c9037e5d53725a2b15d423b6cfa3221444ca8"
+      },
+      {
+        "path": "provenance.json",
+        "bytes": 1718,
+        "sha256": "a4a78c3743095cb660a2a511f226425b1337f4ff63bf75b42ae5a1cdae06c822"
+      },
+      {
+        "path": "result.json",
+        "bytes": 670,
+        "sha256": "14d16f26646b8b47e870685d84de3d0733a9f234c8483e0a1fc927c497a21279"
+      },
+      {
+        "path": "storage-probe.txt",
+        "bytes": 24,
+        "sha256": "18c974d436af764ff8433e7096ec58c2b7d20447eccb72d0a583e591bacecd90"
+      }
+    ],
+    "all_16_files_efs_operator_system_only": true,
+    "raw_capture_and_reassembled_content_published": false
+  },
+  "preservation": {
+    "capture_stopped": true,
+    "temporary_capture_filter_removed": true,
+    "network_dns_firewall_configuration_changed": false,
+    "nighthaven_profile_unchanged": true,
+    "nighthaven_profile_sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea",
+    "box1_ini_game_settings_and_patch_unchanged": true,
+    "box1_memory_card_changed_during_normal_operation": true,
+    "box1_card_after_sha256": "e45530362078b618a7affd08ec075bb28d6d293b2e5e5e76db03f3b1936afaa1",
+    "no_claim_of_box1_card_rollback": true
+  },
+  "excluded_attempts": [
+    {
+      "session_id": "E01-REF-20261031T191742256Z",
+      "result": "ISO launch error; zero matching packets; capture/filter cleaned; not a protocol result."
+    }
+  ],
+  "unknowns": [
+    "Minimal independent updater/no-update XML contract",
+    "Mandatory versus optional file/distribution/Changes fields",
+    "CRC algorithm and semantics within manifest",
+    "Whether Changes requests affect update acceptance",
+    "Effect of existing card state or external code/resource patch",
+    "Original hardware/revision behavior"
+  ],
+  "redaction": {
+    "private_paths_mac_sid_account_values_tokens_imported": false,
+    "raw_packets_response_content_card_bios_patch_code_imported": false
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e00": "PARTIAL",
+    "e01": "PARTIAL; three lab observations and one external reference capture",
+    "protocol_implementation": "CLOSED"
+  }
+}

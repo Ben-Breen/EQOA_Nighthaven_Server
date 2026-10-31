@@ -63,3 +63,7 @@ Do not label any packet field or client transition `CONFIRMED — client/protoco
 ## E01-U01 — empty update response, 2026-10-31
 
 [Result](interpretations/eqoa-frontiers-us-e01-u01-20261031-001.md) and [manifest](manifests/eqoa-frontiers-us-e01-u01-20261031-001.json): one approved lab run transmitted the pinned empty HTTP200 response, received TCP acknowledgment, and reached the update error. This is a scoped negative result, not an accepted updater contract or universal rejection of empty responses. Raw artifacts remain restricted/EFS outside Git; independent rollback verification passed. Next: offline parser analysis; further live variants need separate authorization.
+
+## Online configured-client reference, 2026-10-31
+
+[Review](interpretations/eqoa-frontiers-us-e01-reference-20261031-001.md) and [manifest](manifests/eqoa-frontiers-us-e01-reference-20261031-001.json) register a separate Sandstorm-configured PCSX2 capture: gzip/XML update response and plain-text Changes exchanges; account login is operator-reported without screenshot. Source/response content remains private; structure/hashes only are published. No minimum Nighthaven response or universal client requirement is established. A generator was discussed and explicitly deferred without implementation.
