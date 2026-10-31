@@ -8,6 +8,14 @@ This directory is for Nighthaven protocol evidence manifests, sanitized interpre
 
 The 2026-10-28 [E00 runtime manifest](manifests/eqoa-frontiers-us-e00-offline-20261028-001.json) and [review](interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md) register three collected, reviewed fully offline modified-card controls. Runtime hashes/timestamps are populated; exact endpoints and raw bytes remain restricted outside Git. These are completed offline controls, not a completed full E00 or proven guest-only/all-flow capture. E01 is not run, and no protocol fixture or implementation gate is opened.
 
+The later [N01 manifest](manifests/eqoa-frontiers-us-e00-n01-20261029-001.json) and [result](interpretations/eqoa-frontiers-us-e00-n01-20261029-001.md) register one successful guest-address/DNS-path qualification and bounded DNAS-screen observations. Collection was October 28 local time / October 29 UTC. No raw bytes, images or credentials are imported; full E00 repeatability and E01 completion are not implied.
+
+The October 29 [online-host resolver-boundary review](interpretations/e00-online-host-resolver-boundary-20261029.md) records a failed synthetic Windows containment check with both positive controls present. It is not a PS2/client experiment. The two requested online-host cold starts did not begin; raw probe artifacts remain outside Git.
+
+The October 30 [N02 clean-card result](interpretations/eqoa-frontiers-us-e00-n02-20261031-001.md) and [manifest](manifests/eqoa-frontiers-us-e00-n02-20261031-001.json) register the earlier controlled offline collection: six screenshots, stable seed-derived working card, guest IPv4/DNS, an unexpected resolver address and recovery. The in-game network configuration tool ran during capture. This differs from the earlier proposed online-host repetitions and does not close E00/E01.
+
+A later operator-approved five-minute-policy N02 records the corrected DNS destination, eight screenshots and DNAS Error (-611). Its [separate manifest](manifests/eqoa-frontiers-us-e00-n02-20261031-002.json) and [N01/N02 comparison](interpretations/e00-n01-n02-comparison-20261030.md) preserve both this result and the earlier setup control. The run ended by normal operator close before five minutes; DHCP no longer shortened the window. No full E00/E01 or DNAS success is implied.
+
 ## Authority and classification
 
 - Raw capture files are the authoritative record of observed bytes and packet/stream boundaries.

@@ -1,6 +1,6 @@
 # E00-N01 — one contained network-startup test
 
-Prepared 2026-10-28. **PREPARED / NOT RUN.** This card specifies one cold start to qualify guest addressing, DNS visibility and the next bootstrap blocker. No guest, capture, listener or network configuration was started or changed during preparation. Existing [R01–R03 controls](../interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md) remain complete within their offline scope.
+Prepared 2026-10-28; subsequently collected and reviewed that local date. **NETWORK QUALIFICATION PASS for one run; full E00 not automatically closed.** [Result and evidence](../interpretations/eqoa-frontiers-us-e00-n01-20261029-001.md) record actual guest IPv4, DNS exchanges and DNAS Error (-611). No runtime changes occurred during the original preparation; the later captured run was explicitly authorized. Existing [R01–R03 controls](../interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md) remain complete within their separate offline scope. The procedure below is retained as the planned test; actual deviations are in the result.
 
 ## Scope and address plan
 

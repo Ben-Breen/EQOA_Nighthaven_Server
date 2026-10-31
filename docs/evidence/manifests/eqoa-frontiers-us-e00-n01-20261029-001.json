@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e00-n01-20261029-001",
+  "experiment_id": "E00-N01",
+  "session_id": "E00-N01-20261029T004029603Z",
+  "collected_local_date": "2026-10-28",
+  "timezone": "America/Chicago",
+  "reviewed_at_utc": "2026-10-29T00:48:35Z",
+  "source_kind": "pcsx2",
+  "runtime_profile": "frontiers-us-eeee1fcc-pcsx2-lab-n01-tap-local-dns",
+  "client_identity_manifest": "eqoa-frontiers-us-static-20261025.json",
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_card_sha256": "661a35e06f53d6dc53035da527bdd9346035d2b1e942be8558eb21713c273f6a",
+    "source_bios_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "iso_bytes": 3056386048,
+    "dns_helper_sha256": "e9a18b141f18d9b2b9d74aeef6cb057efe0e85e840bd039e15e19ecf0797a146",
+    "runner_sha256": "09888590bf99971bfa51e87b1edf8633370b5d609f117e49b1242eb682f9d0bc",
+    "baseline_ini_sha256": "ab589a9dc5e761eb0a49ad5cc7fdd02100ea48ae17b593bc39e5e13e819b3012"
+  },
+  "observation_scope": "Frontiers SLUS-20744/EEEE1FCC in PCSX2 2.8.2.0 with an operator-modified card; no physical-hardware or other-revision generalization.",
+  "classification_vocabulary": "CONFIRMED — client/protocol observations below are bounded to this runtime profile; source/configuration observations remain separate.",
+  "raw_registry": {
+    "location": "operator-controlled EFS RawEvidence directory outside Git; session ID resolves exact local path",
+    "session_result_sha256": "ae3e1615db776e18766768516ebf2102217495465ad1006388f5434cad5eb95f",
+    "input_manifest_sha256": "686cbb81dd829f84846806b493a461f7fe057accbf3676fbc582b5df56fa02bc",
+    "run_result_sha256": "a71f9bc969de364c891fc3739b585feaa3d4e91cd891d1f48942e8c0f69b0313",
+    "timeline_sha256": "6e13f80d1be3674d259de2de0d499eed22e5fd88bb7d51109e7c77c3cd9bc758",
+    "dns_proof_sha256": "075ced5fb93cdc26413ccfd7ea4ccbe520778aee36f7e3083fdaa7636e3be797",
+    "dns_query_log_sha256": "3023da402a700dd98f792449c91f9c5d21c3b532b8c00e42d18ffbee7469ff3d",
+    "raw_files": 58,
+    "unencrypted_files": 0,
+    "committed": false
+  },
+  "collection": {
+    "result": "COLLECTED_PENDING_REVIEW",
+    "normal_operator_close": true,
+    "forced_exit": false,
+    "capture_ready_utc": "2026-10-29T00:40:59.6374107Z",
+    "emulator_running_utc": "2026-10-29T00:41:01.0657574Z",
+    "dhcp_log_observed_utc": "2026-10-29T00:42:35.1999216Z",
+    "finished_utc": "2026-10-29T00:44:01.0540263Z",
+    "network_timer_basis": "first observed DHCP-send log; proxy, not exact UI activation",
+    "timing_limits": "Helper UTC, raw packet timestamps, emulator relative logs and screenshot file-write UTC; no complete button-input timeline or independently measured clock error."
+  },
+  "capture": {
+    "tool": "Windows PktMon",
+    "tool_version": "10.0.19041.3636 (WinBuild.160101.0800)",
+    "component_id": 1,
+    "link_type": 1,
+    "boundary": "TAP component; internal DHCP is evidenced semantically in emulator logs, not assumed present in raw TAP frames.",
+    "transport": "Ethernet ARP and IPv4/UDP including DNS; no account/game application transport established",
+    "source_endpoint": "198.18.0.2 (planned lab guest; adoption confirmed by observed packets)",
+    "destination_endpoint": "198.18.0.1:53 (lab resolver); 5.161.217.188:53 attempted on TAP with no external delivery",
+    "recorded_frames": 35,
+    "frame_catalog": {"host_multicast_udp": 3, "arp": 8, "guest_dns_questions": 16, "local_dns_refused_replies": 8},
+    "session_context": "one cold start; no established EQOA account/game session",
+    "direction": "guest-to-lab resolver and replies; host-origin frames distinguished in review",
+    "raw_packet_bytes_published": false,
+    "files": [
+      {
+        "path": "N01/capture1.etl",
+        "bytes": 167772160,
+        "sha256": "af00650e4951e33908d53f7f2b9125acb03b63d15d12eb788121956424eb1e8e"
+      },
+      {
+        "path": "N01/capture1.pcapng",
+        "bytes": 5916,
+        "sha256": "9f850f81317fc55f9442da859dc765977d5b5894fc62dde9954ac897e21831e3"
+      },
+      {
+        "path": "N01/capture2.etl",
+        "bytes": 9945,
+        "sha256": "f079a2aed4907f59fc4fe19bf286f81a75a7e26f5b8204f61cb4369ab3bb3bdc"
+      },
+      {
+        "path": "N01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      }
+    ]
+  },
+  "screen_observations": [
+    {
+      "artifact_id": "N01-screen-01",
+      "file_write_utc": "2026-10-29T00:42:17.0414802Z",
+      "sha256": "6e90e1a20f1b2c315fb3536ffc64011f6ffd6149465c14e555736ca78bf5ac34",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Play menu",
+      "scope": "this emulator/client/card run; timestamp is screenshot write, not exact transition"
+    },
+    {
+      "artifact_id": "N01-screen-02",
+      "file_write_utc": "2026-10-29T00:42:24.2400058Z",
+      "sha256": "c39315c8963fc055a6dabb6d3514edbfe61ef1745ced3e974d14f873bc894419",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "saved network configuration EQOA 2",
+      "scope": "this emulator/client/card run; timestamp is screenshot write, not exact transition"
+    },
+    {
+      "artifact_id": "N01-screen-03",
+      "file_write_utc": "2026-10-29T00:43:15.7661474Z",
+      "sha256": "5f001fffdd84fb7a967876dc62086efd39c3172e1c5ae5106b2da69eb58d233c",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "DNAS Authentication: Connecting",
+      "scope": "this emulator/client/card run; timestamp is screenshot write, not exact transition"
+    },
+    {
+      "artifact_id": "N01-screen-04",
+      "file_write_utc": "2026-10-29T00:43:36.1928269Z",
+      "sha256": "87d0ddb4555c33310dcf819e2a54820a5971fe8fb88b143ae2341b73a72c3517",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "DNAS Error (-611)",
+      "scope": "this emulator/client/card run; timestamp is screenshot write, not exact transition"
+    },
+    {
+      "artifact_id": "N01-screen-05",
+      "file_write_utc": "2026-10-29T00:43:43.5331826Z",
+      "sha256": "8cb5c4adc4c7e03ec61d41ffac847f1f31a91860efbca18f04fc2d33649d55b4",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "return to Play menu",
+      "scope": "this emulator/client/card run; timestamp is screenshot write, not exact transition"
+    }
+  ],
+  "emulator_log_sha256": "5e2f560b50d479176c8fc61b5749b17730360a5ba3486292fa54ff80fc3d30c2",
+  "observations": [
+    {
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "this profile/run",
+      "fact": "Guest-source IPv4 and DNS exchanges use 198.18.0.2 and TAP resolver 198.18.0.1."
+    },
+    {
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "this profile/run",
+      "fact": "Four PTR questions for 2.0.18.198.in-addr.arpa and four A questions for gate1.us.dnas.playstation.org received REFUSED responses from the local deny-recursion resolver."
+    },
+    {
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "this profile/run",
+      "fact": "Client screenshots show DNAS Authentication Connecting, then DNAS Error (-611)."
+    },
+    {
+      "classification": "CONFIRMED — client/protocol",
+      "scope": "this profile/run",
+      "fact": "The guest alternated DNS questions between 5.161.217.188:53 and 198.18.0.1:53 despite DHCP ACK logs advertising only the lab resolver. Eight questions went to each destination; only the lab destination has recorded replies. Endpoint-selection origin remains UNKNOWN."
+    },
+    {
+      "classification": "INFERRED",
+      "scope": "this profile/run",
+      "fact": "Denied name resolution is the immediate observed network blocker associated with the DNAS-stage error; a controlled differential is needed to establish causation and the next protocol step."
+    },
+    {
+      "classification": "UNKNOWN",
+      "fact": "Successful DNAS behavior, resolved original service address, post-resolution transport/bytes, required compatibility mechanism, account/game exchanges and hardware/revision differences."
+    }
+  ],
+  "restoration": {
+    "guest_stopped": true,
+    "temporary_dns_console_stopped": true,
+    "original_windows_dns_service": "Stopped, matching entry state",
+    "original_dns_settings_preserved": true,
+    "physical_adapters_restored": true,
+    "ini_fail_closed": true,
+    "bitlocker_enabled_or_changed": false
+  },
+  "review": {
+    "interpretation_record": "../interpretations/eqoa-frontiers-us-e00-n01-20261029-001.md",
+    "decoder": "read-only pcapng/Ethernet/ARP/IPv4/UDP/DNS review v1 plus independent log and screenshot correlation; not an EQOA codec",
+    "status": "network qualification reviewed; full E00 gate not automatically closed",
+    "manifest_references_checked": 84,
+    "size_or_hash_mismatches": 0,
+    "raw_capture_structure": "35 Ethernet frames in capture1; capture2 empty; valid/untruncated packet records; converter drops 0 and PktMon reports no events lost.",
+    "e00_complete": false,
+    "e01_experiment_complete": false
+  },
+  "redaction": {
+    "raw_artifacts_modified": false,
+    "excluded": [
+      "MAC/operator/machine identifiers",
+      "private absolute paths",
+      "credentials/tokens and DNS auth configuration",
+      "packet payload bytes",
+      "client/BIOS/card bytes",
+      "raw logs/screenshots"
+    ],
+    "transformation": "Allowlisted fingerprints, lab endpoints, observed query metadata and independent screen-state summaries only. No packet fixture created.",
+    "publication_status": "new working-tree evidence documentation; not committed or pushed by this run"
+  }
+}

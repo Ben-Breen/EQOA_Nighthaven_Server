@@ -2,7 +2,7 @@
 
 Checkpoint date: 2026-10-25. Previous documentation review: d63bea28b198620bc2a1dfa44ae3640dfb84a5e6. Pass #5 has begun; Pass #6 and protocol implementation have not begun.
 
-Latest review: 2026-10-28 (America/Chicago). Three offline-control repetitions are now collected and reviewed; full E00 remains incomplete. Earlier sections retain their dated checkpoint context.
+Latest review: 2026-10-30 (America/Chicago). Two N02 **offline clean-card collections** are reviewed alongside N01: an earlier setup/address-mismatch control and a corrected-DNS run under a five-minute policy. The N01/N02 comparison is complete within its bounded scope; full E00 remains incomplete. The earlier proposed online-host repetitions are a different scope and remain unrun. Earlier sections retain their dated checkpoint context.
 
 ## Current result
 
@@ -49,6 +49,26 @@ All three show EULA, the saved PS2 network configuration **EQOA 2** and a later 
 
 The helper recorded full restoration at `01:20:20Z`; the later recovery attempt made no changes and incorrectly threw on an already-restored state. That reporting bug was corrected locally and isolated branch/syntax checks passed; no guest rerun is needed for it. The latest review confirms PCSX2 closed, fail-closed INI and administratively enabled physical adapters. Technitium now reports Stopped, differing from the earlier restoration observation; the intervening cause is UNKNOWN. No current network/service state was changed during this review.
 
+## N01 corrected-address/DNS result — 2026-10-28 local time
+
+[N01 result](evidence/interpretations/eqoa-frontiers-us-e00-n01-20261029-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e00-n01-20261029-001.json) register session `E00-N01-20261029T004029603Z`. The run closed normally with five screenshots; all 84 manifest file references match hashes/sizes and all 58 raw files report EFS encryption. Guest IPv4 `198.18.0.2` and bidirectional local DNS are established for this emulator profile. The capture also shows queries to the legacy DNS address, with no external reply; the effective selection mechanism is UNKNOWN. Local DNAS-associated hostname queries received REFUSED, and the client displayed DNAS Error (-611). This identifies an E01 research target, not a successful DNAS exchange or a proven bypass requirement. Temporary DNS, capture, INI and adapter states were restored. Earlier failed attempts remain separate and do not count as repetitions.
+
+## 2026-10-29 online-host containment qualification
+
+The operator requested two unattended repetitions while keeping the laptop online. A [synthetic host-resolver test](evidence/interpretations/e00-online-host-resolver-boundary-20261029.md) first checked the proposed executable-only firewall boundary: both positive controls produced five TAP-local DNS queries, and the firewall-blocked phase also produced five. This is a host-runtime counterexample to that boundary, not a client/protocol fact or an external-delivery observation. Cleanup was recorded and checked; Wi-Fi remains up, PCSX2 is closed with networking disabled, and the temporary rules were removed. N02/N03 were not started. Stronger online-host containment remains a prerequisite; no DNAS/game implementation or architectural change follows from this result.
+
+## 2026-10-30 earlier N02 clean-card collection
+
+[Earlier N02 result](evidence/interpretations/eqoa-frontiers-us-e00-n02-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e00-n02-20261031-001.json) register `E00-N02-20261031T025049800Z`. The clean seed was cloned to the disposable working card; the source remained unchanged and the mount stayed stable. Six F8 images, guest IPv4, seven PTR questions and three local REFUSED replies are recorded. Queries went to `192.18.0.1` as well as intended `198.18.0.1`. The operator reports running the EQOA Frontiers in-game network configuration tool during capture, entering settings from memory. The exact saved DNS field is not decoded. The first-DHCP timer therefore cannot be equated to the later Play/profile activation.
+
+The 90-second network-phase limit closed the guest normally. All 85 top-level manifest references (106 checks including embedded run references) match; all 58 session raw files remain EFS encrypted with restricted Allow ACLs. All 416 adapter samples during capture show both physical adapters Down; capture preceded launch and restoration passed. Prior pre-boot failures and the interrupted card-switch attempt remain separate. This is a scoped collection, not a same-profile N01 repetition, successful DNAS exchange or completed E01. No further run was started.
+
+## Later October 30 N02 — corrected DNS and comparison
+
+The later [manifest](evidence/manifests/eqoa-frontiers-us-e00-n02-20261031-002.json) registers `E00-N02-20261031T031431295Z`. The operator requested a five-minute window or earlier normal close. A separate v3 lab bundle passed 74 offline regression tests and removed the DHCP-based stop condition; existing isolation/recovery checks were retained. This run closed normally before the 300-second maximum. Eight screenshots, 30 frames, 89 top-level reference checks (112 including embedded run references), 60 encrypted restricted raw files and 350 safe capture-interval adapter samples are reviewed.
+
+The [N01/N02 comparison](evidence/interpretations/e00-n01-n02-comparison-20261030.md) shows the latest N02 queried only `198.18.0.1`, asking both the PTR and DNAS-associated A question; N01 also queried the legacy resolver. Both received eight local REFUSED replies and reached DNAS Error (-611). The corrected-DNS run does not establish a successful DNAS exchange or a single-variable cause. The earlier N02 control is preserved, the seed remains unchanged, the mount stayed stable and restoration passed. No additional live run followed.
+
 ## Current gate state
 
 | Gate or experiment | State | Reason |
@@ -56,9 +76,12 @@ The helper recorded full restoration at `01:20:20Z`; the later recovery attempt 
 | Architecture Gate #2 | PASS carried forward | No architecture changes in this checkpoint. |
 | Evidence Acquisition Gate | OPEN | Static evidence and reviewed offline-control collection registered; further targeted observation remains necessary. |
 | E00 offline control R01–R03 | COMPLETE, scoped control only | Repetitions, integrity and screen/packet review complete; normal online startup and all-flow visibility are not established. |
-| E00 | PARTIAL / NOT COMPLETE | Required DNS/all-flow coverage and normal destinations remain unestablished; exact input timeline and acquisition provenance are incomplete. |
-| E01 | NOT RUN | Depends on E00 baseline and a controlled network/capture path. |
+| E00-N01 network qualification | PASS, one run | Guest address adoption and DNS exchange captured; client reaches the DNAS screen. Internal DHCP remains semantic-log evidence. |
+| October 29 proposed online-host N02/N03 | NOT RUN / BLOCKED | Separate from the later offline clean-card N02. Executable-only resolver containment failed; a stronger boundary is required for an online host. |
+| E00-N02 offline clean-card collection/comparison | COMPLETE, scoped observations only | Earlier setup control plus corrected-DNS run retained separately; latest run has stable working card, eight images and DNAS-stage DNS/error. No DNAS success or causal proof. |
+| E00 | PARTIAL / NOT COMPLETE | N01 qualification and separate N02 clean-card evidence do not satisfy three unchanged-profile cold starts. Timing, acquisition provenance and capture blind spots remain limitations. |
+| E01 | NOT RUN as a dedicated experiment | N01 supplies DNS/DNAS-screen observations and a concrete next target; it does not complete the ordered E01 timeline/differential. |
 | E02–E11 | NOT RUN | Existing sequence and prerequisites remain in force. |
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
-Next: execute the prepared [E00-N01 contained network-startup card](evidence/experiments/E00-N01-contained-startup.md) only after the operator authorizes its bounded DNS/network changes and one captured boot. The plan uses TAP host/DNS `198.18.0.1`, guest `198.18.0.2/24`, explicit nonzero DHCP settings and existing DNS/DHCP logging. It includes permitted traffic, stop timers, capture limits and rollback; preparation changed no runtime settings and produced no new capture. Preserve the completed controls; a changed-profile qualification run does not automatically close full E00. Proceed by investigating the next observed blocker toward E01, rather than broad speculative research or an instrumentation framework. DNAS compatibility remains open; no game service, database or wire implementation is introduced.
+Next: use the comparison to plan a controlled post-resolution E01 observation, preserving the refusal baseline and separately versioning/hash-recording a prepared working-card input. Address the applicable E00 acceptance requirements before executing E01. Do not automatically repeat a run or choose a DNAS bypass. No additional boot, game service, database or wire implementation is authorized by this evidence review.

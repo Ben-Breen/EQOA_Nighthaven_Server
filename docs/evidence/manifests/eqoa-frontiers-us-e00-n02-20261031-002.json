@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e00-n02-20261031-002",
+  "experiment_id": "E00-N02",
+  "session_id": "E00-N02-20261031T031431295Z",
+  "collected_local_date": "2026-10-30",
+  "timezone": "America/Chicago",
+  "reviewed_at_utc": "2026-10-31T03:22:43.5991876Z",
+  "source_kind": "pcsx2",
+  "runtime_profile": "frontiers-us-eeee1fcc-pcsx2-clean-seed-n02",
+  "client_identity_manifest": "eqoa-frontiers-us-static-20261025.json",
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_card_sha256": "f499d9b44baaa772b8c284f48b2ef5e421f8716140c1c9790ec08af0e197f9ee",
+    "source_card_name": "E00-N02-Clean-Seed.ps2",
+    "working_card_name": "EQOA-E00-active.ps2",
+    "source_bios_sha256": "f4c948e61a291d4b3f92a141e550cf8357204287a31ff784caccbedaef910c9d",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "iso_bytes": 3056386048,
+    "dns_helper_sha256": "70a2ab5bf5612bff7c21a1484ac6621c151b081683daf133a48466c6372353d7",
+    "runner_sha256": "2b74aabce7b7257d7fdd9f59b7f054c42d6e47aacf627518aa1cb565ad842a2f",
+    "baseline_ini_sha256": "fae1406134fef40831234e186f3c3e1b60ab88ab2309a65d754f795d3d6e3919",
+    "source_preserved": true,
+    "memory_card_mount_changed_midrun": false,
+    "clean_label_limit": "Operator-designated clean seed; hash identifies input, not proof of pristine historical content."
+  },
+  "observation_scope": "SLUS-20744/EEEE1FCC in PCSX2 2.8.2.0; no physical PS2 or cross-revision generalization.",
+  "operator_context": {
+    "network_profile_created_during_capture": true,
+    "method": "EQOA Frontiers in-game network configuration tool",
+    "source": "Operator-approved in-game setup to set lab DNS; packets verify the observed resolver destination.",
+    "configuration_entered_from_memory": null,
+    "expected_dns": "198.18.0.1",
+    "unexpected_observed_dns": null,
+    "exact_saved_field_mapping": "UNKNOWN; saved network-profile fields not decoded in this pass."
+  },
+  "collection": {
+    "result": "COLLECTED_PENDING_REVIEW",
+    "forced_exit": false,
+    "stop_reason": "NORMAL_OPERATOR_CLOSE",
+    "capture_ready_utc": "2026-10-31T03:15:02.2664934Z",
+    "emulator_running_utc": "2026-10-31T03:15:03.692694Z",
+    "first_dhcp_log_observed_utc": "2026-10-31T03:18:27.0371945Z",
+    "finished_utc": "2026-10-31T03:18:51.6180876Z",
+    "run_limit_seconds": 300,
+    "network_phase_limit_seconds": null,
+    "normal_operator_close": true,
+    "network_timer_basis": "DHCP is diagnostic only; deadline is 300 seconds from launch or earlier normal close.",
+    "repeat_of_n01": false
+  },
+  "capture": {
+    "tool": "Windows PktMon",
+    "tool_version": "10.0.19041.3636 (WinBuild.160101.0800)",
+    "component_id": 101,
+    "boundary": "TAP component, with host noise; internal DHCP remains semantic-log evidence.",
+    "recorded_frames": 30,
+    "frame_catalog": {
+      "arp": 6,
+      "local_dns_refused_replies": 8,
+      "guest_dns_questions": 8,
+      "host_udp": 8
+    },
+    "guest_source": "198.18.0.2",
+    "dns_destinations": [
+      "198.18.0.1:53"
+    ],
+    "question": "2.0.18.198.in-addr.arpa PTR (4); gate1.us.dnas.playstation.org A (4)",
+    "unexpected_destination_question_count": 0,
+    "lab_question_count": 8,
+    "lab_refused_reply_count": 8,
+    "dnas_name_questions_recorded": 4,
+    "guest_tcp_frames": 0,
+    "guest_non_dns_ipv4_frames": 0,
+    "conversion_packet_drops": 0,
+    "pktmon_events_lost": 0,
+    "coverage_limit": "These counts concern this bounded capture, not every possible client/emulator flow.",
+    "files": [
+      {
+        "path": "N02/capture1.etl",
+        "bytes": 150994944,
+        "sha256": "00ece926788f5cf76e44db9bd276d5bfd8ef6e42d45206910ca33e6b807d1e0b"
+      },
+      {
+        "path": "N02/capture1.pcapng",
+        "bytes": 6016,
+        "sha256": "b407d4ff0c63948cee8354739383618afcc8390c518d667f61c8e7dd101675e4"
+      },
+      {
+        "path": "N02/capture2.etl",
+        "bytes": 9838,
+        "sha256": "b2843ec6dc661b3da7aa4c2fc596713a372a6ef62e7641bd936539340306b03e"
+      },
+      {
+        "path": "N02/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      }
+    ]
+  },
+  "raw_registry": {
+    "location": "Operator-controlled EFS RawEvidence outside Git; session ID resolves exact local directory.",
+    "raw_files": 60,
+    "all_efs": true,
+    "allow_acl": "operator and SYSTEM only",
+    "top_level_manifest_references_verified": 89,
+    "references_including_embedded_run_verified": 112,
+    "mismatches": 0,
+    "committed": false,
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 20678,
+        "sha256": "679876997e8614388334caa05646350c80038050f3d8fbe12573cfca36c0b27e"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 5471,
+        "sha256": "f7b76905d9ca9c45b8f87b11e4608b3d9fa086a785748137afdf807e6464ae9c"
+      },
+      {
+        "path": "N02/run-result.json",
+        "bytes": 5986,
+        "sha256": "2b8246ad4647ef75881cf10d9e65116fcff8bcebce27f8f896dd2f076a3541d8"
+      },
+      {
+        "path": "timeline.jsonl",
+        "bytes": 15947,
+        "sha256": "9ac565980c3a7133fd4184daf8b1635be12b5ba6cb69021bdf0054cff8c4f4c2"
+      },
+      {
+        "path": "dns-proof.json",
+        "bytes": 1155,
+        "sha256": "412adf908ddfe082a9cd70e63c9199d28c6eb4757de361d36904979d94f52a92"
+      },
+      {
+        "path": "dns-query-logs/2026-10-31.log",
+        "bytes": 3364,
+        "sha256": "e8244c25a961ddee08a71163a7b95e9f882f87375113f0e3f86cc1f6b53ab61e"
+      },
+      {
+        "path": "N02/live-output/logs/emulog.txt",
+        "bytes": 69989,
+        "sha256": "4e8e6b60a5af656e5036f8650fa24d61b1c83fbc0d8aa940abf6a23c21046a12"
+      }
+    ]
+  },
+  "isolation_observation": {
+    "observer_artifact_id": "N02-Authorization-20261031T031425870Z",
+    "files": [
+      {
+        "path": "authorization.json",
+        "bytes": 1195,
+        "sha256": "1c9b2f543965769bb3ac7012394543499d908139c12994a197f208a6bf0ae421"
+      },
+      {
+        "path": "adapter-transitions.jsonl",
+        "bytes": 269025,
+        "sha256": "8b686443b82f03c7df77526f22b162e20cb3fce9c47abe0751eda5ebc3dcc7f7"
+      }
+    ],
+    "sample_count": 411,
+    "samples_during_capture": 350,
+    "unsafe_or_missing_samples_during_capture": 0,
+    "maximum_sample_gap_seconds": 1.3249,
+    "physical_adapters": "Both administratively Down in every capture-interval sample; restored afterward.",
+    "scope": "Sampled physical-link state and existing routing guards, not proof of all-flow/hardware coverage."
+  },
+  "screen_observations": [
+    {
+      "artifact_id": "N02-screen-01",
+      "file_write_utc": "2026-10-31T03:15:53.0154583Z",
+      "sha256": "04eff1e21febbd5c587a8518c76ceaceb986d877068cf682a4d4c099235b5560",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "User agreement / software license, I Accept highlighted",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    },
+    {
+      "artifact_id": "N02-screen-02",
+      "file_write_utc": "2026-10-31T03:18:17.1618638Z",
+      "sha256": "9c6eb734c76377ee45bf972991b448f75344370e600cbb6db129d72815cf3e61",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "EQOA 2 / SCE-Ethernet network profile selection",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    },
+    {
+      "artifact_id": "N02-screen-03",
+      "file_write_utc": "2026-10-31T03:18:21.2932404Z",
+      "sha256": "e8d73be601ae4d4e1df6e8f9f3c93abc05eadf6b5b18088e9f34b196f2f9efc4",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "SCE-Ethernet Connecting",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    },
+    {
+      "artifact_id": "N02-screen-04",
+      "file_write_utc": "2026-10-31T03:18:27.6672553Z",
+      "sha256": "8c54525077202472656d48ece69469e333684257399954a5ee1b85710faf379b",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "SCE-Ethernet Connected",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    },
+    {
+      "artifact_id": "N02-screen-05",
+      "file_write_utc": "2026-10-31T03:18:34.2168176Z",
+      "sha256": "03558635843ea9c13401f7327b71783e474a8dddb05a3d2e2ea4b30ebb76ff05",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "Initializing Network",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    },
+    {
+      "artifact_id": "N02-screen-06",
+      "file_write_utc": "2026-10-31T03:18:37.2388176Z",
+      "sha256": "adf632bd4bd76696ac3c1b2fd581e1b44915618cf7b480a73a320e3ba46cca02",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "DNAS Authentication Connecting",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    },
+    {
+      "artifact_id": "N02-screen-07",
+      "file_write_utc": "2026-10-31T03:18:38.0526406Z",
+      "sha256": "7fe5fe698696cdbf5bf36cf6352bb9d63ef293f3e6be4dd3083f99488a2ddbec",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "DNAS Authentication Connecting, second image",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    },
+    {
+      "artifact_id": "N02-screen-08",
+      "file_write_utc": "2026-10-31T03:18:39.5363897Z",
+      "sha256": "532d504d010bae895af333f0b63392ccda08da49b3e3bcace1ed6cccaab9453e",
+      "classification": "CONFIRMED — client/protocol",
+      "observation": "DNAS Error (-611)",
+      "scope": "This PCSX2/client/card run; write time is not exact UI transition time."
+    }
+  ],
+  "decoding": {
+    "reviewer": "Codex",
+    "method": "Read-only offline pcapng/Ethernet/IPv4/UDP/DNS decoding, corroborated by DEV9 and local DNS logs; eight native F8 images visually inspected.",
+    "decoder": {
+      "path": "inspect_e00_capture.py",
+      "bytes": 5792,
+      "sha256": "0ab07d03f7913847f9303a37d0fd73d12d9d4bba9d0c28dbe6c0f22e7cfc859e"
+    },
+    "raw_authoritative": true,
+    "redaction": "No raw bytes, screenshots, card/BIOS/game data, MACs, operator SID, credentials or private filesystem paths imported. Raw files preserved.",
+    "fixture_created": false
+  },
+  "restoration": {
+    "guest_stopped": true,
+    "ini_fail_closed": true,
+    "dns_restored": true,
+    "physical_adapters_restored": true
+  },
+  "acceptance": {
+    "scoped_clean_card_collection": "COMPLETE_WITH_LIMITATIONS",
+    "full_e00": "PARTIAL",
+    "e01": "NOT RUN as dedicated experiment",
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_gate": "OPEN",
+    "protocol_implementation_gate": "CLOSED",
+    "next": "N01/N02 comparison is complete within its documented scope. Plan a controlled post-resolution/DNAS observation only after a separate approved plan and applicable gate review; retain the earlier N02 setup control."
+  }
+}
