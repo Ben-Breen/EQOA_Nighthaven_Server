@@ -51,3 +51,7 @@ Nighthaven requires relational persistence, but the backend remains provisional.
 
 Backend and schema implementation are intentionally deferred until the relevant architecture and protocol/client decisions, including durable-state requirements for the first supported slice, are sufficiently established and one relational backend is selected. The reference schema is evidence for that server only, not an authoritative EQOA schema or a Nighthaven schema.
 
+
+## Authorized disposable MySQL storage experiment
+
+The operator subsequently requested a test schema for accounts and character-creation storage. [MySQL lab scripts](../tools/DatabaseLab/mysql/README.md) supply an independently authored, empty `nighthaven_test` scaffold. This authorizes the narrow storage experiment; production schema/backend selection and adapters remain deferred. The scripts do not implement authentication, verified client character creation or resolve the post-update transition. Live execution/verification must be recorded separately; script authoring is not evidence that tables exist.
