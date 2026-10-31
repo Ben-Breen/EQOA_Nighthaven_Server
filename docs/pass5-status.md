@@ -115,3 +115,7 @@ Next: identify the post-update program/resource selection and transition failure
 ## October 31 loader tracing preparation — no launch
 
 [Box1 tracing plan](evidence/experiments/E01-Box1-loader-tracing.md) registers private EFS staging and a disabled debugger recipe. Console/file logging and targeted pause checkpoints replace reliance on developer-only trace channels or the empty memory-log handler. 16 private artifacts, unchanged source fingerprints and five synthetic preparation checks are verified. Active profiles remain unchanged; no emulator or capture was started. Actual breakpoint import/hits remain NOT RUN. The next separately approved guided comparison must validate tracing at entry before Play; no new lab run or broader implementation is authorized. Gate states above are unchanged.
+
+## October31 operator-driven Box1 observation
+
+[Result](evidence/interpretations/eqoa-frontiers-us-box1-trace-20261031-001.md): after a stopped UI-helper attempt, the operator drove a separately authorized run without a session timer and reports account login. Three updater exchanges match the prior reference semantically. The emulator log records a later TCP9735 connection attempt, outside the TCP7000 capture filter. Actual loader checkpoints/filenames remain unverified. Capture stopped; deferred INI restoration was completed and all ten original source fingerprints match. No further lab run occurred; E01 remains PARTIAL.

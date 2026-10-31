@@ -48,3 +48,7 @@ For a hit, record UTC, current PC/ra/sp/a0–a3/v0–v1, active CRC, checkpoint 
 6. Close normally, stop only owned capture, preserve artifacts, restore exact original Box1 INI and prove source cards/patch/BIOS and Nighthaven profile unchanged. Keep the changed working card separately; never promote it into the original silently.
 
 **Runtime validation remains NOT RUN:** actual debugger import, breakpoint hits, filename interpretation and post-update cause. Preparation does not authorize a later lab run or open broad protocol implementation. Acceptance for the next comparison is a supported entry/return/program-source observation around the transition, correlated with screens and HTTP, rather than merely reaching login again.
+
+## Subsequent attempts, 2026-10-31
+
+[Operator-driven result](../interpretations/eqoa-frontiers-us-box1-trace-20261031-001.md): first attempt stopped on UI-helper failures; the explicitly reauthorized manual run had no time limit and reached account login per operator report. TCP7000 capture and a later9735 diagnostic-log attempt were collected, but breakpoint hits and post-update filenames remain UNKNOWN. Deferred INI restoration was completed and verified afterward. This does not complete loader tracing or authorize another run.
