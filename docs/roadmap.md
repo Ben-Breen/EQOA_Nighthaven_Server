@@ -49,6 +49,27 @@ After the standard creation and world-entry path is proven, a separate future ex
 - Add combat/abilities with server-authoritative domain tests; then chat, groups, quests and administrative tooling.
 - Maintain per-feature protocol coverage and migration/data provenance.
 
+## Observability & Operations
+
+### Deferred: read-only server/service health dashboard
+
+**Status: DEFERRED.** Implement the probes, public status API and dashboard only after the relevant auth/login, gateway, world-instance and selected database components exist and expose verifiable health/readiness telemetry. This requirement does not change the current evidence/protocol gates or the first-playable priority.
+
+Following Axiom's operational philosophy, the system must expose enough state to distinguish healthy, degraded, unavailable and unknown without requiring an operator to guess.
+
+**Acceptance criteria when implementation is activated:**
+
+1. **Status semantics:** Show green **Operational**, yellow **Degraded**, red **Unavailable**, and gray **Unknown** or **Maintenance**, using text labels as well as dots/colors. Unknown and maintenance have distinct labels; unimplemented or unobserved components cannot appear operational. A planned maintenance designation is separate from measured health and retains any measured result alongside the notice.
+2. **Independent probes:** Evaluate auth/login, gateway, each world instance, and database dependencies independently, using safe functional/readiness checks appropriate to each component. Process liveness, an open port, or a successful website request alone cannot establish service readiness.
+3. **Availability scopes:** Show website/status-hosting health separately from game-backend health, and login availability separately from gateway and per-world availability. Partial outages remain visible; a working website or successful login cannot imply that world entry/play is available.
+4. **Timestamps and freshness:** Include UTC observation/publication timestamps and the last successful check for each component. Document and configure freshness limits; missing, expired or unreachable telemetry becomes **Unknown** within the defined limit. Retained last-known results are timestamped and explicitly historical, never presented as current green status.
+5. **Measured thresholds and hysteresis:** Derive and document operational/degraded/unavailable thresholds from measured readiness, latency and error-rate baselines. Specify probe cadence, timeouts, failure and recovery counts/windows, and bounded detection/recovery times. Test failure/recovery hysteresis so transient failures do not cause status flapping or indefinitely mask sustained outages.
+6. **Sanitized public API:** Serve an allowlisted, read-only status contract containing public component/world identifiers, states, timestamps, notices and available aggregate population. Exclude credentials, private addresses/endpoints, account/session/player details, raw errors and internal diagnostics. Keep probe/management interfaces private and expose no control actions through the dashboard or public API.
+7. **Per-world population:** Display aggregate population for each world where reliable telemetry exists, with its observation time and freshness handling. Missing, stale or unsupported counts are explicitly unknown/unavailable, distinguishable from a measured zero; counts do not establish world readiness.
+8. **Dashboard resilience:** The dashboard remains loadable and useful during game-backend or telemetry outages, using bounded requests and explicit unavailable/unknown states. Clearly label retained historical data and status-fetch failures instead of failing the whole page or displaying stale green status.
+9. **Incident and maintenance notices:** Display notices with affected services/worlds, incident or planned-maintenance labels, UTC start/end times where known, and last-update timestamps. Keep notices distinguishable from probe-derived states and visible during backend outages.
+10. **Operational tests:** Demonstrate independent/partial service failures, database dependency loss, degraded latency/error rates, probe timeouts, missing/stale telemetry, failure/recovery hysteresis, and recovery. Verify all state labels/colors, API sanitization and absence of control actions, unknown versus zero population, incident/maintenance notices, and dashboard behavior during backend/status-API outages before acceptance.
+
 ## Acceptance gates
 
 1. Every supported message has a field-level source/capture reference and parser/serializer coverage.
