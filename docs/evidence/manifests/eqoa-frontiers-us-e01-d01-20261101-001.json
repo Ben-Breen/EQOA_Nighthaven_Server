@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-d01-20261101-001",
+  "experiment_id": "E01-D01",
+  "session_id": "E01-D01-20261101T135950501Z",
+  "collected_local_date": "2026-11-01",
+  "timezone": "America/Chicago",
+  "reviewed_at_utc": "2026-11-01T14:22:23.445969+00:00",
+  "repository_base": "c7b5fb516f1af35273140de63df4ad7febfdcb96",
+  "profile": "Frontiers US EEEE1FCC; PCSX2 2.8.2.0; original prepared card; diagnostic candidate D01",
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "source_card_sha256": "e859bee1de08dcaa861c1f29aca1396f4a3f7b0a847eadc1a1d7243779d4c393",
+    "patch_sha256": "215e132fa20f2fdb2f5950bf3f1ad64f4860342c606387660aedcb676162754a",
+    "runner_sha256": "8425ed773df892beaaf53c54ddb159091437d6d655a1816ab85fb3b588bf67cb",
+    "listener_script_sha256": "417af74e01b78b712ba7116eb3dda7b3b82e0202064453caade5f27a3515dd85"
+  },
+  "authorization": "One explicitly requested isolated diagnostic run; operator present for UAC/guest/debugger steps; operator-close policy, temporary offline containment and restoration. No automatic retry.",
+  "review": {
+    "experiment": "E01-D01",
+    "session_id": "E01-D01-20261101T135950501Z",
+    "authorization_id": "E01-D01-Authorization-20261101T135949710Z",
+    "local_date": "2026-11-01",
+    "outcome": "POST-UPDATE TARGET NOT REACHED; useful pre-update diagnostic evidence; preserve harness INVALID_OR_BLOCKED label",
+    "artifact_references_verified": 85,
+    "frames": 32,
+    "tcp_frames": 8,
+    "tcp_destination": "198.18.0.1:443",
+    "syn_only": true,
+    "application_bytes": 0,
+    "updater_result": "NO_CLIENT",
+    "account_probe_result": "NO_CLIENT",
+    "diagnostic_calls_observed": 33,
+    "state_samples": 2603,
+    "state_records": 16,
+    "static_loader_observation": "SUPPORT, MCERR, SETUP disc fallbacks and successful image processing/module initialization logged; Station and Client module slots/calls remain unpopulated.",
+    "operator_report": "DNAS Connecting; operator manually paused/resumed debugger then closed normally.",
+    "checkpoint_hits_confirmed": false,
+    "exact_wait_pc": "UNKNOWN",
+    "root_cause": "UNKNOWN",
+    "instrumentation_risk": "Diagnostic redirect at original 00101F60 precedes UTIL allocation at00101F6C. Logging/stdio allocation or timing may disturb fixed-address compatibility patches; not proved as this cause. Baseline DNAS instruction words were not sampled.",
+    "next_design_requirement": "Do not activate tracing before the working DNAS patch is verified in memory; preserve pre-UTIL startup. No443 service or automatic retry.",
+    "isolation_samples": 1298,
+    "physical_admin_up_samples": 0,
+    "rollback_status": "ROLLBACK_VERIFIED_NO_BOOT",
+    "rollback_utc": "2026-11-01T14:16:42.4545044Z"
+  },
+  "validation": {
+    "diagnostic_patch_tests": 8,
+    "observer_in_memory_tests": 8,
+    "harness_regressions": 110,
+    "source_preserved": true,
+    "scope": "No resource/loader import, credentials, authentication protocol or server functionality added."
+  },
+  "raw_registry": {
+    "location": "Restricted EFS RawEvidence outside Git",
+    "authorization_artifact_id": "E01-D01-Authorization-20261101T135949710Z",
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 20326,
+        "sha256": "49e33ca77aa1fef68bed35698951249570c718e655699869f44a1d0f6d3e26e0"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 7438,
+        "sha256": "203a89a1634d78d9d683710c3295a5f0480923eb2cb8bfbd7b832e2092e37bf0"
+      },
+      {
+        "path": "E01/capture1.pcapng",
+        "bytes": 9656,
+        "sha256": "a5adf5a133f4c0779351665f85dd5773b3c0a35bbbfb39ba94e4e2887b8c4a07"
+      },
+      {
+        "path": "E01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      },
+      {
+        "path": "E01/live-output/logs/emulog.txt",
+        "bytes": 44218,
+        "sha256": "cb6d85bce443d9799be987b8e5ef5a4f6b2509ee686042c788e3983101395ffa"
+      },
+      {
+        "path": "E01/live-output/debugger-settings/SLUS-20744_EEEE1FCC.json",
+        "bytes": 3445,
+        "sha256": "319a9164c90972b528effb6ed2818e6a7df41cb2af51b2c52275b0cf0de28a5d"
+      },
+      {
+        "path": "E01/listener-result.json",
+        "bytes": 867,
+        "sha256": "4d2290e0cea3937f90660226182b8858ebd6bc4f6eedfb7f6a2ad3ccb010ded7"
+      },
+      {
+        "path": "E01/account-probe/result.json",
+        "bytes": 412,
+        "sha256": "47ed5e3cfac850867a365cd5c8519da9366009bbbf6922501de127616c8412a9"
+      },
+      {
+        "path": "rollback-verification.json",
+        "bytes": 610,
+        "sha256": "d7dbf39ffba1ca840bf30e20801f76f0bda7f390908b81b2f12bf9cadeedaf00"
+      },
+      {
+        "path": "d01-review.json",
+        "bytes": 1636,
+        "sha256": "0e554134e90886764e0a70ea2d1ecdb5dd2d85a24fbac444c57c0f217fd886a1"
+      },
+      {
+        "path": "review-inventory.json",
+        "bytes": 13014,
+        "sha256": "2ff6f37795c771d981d162d67f2528472fc108763c23e6bfb45cb1daae8e2743"
+      },
+      {
+        "path": "reviewed-tools/EEEE1FCC.pnach",
+        "bytes": 6365,
+        "sha256": "215e132fa20f2fdb2f5950bf3f1ad64f4860342c606387660aedcb676162754a"
+      },
+      {
+        "path": "reviewed-tools/candidate-audit.json",
+        "bytes": 3085,
+        "sha256": "55000941c4422a1faf98f89f8dafda0cc0d31530fb6eaeba6c6eebd7c8468629"
+      }
+    ],
+    "authorization_files": [
+      {
+        "path": "adapter-transitions.jsonl",
+        "bytes": 514610,
+        "sha256": "2ac4db0184bfcd3ba1cf453b105f539946ed8871ba28a08d20aaf704c6b5e1ff"
+      },
+      {
+        "path": "authorization.json",
+        "bytes": 2193,
+        "sha256": "00ee69bca7dfd682d84fa25a54fd915152b5a16a2f5e8bcc5d7321cddbeca16c"
+      },
+      {
+        "path": "loader-watch.jsonl",
+        "bytes": 12534,
+        "sha256": "e6e87d523a61cf5f65c0ed7be1bba33d8d5b785ca4805ac942895ff7656a4edb"
+      },
+      {
+        "path": "loader-watch.jsonl.result.json",
+        "bytes": 269,
+        "sha256": "40f18023d34ac1ffdbed4a3eadb46c34a91967584aebeca5ecf4373a224f5ac8"
+      },
+      {
+        "path": "observer-stop.txt",
+        "bytes": 4,
+        "sha256": "6c45cb72a36e63d522aa54ed8adbd7a29a989474f2f77e0458af8800564ef3cb"
+      }
+    ]
+  },
+  "classification": "CONFIRMED \u2014 client/protocol for scoped traffic; CONFIRMED \u2014 reference for original/static diagnostic code; causal explanations INFERRED/UNKNOWN",
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e01": "PARTIAL",
+    "protocol_implementation": "CLOSED for broad server functionality"
+  }
+}
