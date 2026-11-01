@@ -119,3 +119,7 @@ Next: identify the post-update program/resource selection and transition failure
 ## October31 operator-driven Box1 observation
 
 [Result](evidence/interpretations/eqoa-frontiers-us-box1-trace-20261031-001.md): after a stopped UI-helper attempt, the operator drove a separately authorized run without a session timer and reports account login. Three updater exchanges match the prior reference semantically. The emulator log records a later TCP9735 connection attempt, outside the TCP7000 capture filter. Actual loader checkpoints/filenames remain unverified. Capture stopped; deferred INI restoration was completed and all ten original source fingerprints match. No further lab run occurred; E01 remains PARTIAL.
+
+## October31 P01 — ready9735 probe receives no connection
+
+[Result](evidence/interpretations/eqoa-frontiers-us-e01-p01-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-p01-20261031-001.json): unchanged updater plus guest-only receive-only9735 probe; operator-close run without a guest timer. Updater responses delivered; probe reports NO_CLIENT/zero bytes; all30 captured TCP frames use7000. Operator reports Loading without login, with no images. All102 references and independent two-port rollback verification pass. Cause remains UNKNOWN; next action is client loading/transition mapping, not speculative authentication. No retry occurred; existing broad gates remain unchanged.

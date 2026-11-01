@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-p01-20261031-001",
+  "experiment_id": "E01-P01",
+  "collected_local_date": "2026-10-31",
+  "timezone": "America/Chicago",
+  "session_id": "E01-P01-20261101T013233809Z",
+  "reviewed_at_utc": "2026-11-01T01:38:49.356700+00:00",
+  "profile": "Frontiers US EEEE1FCC; PCSX2 2.8.2.0; same prepared N02 card and guarded Nighthaven PNACH as U02",
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "source_card_sha256": "e859bee1de08dcaa861c1f29aca1396f4a3f7b0a847eadc1a1d7243779d4c393",
+    "patch_sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82",
+    "runner_sha256": "d16eaa2b4cc88260959755f065b366d48ccda7e6ef1f981bb333c9e26ddf541c",
+    "listener_script_sha256": "a61b59ddda11f05172994f15402cb1bd668cdafd4258f67b92d973affd09092b",
+    "account_probe_sha256": "4412dc902b8a32f26ac3b2bad2143c5b9f7615c98158cf443379efc561c43441"
+  },
+  "authorization": "Explicit request for isolated lab transition test with receive-only9735 alongside updater; operator-close policy, temporary offline containment and restoration. No credentials requested.",
+  "probe": {
+    "result": "NO_CLIENT",
+    "stopped": true,
+    "listener_closed": true,
+    "client_closed": true,
+    "bytes_received": 0,
+    "application_bytes_sent": 0,
+    "bind_address": "198.18.0.1",
+    "port": 9735,
+    "remote_address": null,
+    "error": null,
+    "cleanup_errors": [],
+    "stop_reason": "OPERATOR_STOP"
+  },
+  "probe_ready": {
+    "utc": "2026-11-01T01:33:26.8613998Z",
+    "same_process_as_updater": true,
+    "metadata_limitation": "Ready JSON retains stale maximum_accept_seconds300; source accept-deadline condition was removed for operator-close run. Not treated as a measured timeout."
+  },
+  "updater": {
+    "responses": [
+      {
+        "name": "Nighthaven-empty-distribution-v1",
+        "bytes": 307,
+        "sha256": "fc3dd9c20882f8d74e99d622ae83d37f37da89f7da03b1eae184a0b9f79efd05"
+      },
+      {
+        "name": "Nighthaven-changes-v1",
+        "bytes": 118,
+        "sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07"
+      },
+      {
+        "name": "Nighthaven-changes-v1",
+        "bytes": 118,
+        "sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07"
+      }
+    ],
+    "application_bytes_sent": 543,
+    "changed_from_u02": false
+  },
+  "capture": {
+    "frames": 47,
+    "tcp_frames": 30,
+    "tcp_server_ports_observed": [
+      7000
+    ],
+    "tcp9735_frames": 0,
+    "account_payload_bytes": 0,
+    "scope": "TAP raw packets plus emulator semantic logs; complete intercepted traffic/hardware coverage not claimed."
+  },
+  "screen": {
+    "source": "Operator report: Loading screen but did not reach account login",
+    "image_count": 0,
+    "classification": "INFERRED; no independent image confirmation"
+  },
+  "conclusion": {
+    "classification": "INFERRED",
+    "statement": "Making lab9735 available did not move this environment to account transport. Investigate post-update client loading/transition; no authentication response can be derived from an absent exchange.",
+    "cause": "UNKNOWN",
+    "login_goal_complete": false
+  },
+  "validation": {
+    "harness_tests": 110,
+    "updater_tests": 19,
+    "probe_loopback_tests": 10,
+    "dual_listener_loopback_tests": 1,
+    "artifact_checks": {
+      "session": 66,
+      "run": 29,
+      "input": 7
+    },
+    "total_artifact_checks": 102,
+    "mismatches": 0
+  },
+  "raw_registry": {
+    "location": "Restricted EFS RawEvidence outside Git",
+    "session_files": 67,
+    "authorization_files": 3,
+    "all_efs_operator_system_only": true,
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 22590,
+        "sha256": "ba0264fbb1519949e680e64bbdbfd6dce2cc5366d33f9082eadf09d7de25434d"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 7102,
+        "sha256": "841588a678151d503259f70f3f5f4a9b5514aa67e5a9cd4593fe517998ca8ed5"
+      },
+      {
+        "path": "E01/run-result.json",
+        "bytes": 6710,
+        "sha256": "fc67dfde25d4a4b1aa59f61ba1fa3928e5e2e35870dd532cfadad2bae3e10a23"
+      },
+      {
+        "path": "E01/listener-result.json",
+        "bytes": 2843,
+        "sha256": "61beb4a53e80f880a0f3db340207c28159032e2295bb64cfe79895c4c08eb08d"
+      },
+      {
+        "path": "E01/account-probe/ready.json",
+        "bytes": 341,
+        "sha256": "55748f367bcbe747bec042baa11c2d1306cc66c88e446740e7f24819ce7eaad6"
+      },
+      {
+        "path": "E01/account-probe/result.json",
+        "bytes": 412,
+        "sha256": "4bb5ebfecca29c71b8941156a3b4de7b6647226f88e4a3a6f9cf87958bb33472"
+      },
+      {
+        "path": "E01/capture1.pcapng",
+        "bytes": 7252,
+        "sha256": "946e196798c2348db94d21ceeae06ce1f2dae43a9cea34de81628f76b26c0ed2"
+      },
+      {
+        "path": "E01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      },
+      {
+        "path": "E01/live-output/logs/emulog.txt",
+        "bytes": 38989,
+        "sha256": "57f60054a030ae914332965c51e041eaca0302fe76705412eeebb6336da7911d"
+      }
+    ]
+  },
+  "rollback": {
+    "result": "ROLLBACK_VERIFIED_NO_BOOT",
+    "verification_utc": "2026-11-01T01:36:50.5089689Z",
+    "verification_sha256": "99f5a9f8bfe987d26ee901f1383f33127739450d318f96a50b34dfd407082a1f",
+    "both_ports_queried_absent": [
+      7000,
+      9735
+    ],
+    "original_profile_sources_dns_and_adapters_restored": true,
+    "additional_boot": false
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e01": "PARTIAL",
+    "protocol_implementation": "CLOSED for broad functionality; disposable probe only"
+  },
+  "redaction": {
+    "raw_payloads_assets_private_paths_mac_sid_secrets_imported": false
+  }
+}
