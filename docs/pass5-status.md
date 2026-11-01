@@ -106,7 +106,7 @@ The [independent lab responder](../tools/ProtocolEvidenceLab/E01BootstrapRespond
 | October 29 proposed online-host N02/N03 | NOT RUN / BLOCKED | Separate from the later offline clean-card N02. Executable-only resolver containment failed; a stronger boundary is required for an online host. |
 | E00-N02 offline clean-card collection/comparison | COMPLETE, scoped observations only | Earlier setup control plus corrected-DNS run retained separately; latest run has stable working card, eight images and DNAS-stage DNS/error. No DNAS success or causal proof. |
 | E00 | PARTIAL / NOT COMPLETE | N01 qualification and separate N02 clean-card evidence do not satisfy three unchanged-profile cold starts. Timing, acquisition provenance and capture blind spots remain limitations. |
-| E01 | PARTIAL; four lab observations and one external reference reviewed | Independent candidate reaches Writing game data then black screen. Login and post-update cause remain unresolved; no account-service connection observed. |
+| E01 | PARTIAL; account-login goal unresolved | Independent updater reaches the post-update loading stage. R01 does not establish that its resource change applied; no lab account-service connection observed. |
 | E02–E11 | NOT RUN | Existing sequence and prerequisites remain in force. |
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
@@ -123,3 +123,9 @@ Next: identify the post-update program/resource selection and transition failure
 ## October31 P01 — ready9735 probe receives no connection
 
 [Result](evidence/interpretations/eqoa-frontiers-us-e01-p01-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-p01-20261031-001.json): unchanged updater plus guest-only receive-only9735 probe; operator-close run without a guest timer. Updater responses delivered; probe reports NO_CLIENT/zero bytes; all30 captured TCP frames use7000. Operator reports Loading without login, with no images. All102 references and independent two-port rollback verification pass. Cause remains UNKNOWN; next action is client loading/transition mapping, not speculative authentication. No retry occurred; existing broad gates remain unchanged.
+
+## October 31 R01 — offline comparison and resource-only hypothesis
+
+[Review](evidence/interpretations/eqoa-frontiers-us-e01-r01-20261031-001.md) and [manifest](evidence/manifests/eqoa-frontiers-us-e01-r01-20261031-001.json): original bootstrap distinguishes Station and Client calls; the published loader hook is at the Client wrapper. Allocated card-directory inspection confirms replacement files in the frozen reference environment and their absence in the lab comparison baseline. One explicitly requested resource-only candidate adds three guarded data writes, retaining the prior DNAS/resolver instructions and updater/probe behavior. No loader or resource was imported.
+
+The operator reports Loading followed by a memory-card loading box; login is not established. The capture has56 frames/31 TCP frames, all server7000; account probe NO_CLIENT.441 bounded emulator samples observe neither the assumed old filename nor its replacement: candidate effect INCONCLUSIVE, not a negative applied-patch result. Unknown bytes were hash-only; future private instrumentation preparation corrects that limitation while preserving the tested runner.95 references, restricted EFS storage and independent three-port/profile rollback verify. No automatic second run. Next: resolve the actual Station resource address/token before another candidate; broad gates stay unchanged.

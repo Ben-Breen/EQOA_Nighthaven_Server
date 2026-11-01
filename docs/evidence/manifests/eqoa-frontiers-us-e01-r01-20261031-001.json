@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-e01-r01-20261031-001",
+  "experiment_id": "E01-R01",
+  "collected_local_date": "2026-10-31",
+  "timezone": "America/Chicago",
+  "session_id": "E01-R01-20261101T020048844Z",
+  "reviewed_at_utc": "2026-11-01T02:10:40.992213+00:00",
+  "repository_base": "e2c757534b6a5311709db3eef7bd08c4ce325cf7",
+  "profile": "Frontiers US EEEE1FCC; PCSX2 2.8.2.0; same prepared card as P01; R01 guarded resource-only hypothesis",
+  "input_identity": {
+    "exe_sha256": "982c7c62600a999cf15a25c18349426166c785e7867b2fcc5018d733245b71a3",
+    "iso_sha256": "4b87d3571917b779198504b7454c11fd842c838ac8335aaafe609cc1bce4702a",
+    "source_card_sha256": "e859bee1de08dcaa861c1f29aca1396f4a3f7b0a847eadc1a1d7243779d4c393",
+    "patch_sha256": "d712ff9a8f7e4b6696859a7339e6765a3a6723ea1ffcfe5638901e8eaf585b7d",
+    "runner_sha256": "1d58e8168a49d1074adaeaf5f8f8682444b4a0b33f69163aaeb528037ffcdb19",
+    "listener_script_sha256": "6b0d720786e615d1f3787248f33986a44134b62acfd883a5b7e21b5f8f067e16",
+    "account_probe_sha256": "4e9e8717a47dbd5a7587ccda0ba2d34906d71047c87df1b803f321bb8737d949"
+  },
+  "authorization": "User requested a focused candidate test and confirmed presence for one R01 isolated captured run; temporary offline containment, operator-driven guest, bounded read-only local filename observation and restoration; no credentials or automatic retry.",
+  "candidate": {
+    "classification": "INFERRED",
+    "new_data_word_writes": 3,
+    "unchanged_instruction_writes": 28,
+    "new_guards": 7,
+    "expected_old_filename": "UNKNOWN hypothesis /station.pak followed by NUL",
+    "replacement": "STATION.PAK followed by NUL",
+    "address": "003635A0; published placement not established for this lab module",
+    "effect": "NOT ESTABLISHED",
+    "loader_or_resource_imported": false
+  },
+  "observer": {
+    "read_only": true,
+    "port": 28121,
+    "bind_required": "127.0.0.1",
+    "bytes_per_sample": 13,
+    "samples": 441,
+    "observations": 6,
+    "applied_token_observed": false,
+    "original_token_observed": false,
+    "error": null
+  },
+  "observer_limitation": "Unexpected samples were hash-only. No actual filename can be read back from those records alone; frozen run preserved, future uninstalled preparation retains bounded raw bytes privately.",
+  "capture": {
+    "frames": 56,
+    "tcp_frames": 31,
+    "tcp_server_ports": [
+      7000
+    ],
+    "server_payload_bytes": 543,
+    "client_payload_bytes": 220
+  },
+  "updater": {
+    "changed_from_p01": false,
+    "responses": [
+      {
+        "response_name": "Nighthaven-empty-distribution-v1",
+        "response_bytes": 307,
+        "response_sha256": "fc3dd9c20882f8d74e99d622ae83d37f37da89f7da03b1eae184a0b9f79efd05",
+        "response_write_complete": true
+      },
+      {
+        "response_name": "Nighthaven-changes-v1",
+        "response_bytes": 118,
+        "response_sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07",
+        "response_write_complete": true
+      },
+      {
+        "response_name": "Nighthaven-changes-v1",
+        "response_bytes": 118,
+        "response_sha256": "1b13bd2e084f64910817bdb7bcab9e0dc40ffbf7e1fd664b69ba4857fc03ec07",
+        "response_write_complete": true
+      }
+    ]
+  },
+  "account_probe": {
+    "result": "NO_CLIENT",
+    "stopped": true,
+    "listener_closed": true,
+    "client_closed": true,
+    "bytes_received": 0,
+    "application_bytes_sent": 0,
+    "error": null
+  },
+  "visual": {
+    "operator_report": "Loading screen plus a memory-card loading box afterward",
+    "screenshots": 0,
+    "account_login_confirmed": false
+  },
+  "validation": {
+    "resource_guard_tests": 7,
+    "baseline_instruction_tests": 7,
+    "observer_in_memory_tests": 8,
+    "harness_regressions": 110,
+    "recorded_artifact_references_verified": 95,
+    "private_session_files_checked_efs_acl": 86,
+    "private_authorization_files_checked_efs_acl": 5,
+    "sampled_guest_interval_adapter_records": 223,
+    "physical_admin_up_samples": 0,
+    "observer_error_samples": 0,
+    "rollback_status": "ROLLBACK_VERIFIED_NO_BOOT",
+    "rollback_utc": "2026-11-01T02:06:20.5094169Z",
+    "restored_profile_sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea",
+    "temporary_ports_absent": [
+      7000,
+      9735,
+      28121
+    ]
+  },
+  "raw_registry": {
+    "location": "Operator-only EFS RawEvidence outside Git; session and authorization IDs resolve locally",
+    "files": [
+      {
+        "path": "session-result.json",
+        "bytes": 22592,
+        "sha256": "6eb342885d47053e5ad5876b4a457b4ac6091794505c4a4dcd9ea6d791ec677e"
+      },
+      {
+        "path": "recovery-plan.json",
+        "bytes": 888,
+        "sha256": "789b6dbb6b1e0be0ca7bd4da5dd1cead06198dfbe3e5383e2f99035c7b3a375e"
+      },
+      {
+        "path": "timeline.jsonl",
+        "bytes": 37718,
+        "sha256": "5d11241a5c6f02cdc30f89662999523a2f8292ea4bbfc59fb607928a15017e0b"
+      },
+      {
+        "path": "inputs/input-manifest.json",
+        "bytes": 7241,
+        "sha256": "1b44be1860eef4b1cda84d7731b0f0ebe7e425fe019d8b472c66a83eb0e60acf"
+      },
+      {
+        "path": "inputs/ini-original.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "inputs/ini-baseline-template.ini",
+        "bytes": 10582,
+        "sha256": "f0e50f3843e285510ba573d7b8efd670d2a7669fff56f3cd1c940e74d2672e46"
+      },
+      {
+        "path": "inputs/ini-restoration-failclosed.ini",
+        "bytes": 10207,
+        "sha256": "926d6f3a67a9a6cf08ceb855bf23b0ae4b68e0f871326dd93096ac4fbb6651ea"
+      },
+      {
+        "path": "E01/run-result.json",
+        "bytes": 6711,
+        "sha256": "c52a19690ceb22e8f7dd22b1a13c5e5200eaeac61e0c016f0b3ff61c763ca46e"
+      },
+      {
+        "path": "E01/capture1.pcapng",
+        "bytes": 13200,
+        "sha256": "fe5e8d492caad04b8ff1b1ae2b1ad82f43784d8ef3792375977d625355f0c59a"
+      },
+      {
+        "path": "E01/capture2.pcapng",
+        "bytes": 152,
+        "sha256": "5a2374f610fb9373dab2d9447f6b30405b3c479821015728737e8ecbb088142f"
+      },
+      {
+        "path": "E01/live-output/logs/emulog.txt",
+        "bytes": 39456,
+        "sha256": "1d5fadcb1f3ba4372f9733ef8155c7707080deffef545a31b78c062008ebde0c"
+      },
+      {
+        "path": "E01/listener-ready.json",
+        "bytes": 323,
+        "sha256": "d74dbfbf90769c7e644bbe62927764d2c16f1dd3bb0cbe08dfae3fad7a077be6"
+      },
+      {
+        "path": "E01/listener-result.json",
+        "bytes": 2844,
+        "sha256": "b85320c821ab99ed4af7889d3741790c9d3279a55f556f735a5a5baabc15494a"
+      },
+      {
+        "path": "E01/account-probe/result.json",
+        "bytes": 412,
+        "sha256": "e0b73f036c6586112a832c79ec1cb9a8dc3ddf9242f5ac4b15621c9f28990be0"
+      },
+      {
+        "path": "E01/card-output.ps2",
+        "bytes": 8650752,
+        "sha256": "f2a8f9ab221e8a0f61e864f64a23e276e2988b2bf6e32d7a696eedcdf4988b9f"
+      },
+      {
+        "path": "rollback-verification.json",
+        "bytes": 610,
+        "sha256": "d14315b2cf58b1211c963753fcaf7b517caee8dac9089ecf55967bcc9a8fb256"
+      },
+      {
+        "path": "r01-review.json",
+        "bytes": 1120,
+        "sha256": "50685888b88395c0687d94bfd8065d10ad7bd69e7c711d2d38e84196a1173047"
+      },
+      {
+        "path": "review-inventory.json",
+        "bytes": 13436,
+        "sha256": "20730c015ee29728e2bd4f9fe19c5f9d3f86e4583527020dbb4fe0cb12e05380"
+      },
+      {
+        "path": "reviewed-tools/R01-ResourceWatch.ps1",
+        "bytes": 5950,
+        "sha256": "457f447918240f8daec9b391fb3cc60d373f890f6363af2120b84b52fd4213f1"
+      },
+      {
+        "path": "reviewed-tools/EEEE1FCC.pnach",
+        "bytes": 2968,
+        "sha256": "d712ff9a8f7e4b6696859a7339e6765a3a6723ea1ffcfe5638901e8eaf585b7d"
+      }
+    ],
+    "authorization_artifact_id": "E01-R01-Authorization-20261101T020048467Z",
+    "authorization_files": [
+      {
+        "path": "adapter-transitions.jsonl",
+        "bytes": 127894,
+        "sha256": "6da9cf5ece66bafb9565b77d8e7d839053497c6162b39b57573751f4011c9c47"
+      },
+      {
+        "path": "authorization.json",
+        "bytes": 1900,
+        "sha256": "defe43a8668b5271a08b74057878a5cb83ac978237f7ba737e023b3551a118bd"
+      },
+      {
+        "path": "observer-stop.txt",
+        "bytes": 4,
+        "sha256": "6c45cb72a36e63d522aa54ed8adbd7a29a989474f2f77e0458af8800564ef3cb"
+      },
+      {
+        "path": "resource-watch.jsonl",
+        "bytes": 1248,
+        "sha256": "0191e23bd1e375eb5119a3fa19422c4279d2795e036aa1ba41e2cc31dbbc1ff9"
+      },
+      {
+        "path": "resource-watch.jsonl.result.json",
+        "bytes": 440,
+        "sha256": "73bf6e7232e98e93e9834e13e24b3c1a2b86d4e9d35be962dc10b2d8474e0349"
+      }
+    ]
+  },
+  "interpretation": {
+    "classification": "UNKNOWN",
+    "outcome": "INCONCLUSIVE for candidate effect; collection complete; login goal incomplete",
+    "next_action": "Identify actual Station resource token/address and prove candidate application before another behavior variant; no unchanged repeat."
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e01": "PARTIAL",
+    "protocol_implementation": "CLOSED for broad server functionality"
+  }
+}
