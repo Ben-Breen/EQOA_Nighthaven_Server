@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "artifact_id": "eqoa-frontiers-us-account-endpoint-static-20261101-001",
+  "artifact_kind": "STATIC_ANALYSIS_NOT_CAPTURE",
+  "reviewed_local_date": "2026-11-01",
+  "timezone": "America/Chicago",
+  "reviewed_at_utc": "2026-11-01T17:15:46.733084+00:00",
+  "repository_base": "c9398a388950f27f52a7486ad703cd7ed2f214c2",
+  "scope": "Offline original-media metadata, pinned public reference analysis, synthetic tool tests and uninstalled gated diagnostic preparation.",
+  "original_media": {
+    "bootstrap_sha256": "40909bc57f83be237a5dbbaef1ca935c98188fddfa4ffc715039e1d3307fdcd2",
+    "util_sha256": "86574f608d78b84716cab41a6c246c0cbbb80e8d17091df950024145f4b387a0",
+    "station_pack_sha256": "cbde2c3bbe637ddcf6c39c71cd362e8f855f60181a39cde802bf45b51ded44d1",
+    "station_pack_bytes": 82094,
+    "complete_records": 25,
+    "host_entries": [
+      {
+        "entry": "stationdata/servers/stationLiveHosts.txt",
+        "bytes": 20,
+        "numeric_ipv4_syntax": true,
+        "port": 9735,
+        "original_host_value_omitted": true
+      }
+    ],
+    "alternate_hosts_present": false,
+    "resources_extracted": false,
+    "media_modified": false
+  },
+  "bootstrap_evidence": {
+    "resolver_export": "00124AE8",
+    "resolver_replacement_start": "00124B18",
+    "pre_replacement_numeric_branch_present": false,
+    "util_unresolved_imports": [
+      "sceInetCreate",
+      "sceInetName2Address",
+      "sceInetOpen"
+    ],
+    "module_registry_export": "0016DA10"
+  },
+  "matching_reference": {
+    "repository": "DabDavis/eqoa-decomp",
+    "commit": "e803a6abd9b038c758603dc0f236561906d5530b",
+    "matched_list_claim_checked": [
+      "LoadServers__20VIWndGenericRenderer",
+      "AddServers__20VIWndGenericRendererPCc",
+      "Connect__12VIStationAPI",
+      "Connect__15VITCPConnectionPCci",
+      "IsConnected__15VITCPConnection",
+      "Open__9TCPSocket",
+      "IsOpen__9TCPSocket"
+    ],
+    "independently_compared_to_operator_station_image": false,
+    "source_code_imported": false,
+    "analysis_station_base": "002B6A80",
+    "station_main_offset": "00000100",
+    "unnamed_resource_data_offset": "000ACB20",
+    "exact_data_symbol_to_filename_mapping": "UNKNOWN"
+  },
+  "native_reference": {
+    "repository": "DabDavis/eqoa-rust-client-vanilla",
+    "commit": "42e41f8a6f01f688d9468115a8c1d0945df6b539",
+    "adaptations_excluded_from_original_client_claims": [
+      "Saved native server override of original hosts file",
+      "First-received-data asynchronous connection readiness"
+    ]
+  },
+  "conclusions": {
+    "classification": "CONFIRMED \u2014 reference for static evidence; runtime implications INFERRED/UNKNOWN",
+    "original_reference_path": "host source -> host:port parser -> API choose -> connection -> sceInetName2Address -> create/open",
+    "numeric_host_automatically_bypasses_patch": false,
+    "actual_station_import_binding": "UNKNOWN",
+    "actual_runtime_util_station_bases": "UNKNOWN; registry not captured",
+    "original_reference_connect_requires_application_greeting": false,
+    "first_screen_timing": "UNKNOWN",
+    "extra_account_endpoint_patch_justified": false,
+    "443_response_implemented": false
+  },
+  "registry_preparation": {
+    "header_bytes": 8,
+    "entry_bytes": 12,
+    "maximum_slots": 1024,
+    "xor_check": "31415926",
+    "maximum_snapshot_bytes": 12296,
+    "offline_decoder_tests": 7,
+    "runtime_snapshot_taken": false
+  },
+  "diagnostic_preparation": {
+    "experiment": "E01-D02-preparation",
+    "status": "OFFLINE PREPARATION; NOT RUN; no launcher or active profile changed",
+    "baseline_sha256": "94c406a3a4a6106d7cacc65af8b41d8aaae734da51ca05fa9ec42787bd101a82",
+    "candidate_sha256": "f2e746ffd3a712449cf5f837b92c75eceb7d6c2f4fff28990fae58e2f82fea53",
+    "baseline_prefix_byte_exact": true,
+    "diagnostic_guards": 135,
+    "diagnostic_writes": 33,
+    "maximum_skip": 167,
+    "checks_all_baseline_words": 28,
+    "purpose": "Do not replace early printf until actual expected DNAS/resolver words and unchanged fingerprints exist.",
+    "limits": [
+      "Runtime readiness and actual UTIL placement still require observation",
+      "Does not prove behavior-neutral diagnostics",
+      "Later modules must be located dynamically",
+      "No new endpoint redirection or443 response",
+      "Do not treat this preparation as permission for a live run"
+    ]
+  },
+  "local_tool_provenance": [
+    {
+      "local_artifact": "build_d02_gated_diagnostics.py",
+      "bytes": 2173,
+      "sha256": "7be2f31d53baab2c5054917a5e7d0a64ebeed1902a7b3fba3337dd364de5955a"
+    },
+    {
+      "local_artifact": "test_d02_gated_diagnostics.py",
+      "bytes": 2345,
+      "sha256": "bc62dd4fdb7d3d947c823213b3e5578423c42fba2d488ca8615af90d0a503946"
+    },
+    {
+      "local_artifact": "module_registry.py",
+      "bytes": 1444,
+      "sha256": "016144f5d6c57117bd63384dd95726209775417fb852af878fef3e5733b961dc"
+    },
+    {
+      "local_artifact": "test_module_registry.py",
+      "bytes": 1649,
+      "sha256": "752beeff9dae17ad59d95018656ee927387a4fa87098e2fdfb88258b025b024e"
+    },
+    {
+      "local_artifact": "candidate-d02/EEEE1FCC.pnach",
+      "bytes": 8818,
+      "sha256": "f2e746ffd3a712449cf5f837b92c75eceb7d6c2f4fff28990fae58e2f82fea53"
+    },
+    {
+      "local_artifact": "candidate-d02/audit.json",
+      "bytes": 905,
+      "sha256": "79811423672f15e8bf74c5ac47d2ad66b2d6c5a8cea8dfa7566903e7c430e8c5"
+    }
+  ],
+  "validation": {
+    "diagnostic_gate_tests": 8,
+    "registry_tests": 7,
+    "baseline_prefix_unchanged": true,
+    "prior_candidate_unchanged": true
+  },
+  "execution": {
+    "guest_started": false,
+    "listener_started": false,
+    "capture_started": false,
+    "profile_modified": false,
+    "network_configuration_changed": false,
+    "live_run_authorized_by_preparation": false
+  },
+  "gates": {
+    "architecture_gate_2": "PASS carried forward",
+    "evidence_acquisition": "OPEN",
+    "e01": "PARTIAL",
+    "protocol_implementation": "CLOSED for broad server functionality"
+  }
+}
