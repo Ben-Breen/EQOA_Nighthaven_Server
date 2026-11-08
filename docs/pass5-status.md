@@ -163,3 +163,7 @@ In `E01-A04-20261108T180211602Z`, the passive observer again derived Station bas
 The [A05 review](evidence/interpretations/e01-a05-login-parser-20261108.md) records a synthetic known-value control followed by a captured isolated Frontiers run. Station Init returned zero. The loose-file parser returned null for the login-page request. TAP showed TCP/7000 only and the account probe saw no client. The lab was restored before the separate Box1 comparison. Next isolate the archive open and lookup result.
 
 The [Box1 comparison](evidence/interpretations/e01-box1-server-selection-20261108.md) reached server selection by operator report. Process-attributed network metadata shows TCP/9735 with receive activity before the first observed send, followed later by bidirectional UDP/10071. These event sizes do not establish message boundaries. Box1 closed normally and its original INI and source-card hashes matched afterward.
+
+## November 8 A06 — archive lookup miss observed
+
+The [A06 review](evidence/interpretations/e01-a06-station-archive-miss-20261108.md) records successful Station Init, a null archive lookup, a null loose login-page parse and a black screen. The exact-token guard did not match at the proposed data address, so the candidate made no guest change. The account probe saw no client, and the lab was restored. Move the next guard to the actual file-open call and retain its return.
