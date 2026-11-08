@@ -147,3 +147,7 @@ Original bootstrap registry routines provide a bounded way to locate actual load
 ## November 8 A01 — Station binding observed; no account connection
 
 The [A01 review](evidence/interpretations/e01-a01-station-binding-20261108.md) records the isolated run with the unchanged v1 patch and passive observer. UTIL and all 28 words were verified before Play. The updater exchanged the prior response bytes, and Station loaded and linked its expected resolver/socket calls. The final screenshot is black. The TAP capture contains no TCP/9735 attempt and the account probe reports NO_CLIENT. A shutdown race left the harness result INVALID_OR_BLOCKED, with intact partial evidence and verified restoration. The v9 fix passed offline tests. E01 remains PARTIAL. Next isolate Station entry and the login-resource open/return path before changing endpoint or response behavior.
+
+## November 8 A03 — live Station return points verified
+
+The [A03 review](evidence/interpretations/e01-a03-station-checkpoints-20261108.md) records the loaded Init and login-resource return PCs, including `0x002B6C98` for Init at the observed Station base. Two manual pauses left no recorded EE PC or register value. The resource outcome remains UNKNOWN. TAP again showed only the updater TCP traffic. Normal closure and restoration verified. The next measurement is an automatic pause at the live-validated Init return with EE PC and `v0` captured together.
