@@ -1,6 +1,6 @@
 # E00 first baseline and E01 handoff
 
-Status: THREE OFFLINE-CONTROL RUNS COLLECTED AND REVIEWED; E00 PARTIAL / NOT COMPLETE. [Collection review and remaining gaps](../interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md). An uncaptured preparation boot is excluded from R01–R03. Candidate profile: [Frontiers US isolated PCSX2](../profiles/frontiers-us-eeee1fcc-pcsx2-lab.md). Follow the existing [E00–E11 plan](../../protocol-evidence-plan.md); this card does not reorder or close its gates.
+Status as of 2026-11-08: **E00 complete for the contained, unpatched N01 profile.** The [closeout](../interpretations/e00-n01-baseline-closeout-20261108.md) records three comparable N01 cold starts and the capture-coverage review. The earlier [R01–R03 offline controls](../interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md) remain separate. Profile: [Frontiers US isolated PCSX2](../profiles/frontiers-us-eeee1fcc-pcsx2-lab.md). The following sections preserve their dated checkpoint context.
 
 ## Setup and preflight
 

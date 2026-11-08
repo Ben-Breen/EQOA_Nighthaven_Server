@@ -1,6 +1,6 @@
 # Candidate profile: Frontiers US / EEEE1FCC / isolated PCSX2
 
-Status: E00 PARTIAL; three earlier offline controls and the N01 network qualification reviewed. Separate clean-card N02 variants and their limitations are registered in the [N01/N02 comparison](../interpretations/e00-n01-n02-comparison-20261030.md); they do not establish unchanged-profile repeatability for this modified-card profile. Source set: [static manifest](../manifests/eqoa-frontiers-us-static-20261025.json). Runtime evidence: [earlier control review](../interpretations/eqoa-frontiers-us-e00-offline-20261028-001.md) and [N01 result](../interpretations/eqoa-frontiers-us-e00-n01-20261029-001.md).
+Status: **E00 complete for the contained, unpatched N01 profile**, with three comparable cold starts and coverage limits recorded in the [closeout](../interpretations/e00-n01-baseline-closeout-20261108.md). The earlier offline controls and [N02 clean-card variants](../interpretations/e00-n01-n02-comparison-20261030.md) remain separate. Source set: [static manifest](../manifests/eqoa-frontiers-us-static-20261025.json).
 
 | Field | Recorded value / outstanding work |
 |---|---|

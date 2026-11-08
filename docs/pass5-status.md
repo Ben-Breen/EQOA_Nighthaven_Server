@@ -2,7 +2,7 @@
 
 Checkpoint date: 2026-10-25. Previous documentation review: d63bea28b198620bc2a1dfa44ae3640dfb84a5e6. Pass #5 has begun; Pass #6 and protocol implementation have not begun.
 
-E00 review, 2026-11-08 (America/Chicago). The [N01 repeat](evidence/interpretations/e00-n01-repeat-20261108.md) reproduced the original contained DNS observations and DNAS Error (-611). Two comparable N01 cold starts are now reviewed. Full E00 remains open for the third comparable cold start and capture-coverage review. The earlier N02 clean-card comparison is complete in its separate scope, and the proposed online-host repetitions remain unrun. Earlier sections retain their dated checkpoint context.
+E00 review, 2026-11-08 (America/Chicago). The [N01 baseline closeout](evidence/interpretations/e00-n01-baseline-closeout-20261108.md) records three comparable unpatched cold starts with matching contained DNS observations and DNAS Error (-611). NH-E00 is complete for this PCSX2/TAP baseline. The earlier N02 clean-card comparison is complete in its separate scope, and the proposed online-host repetitions remain unrun. Earlier sections retain their dated checkpoint context.
 
 ## Current result
 
@@ -105,12 +105,12 @@ The [independent lab responder](../tools/ProtocolEvidenceLab/E01BootstrapRespond
 | E00-N01 network qualification | PASS, one run | Guest address adoption and DNS exchange captured; client reaches the DNAS screen. Internal DHCP remains semantic-log evidence. |
 | October 29 proposed online-host N02/N03 | NOT RUN / BLOCKED | Separate from the later offline clean-card N02. Executable-only resolver containment failed; a stronger boundary is required for an online host. |
 | E00-N02 offline clean-card collection/comparison | COMPLETE, scoped observations only | Earlier setup control plus corrected-DNS run retained separately; latest run has stable working card, eight images and DNAS-stage DNS/error. No DNAS success or causal proof. |
-| E00 | PARTIAL / NOT COMPLETE | Two comparable N01 cold starts are reviewed. One remains for the repetition criterion. TAP interception and timing limitations still apply. |
+| E00 | COMPLETE, contained N01 baseline | Three comparable cold starts and capture review complete. Pre-TAP visibility, normal online startup and hardware behavior remain unverified. |
 | E01 | PARTIAL; account-login goal unresolved | Independent updater reaches the post-update loading stage. R01 does not establish that its resource change applied; no lab account-service connection observed. |
 | E02–E11 | NOT RUN | Existing sequence and prerequisites remain in force. |
 | Protocol Implementation Gate | CLOSED | No capture-backed framing/authentication/session evidence yet. |
 
-Next: identify the post-update program/resource selection and transition failure from existing artifacts, then focused loader evidence if needed. U02 advances to Writing game data but does not establish account login or an authentication-service cause; manifest minimums remain open. Any further live response experiment requires new authorization. The operator-directed E01 handoff retains E00 limitations; these results do not pass full E00 or authorize an updater, account/game/database services or broad wire implementation.
+Next: identify the post-update program/resource selection and transition failure from existing artifacts, then focused loader evidence if needed. U02 advances to Writing game data but does not establish account login or an authentication-service cause; manifest minimums remain open. Any further live response experiment requires new authorization. The November 8 E00 closeout accepts only the contained N01 baseline. The existing E01 limitations and implementation gate still apply.
 
 ## October 31 loader tracing preparation — no launch
 
