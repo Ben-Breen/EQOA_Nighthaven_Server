@@ -151,3 +151,9 @@ The [A01 review](evidence/interpretations/e01-a01-station-binding-20261108.md) r
 ## November 8 A03 — live Station return points verified
 
 The [A03 review](evidence/interpretations/e01-a03-station-checkpoints-20261108.md) records the loaded Init and login-resource return PCs, including `0x002B6C98` for Init at the observed Station base. Two manual pauses left no recorded EE PC or register value. The resource outcome remains UNKNOWN. TAP again showed only the updater TCP traffic. Normal closure and restoration verified. The next measurement is an automatic pause at the live-validated Init return with EE PC and `v0` captured together.
+
+## November 8 A04 — automatic pause did not yield a return value
+
+In `E01-A04-20261108T180211602Z`, the passive observer again derived Station base `0x002B6A80` and Init return `0x002B6C98` from the loaded client. The operator reported no automatic pause. The run captured neither an execution hit nor `v0`. Whether Init returned remains UNKNOWN. The capture contained 30 TCP frames, all on the updater path, and the account probe reported NO_CLIENT. The first converted capture SHA-256 is `b3859e192d24c9087fb15386216304a2852f5e0dfdb715b2f553a08afff2ea7f`. Raw artifacts remain in the restricted local evidence store. The runner reported normal restoration and the fail-closed INI hash matched.
+
+**NIGHTHAVEN DECISION.** Retire the operator-visible pause as the evidence mechanism for this question. Prepare a lab-only host-side execution trace that records the EE PC and low 32 bits of `v0` at the verified return. Record whether that checkpoint is reached and correlate the trace with TAP. If Init succeeds, extend the same trace to the verified login-page parser returns. Keep the known patch and updater responses fixed. NH-E01 remains PARTIAL.
