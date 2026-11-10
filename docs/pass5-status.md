@@ -167,3 +167,12 @@ The [Box1 comparison](evidence/interpretations/e01-box1-server-selection-2026110
 ## November 8 A06 — archive lookup miss observed
 
 The [A06 review](evidence/interpretations/e01-a06-station-archive-miss-20261108.md) records successful Station Init, a null archive lookup, a null loose login-page parse and a black screen. The exact-token guard did not match at the proposed data address, so the candidate made no guest change. The account probe saw no client, and the lab was restored. Move the next guard to the actual file-open call and retain its return.
+
+## November 8 A07 — login form verified in two isolated runs
+
+Both traces recorded the live `/station.pak` argument, an applied basename guard, archive registration and a nonzero login-page parser return. A06 recorded a fixed-address guard miss and null parser return. The actual A06 call argument remains unknown. Both A07 sessions passed their artifact inventory and restoration checks.
+
+- [Run 1](evidence/interpretations/e01-a07-login-screen-20261108-001.md) shows the blank login form. TCP/9735 connected before credential input and carried zero application bytes.
+- [Run 2](evidence/interpretations/e01-a07-login-submission-20261108-002.md) shows “Connecting to server…” after the reported disposable submission. The guest sent one 148-byte TCP segment after the receive-only probe timed out. The host reset the connection.
+
+The visible login milestone is verified for this lab configuration. Authentication, account creation and the account message format remain unverified. NH-E01 remains PARTIAL. The next account evidence gap is a capture with the receive-only probe open through submission.
