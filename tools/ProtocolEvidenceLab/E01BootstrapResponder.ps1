@@ -5,7 +5,8 @@ param(
     [string]$StopPath,
     [string]$ReportPath,
     [string]$ReadyPath,
-    [switch]$LibraryOnly
+    [switch]$LibraryOnly,
+    [string]$ChangesText
 )
 $ErrorActionPreference='Stop'
 
@@ -62,9 +63,11 @@ function Get-E01Crc32 {
 }
 
 function Get-E01BootstrapCatalog {
+    param([ValidatePattern('^[ -~]{1,512}\z')][string]$ChangesText = 'Nighthaven laboratory bootstrap.')
+
     # Independent candidate, not a copy/replay of the reference manifest or file entries.
     # Empty Distribution and selected version values are hypotheses, not validated minima.
-    $changes=[Text.Encoding]::ASCII.GetBytes("Nighthaven laboratory bootstrap.`r`n")
+    $changes=[Text.Encoding]::ASCII.GetBytes("$ChangesText`r`n")
     $crc=(Get-E01Crc32 $changes).ToString([Globalization.CultureInfo]::InvariantCulture)
     $xml="<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<VerantPatcher Version=`"1`"><Product Version=`"36`"><Distribution Name=`"Nighthaven`" UseCRC=`"True`"/><Changes Version=`"0`" CRC=`"$crc`" Server=`"198.18.0.1`" Port=`"7000`" RemotePath=`"/patch/eqoa/Changes.txt`"/></Product></VerantPatcher>`n"
     $plain=[Text.UTF8Encoding]::new($false).GetBytes($xml)
@@ -82,10 +85,12 @@ function Get-E01BootstrapCatalog {
 }
 
 function Get-E01BootstrapResponse {
-    param([Parameter(Mandatory)][byte[]]$RequestBytes)
+    param(
+        [Parameter(Mandatory)][byte[]]$RequestBytes,
+        [object[]]$Catalog = @(Get-E01BootstrapCatalog)
+    )
     # Only exact known GET shapes. No absolute URLs, POST, queries, extra headers or credentials.
-    $catalog=@(Get-E01BootstrapCatalog)
-    foreach($e in $catalog){
+    foreach($e in $Catalog){
         $hosts=if($e.path-eq'/patch/eqoa/eqoa-frontierslive-update.xml.gz'){@('patch.everquestonlineadventures.com')}else{@('198.18.0.1','198.18.0.1:7000','patch.everquestonlineadventures.com')}
         foreach($hostValue in $hosts){
             $expected=[Text.Encoding]::ASCII.GetBytes("GET $($e.path) HTTP/1.1`r`nHost: $hostValue`r`n`r`n")
@@ -135,10 +140,15 @@ function Receive-E01InitialBytes {
 }
 
 function Invoke-E01Listener {
-    param([string]$RunDirectory,[string]$StopPath,[string]$ReportPath,[string]$ReadyPath)
+    param([string]$RunDirectory,[string]$StopPath,[string]$ReportPath,[string]$ReadyPath,[string]$ChangesText)
     $listener=$null;$client=$null;$file=$null;$validated=$false;$root=$null
     $result=[ordered]@{experiment='E01-U02';utc=[DateTime]::UtcNow.ToString('o');result='FAILED';stopped=$false;listener_closed=$false;client_closed=$false;file_closed=$false;application_bytes_sent=0;bytes_received=0;bind_address='198.18.0.1';port=7000;error=$null;exchanges=@();cleanup_errors=@()}
     try{
+        $catalogOptions = @{}
+        if ($PSBoundParameters.ContainsKey('ChangesText')) {
+            $catalogOptions.ChangesText = $ChangesText
+        }
+        $catalog = @(Get-E01BootstrapCatalog @catalogOptions)
         if([string]::IsNullOrWhiteSpace($RunDirectory)-or[string]::IsNullOrWhiteSpace($StopPath)-or[string]::IsNullOrWhiteSpace($ReportPath)-or[string]::IsNullOrWhiteSpace($ReadyPath)){throw 'All four explicit listener artifact paths are required.'}
         $root=Assert-E01ListenerRawPath -Path $RunDirectory -Root $RunDirectory -Existing
         $artifactPaths=@($StopPath,$ReportPath,$ReadyPath)
@@ -169,7 +179,7 @@ function Invoke-E01Listener {
             $request=[IO.File]::ReadAllBytes($payload);$result.bytes_received+=$request.Length
             $entry.request_file=[IO.Path]::GetFileName($payload);$entry.request_bytes=$request.Length;$entry.request_sha256=(Get-FileHash $payload).Hash.ToLowerInvariant()
             if(-not$received.header_complete){throw 'Request header incomplete; no response sent.'}
-            $candidate=Get-E01BootstrapResponse $request
+            $candidate=Get-E01BootstrapResponse -RequestBytes $request -Catalog $catalog
             if($index-eq1-and$candidate.name-cne'Nighthaven-empty-distribution-v1'){throw 'First request is not the approved updater GET.'}
             if([IO.File]::Exists($StopPath)){throw 'Operator stopped before response.'}
             [IO.File]::WriteAllBytes($responseFile,$candidate.response);$null=Assert-E01ListenerRawPath -Path $responseFile -Root $root -Existing
@@ -193,4 +203,7 @@ function Invoke-E01Listener {
     if($result.result-eq'FAILED'){throw ('E01 bootstrap listener failed: '+$result.error)}
 }
 
-if(-not$LibraryOnly){Invoke-E01Listener -RunDirectory $RunDirectory -StopPath $StopPath -ReportPath $ReportPath -ReadyPath $ReadyPath}
+if (-not $LibraryOnly) {
+    $null = $PSBoundParameters.Remove('LibraryOnly')
+    Invoke-E01Listener @PSBoundParameters
+}

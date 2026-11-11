@@ -13,6 +13,23 @@ try{$xml=[xml]$reader.ReadToEnd()}finally{$reader.Dispose();$gzip.Dispose();$str
 Check ($xml.DocumentElement.Name-ceq'VerantPatcher'-and$xml.SelectNodes('//File').Count-eq0) 'Gzip contains XML and zero file/download/deletion entries'
 $c=$xml.SelectSingleNode('/VerantPatcher/Product/Changes')
 Check ($c.Server-ceq'198.18.0.1'-and$c.Port-ceq'7000'-and$c.RemotePath-ceq'/patch/eqoa/Changes.txt'-and$c.CRC-ceq(Get-E01Crc32 $catalog[1].body).ToString()) 'Manifest endpoint and independently calculated Changes checksum'
+$custom = @(Get-E01BootstrapCatalog -ChangesText 'Welcome to Nighthaven!')
+$customRequest = [Text.Encoding]::ASCII.GetBytes("GET /patch/eqoa/Changes.txt HTTP/1.1`r`nHost: 198.18.0.1`r`n`r`n")
+$customReply = Get-E01BootstrapResponse -RequestBytes $customRequest -Catalog $custom
+$customWire = [Text.Encoding]::ASCII.GetString($customReply.response)
+Check ($customWire.Contains("Content-Length: 24`r`n") -and $customWire.EndsWith("`r`n`r`nWelcome to Nighthaven!`r`n")) 'Custom Changes text is served with exact length and CRLF'
+$stream = [IO.MemoryStream]::new($custom[0].body, $false)
+$gzip = [IO.Compression.GZipStream]::new($stream, [IO.Compression.CompressionMode]::Decompress)
+$reader = [IO.StreamReader]::new($gzip, [Text.Encoding]::UTF8)
+try { $customXml = [xml]$reader.ReadToEnd() }
+finally { $reader.Dispose(); $gzip.Dispose(); $stream.Dispose() }
+Check ($customXml.SelectSingleNode('/VerantPatcher/Product/Changes').CRC -ceq (Get-E01Crc32 $customReply.body).ToString()) 'Custom manifest checksum follows the served text'
+foreach ($invalidText in @('', "Two`nlines", ('x' * 513), ('Welcome ' + [char]0xE9))) {
+    $rejected = $false
+    try { $null = Get-E01BootstrapCatalog -ChangesText $invalidText }
+    catch [System.Management.Automation.ParameterBindingException] { $rejected = $true }
+    Check $rejected 'Unsupported Changes text is rejected'
+}
 foreach($e in $catalog){
  $head=[Text.Encoding]::ASCII.GetString($e.response,0,$e.response.Length-$e.body.Length)
  Check ($head.StartsWith("HTTP/1.1 200 OK`r`n")-and$head.Contains("Content-Length: $($e.body.Length)`r`n")-and$head.EndsWith("`r`n`r`n")) ('Correct Content-Length and CRLF framing: '+$e.name)

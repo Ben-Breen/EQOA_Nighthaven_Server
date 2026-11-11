@@ -176,3 +176,35 @@ Both traces recorded the live `/station.pak` argument, an applied basename guard
 - [Run 2](evidence/interpretations/e01-a07-login-submission-20261108-002.md) shows “Connecting to server…” after the reported disposable submission. The guest sent one 148-byte TCP segment after the receive-only probe timed out. The host reset the connection.
 
 The visible login milestone is verified for this lab configuration. Authentication, account creation and the account message format remain unverified. NH-E01 remains PARTIAL. The next account evidence gap is a capture with the receive-only probe open through submission.
+
+## November 10 E04-L01 — login request captured
+
+The [L01 review](evidence/interpretations/e04-l01-login-request-20261110.md) verifies a 148-byte TCP/9735 login request about 28.4 seconds after connection. The TAP payload and receive-only probe file match byte-for-byte. The declared big-endian length and `0x24` type also match the earlier A07 submission. The client displayed a request timeout after receiving zero application bytes. Authentication and credential encoding remain unverified. **Create User Name** remains a separate capture. Both the integrity and restoration checks passed.
+
+## November 10 E04-C01 — Create User Name submission captured
+
+The [C01 review](evidence/interpretations/e04-c01-create-user-name-20261110.md) records the operator's two-form flow and a 476-byte `0x38` submission on TCP/9735. The TAP and probe bytes match. The host sent zero application bytes. The accepted response and successful account creation remain unverified. The fields displayed by the client are separate from Nighthaven's storage requirements. Integrity and restoration checks passed.
+
+## November 10 E04-C02 — creation reply accepted and login request followed
+
+The [C02 review](evidence/interpretations/e04-c02-create-reply-20261110.md) verifies `0x38` → synthetic `0x29` → `0x24` on one TCP/9735 connection. The operator reported acceptance, and the client sent a login request with matching candidate username and credential slots. The next test must verify account persistence and a client-accepted login response. All 121 artifact checks and restoration checks passed.
+
+## November 10 E04-C03/C04 — persistence verified; cold-start login unresolved
+
+The [C03/C04 review](evidence/interpretations/e04-c03-c04-persistence-login-20261110.md) records account persistence and successful immediate credential verification in C03, followed by a news-page request that the updater rejected. C04's saved-account login used different credential bytes and received no reply. The operator reported forgetting the original password and trying variations, so credential stability across equal-input cold starts remains unknown. The probe also rejected a second standalone login because of its test sequence limit. Both runs restored the lab. Next use a known recorded disposable password and correct login-retry handling before testing the saved account again. Server selection and character creation remain unverified.
+
+The later C04 creation and C05 cold-login comparison resolves the full-field mismatch for that account. Offline decoding verified identical password bytes before the first NUL with different bytes afterward. The lab's opaque-field verifier was unsuitable. C06 corrects the verifier input and passed offline checks, including equality against both saved fields. A fresh C06 account or explicit verifier migration is required before the next live check. [Follow-up review](evidence/interpretations/e04-c03-c04-persistence-login-20261110.md#c05--correct-password-rejected-by-the-opaque-field-verifier)
+
+C06 then verified persistence and two logins with the corrected verifier. The operator reached “Getting news.” One news reply was sent, but a second request exceeded the HTTP listener's four-request processing limit. C07 removes that limit and passed a nine-request loopback test plus the existing harness checks. Client acceptance of the news body and server-selection rendering remain open. [C06 review](evidence/interpretations/e04-c03-c04-persistence-login-20261110.md#c06--verification-works-repeated-news-request-unanswered)
+
+## November 10 E04-C07 — cold-start login verified; memory-card transition open
+
+The [C07 review](evidence/interpretations/e04-c07-cold-login-news-memcard-20261110.md) verifies login against the saved C06 account and complete delivery of two news responses. Screenshots show news text with literal HTML tags, followed by a memory-card check. The operator reported a hang at that check. No guest game-UDP exchange was captured at TAP. All 130 artifact checks and restoration flags passed. The bounded lab account creation, persistence and cold-login milestone is complete. Server selection remains unverified. Next inspect the client/card transition using saved evidence.
+
+The [saved-card investigation](evidence/interpretations/e04-c07-post-news-card-review-20261110.md) found readable allocation chains, unchanged EQOA files apart from `session.id`, and no shard-host file. Public client analysis places a card-status/session check before word, option and host-list loading. The existing log cannot identify the runtime wait. Next trace the card-status return and session-completion callback before treating the missing host file as the cause of the displayed dialog. Original cards, raw evidence and source repositories were preserved.
+
+[C08](evidence/experiments/E04-C08-card-transition.md) used an automatic passive execution trace for the post-news card operations. Network-disabled synthetic controls verified the call/return, file-read and callback logging and invalid-registry handling. The original Station guard controls, package, harness, account and news tests passed.
+
+## November 11 E04-C08 — host-file failure identified
+
+The [C08 review](evidence/interpretations/e04-c08-card-host-loop-20261111.md) records card status zero, matching session result one and completed owner callbacks. Options loading returned 1,024 bytes; both `althosts.txt` and `eqahosts.txt` then returned −2, followed by repeated card-check cycles. The operator reported the memory-card message. All 124 inventory references passed validation and restoration records passed. The trace later exhausted its budget, so subsequent execution is unobserved. Original lab-only host files have been prepared privately for `198.18.0.1:10070`, using a reference-derived candidate port. Guest delivery and successful host loading remain unverified. No new listener or live run was started; server selection and character creation remain open.
